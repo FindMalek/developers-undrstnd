@@ -608,8 +608,8 @@ importers:
         specifier: ^0.10.4
         version: 0.10.4
       '@prisma/adapter-neon':
-        specifier: ^6.0.1
-        version: 6.0.1(@neondatabase/serverless@0.10.4)
+        specifier: ^6.1.0
+        version: 6.1.0(@neondatabase/serverless@0.10.4)
       '@prisma/client':
         specifier: 6.0.1
         version: 6.0.1(prisma@6.0.1)
@@ -3184,8 +3184,8 @@ packages:
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
 
-  '@prisma/adapter-neon@6.0.1':
-    resolution: {integrity: sha512-H6WV/pKTa1ttEVfLh6WPldf7EKonFnul2J+U36WCDTWBGwcAKyzDCBYM3qTRrs0siz7FJ/CMxbOoubJqeMHBog==}
+  '@prisma/adapter-neon@6.1.0':
+    resolution: {integrity: sha512-wVAwpfiDr7O6kq4Gg4M/2grtm79vkdr52osoZItIhYrKcqPaE+H0r+nX7/S5dYLLuaVeB6UAw1SprLxff1rhNA==}
     peerDependencies:
       '@neondatabase/serverless': ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0 || ^0.10.0
 
@@ -3201,8 +3201,11 @@ packages:
   '@prisma/debug@6.0.1':
     resolution: {integrity: sha512-jQylgSOf7ibTVxqBacnAlVGvek6fQxJIYCQOeX2KexsfypNzXjJQSS2o5s+Mjj2Np93iSOQUaw6TvPj8syhG4w==}
 
-  '@prisma/driver-adapter-utils@6.0.1':
-    resolution: {integrity: sha512-er0UqOPcqg/A15Ozf9+O9MQ0p81nbG1dI771VROSmSMlqnwVNOOoBRG51x6+4MRzeL50W0Xgu34pb87+kIoDew==}
+  '@prisma/debug@6.1.0':
+    resolution: {integrity: sha512-0himsvcM4DGBTtvXkd2Tggv6sl2JyUYLzEGXXleFY+7Kp6rZeSS3hiTW9mwtUlXrwYbJP6pwlVNB7jYElrjWUg==}
+
+  '@prisma/driver-adapter-utils@6.1.0':
+    resolution: {integrity: sha512-+4MefY+kjWDRRbC986A9X+JM4Dqc/8jqBbbiqmOwtFAD2Ttf87WeBSO2Ef6/rUqqhGQE8YHl86yCik8CF+QlEQ==}
 
   '@prisma/engines-version@5.23.0-27.5dbef10bdbfb579e07d35cc85fb1518d357cb99e':
     resolution: {integrity: sha512-JmIds0Q2/vsOmnuTJYxY4LE+sajqjYKhLtdOT6y4imojqv5d/aeVEfbBGC74t8Be1uSp0OP8lxIj2OqoKbLsfQ==}
@@ -12576,10 +12579,10 @@ snapshots:
 
   '@polka/url@1.0.0-next.25': {}
 
-  '@prisma/adapter-neon@6.0.1(@neondatabase/serverless@0.10.4)':
+  '@prisma/adapter-neon@6.1.0(@neondatabase/serverless@0.10.4)':
     dependencies:
       '@neondatabase/serverless': 0.10.4
-      '@prisma/driver-adapter-utils': 6.0.1
+      '@prisma/driver-adapter-utils': 6.1.0
       postgres-array: 3.0.2
 
   '@prisma/client@6.0.1(prisma@6.0.1)':
@@ -12588,9 +12591,11 @@ snapshots:
 
   '@prisma/debug@6.0.1': {}
 
-  '@prisma/driver-adapter-utils@6.0.1':
+  '@prisma/debug@6.1.0': {}
+
+  '@prisma/driver-adapter-utils@6.1.0':
     dependencies:
-      '@prisma/debug': 6.0.1
+      '@prisma/debug': 6.1.0
 
   '@prisma/engines-version@5.23.0-27.5dbef10bdbfb579e07d35cc85fb1518d357cb99e': {}
 
