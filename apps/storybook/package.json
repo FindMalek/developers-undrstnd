@@ -33,7 +33,7 @@
     "chromatic": "^11.20.1",
     "postcss": "^8",
     "storybook": "^8.4.7",
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }
