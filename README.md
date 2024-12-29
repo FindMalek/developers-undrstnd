@@ -1,25 +1,47 @@
-# next-forge
+# **Undrstnd Developers**
 
-**Production-grade Turborepo template for Next.js apps.**
+<p align="center">
+    Easy AI integration for devs. ⏩
+</p>
+<p align="center">
+    <a href="https://dev.undrstnd.com">Website</a>
+    ·
+    <a href="https://github.com/undrstnd-labs/developers/issues">Issues</a>
+</p>
 
-<div>
-  <img src="https://img.shields.io/npm/dy/next-forge" alt="" />
-  <img src="https://img.shields.io/npm/v/next-forge" alt="" />
-  <img src="https://img.shields.io/github/license/haydenbleasel/next-forge" alt="" />
-</div>
+## Under active development
 
-[next-forge](https://github.com/haydenbleasel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
+> Undrstnd Developers is dedicated to delivering a high-quality product and has been actively improving code quality and best practices. Our philosophy centers around providing a seamless and enjoyable user experience, with a focus on reliability, efficiency, and security. We're excited about the progress made and continue to innovate and improve the platform for our users.
 
-Clone the repo using:
+## App Architecture
 
-```sh
-npx next-forge@latest init [my-app]
-```
+- PNpm
+- React
+- TypeScript
+- Nextjs
+- Supabase
+- Shadcn
+- TailwindCSS
+- Prisma
+- NextAuth
 
-Then read the [docs](https://docs.next-forge.com) for more information.
+### Hosting
 
-<a href="https://github.com/haydenbleasel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=haydenbleasel/next-forge" />
-</a>
+- Supabase (Database, storage, realtime)
+- Vercel (Website, edge-config, analytics and metrics)
+- Github (Codebase, issues, PRs, actions)
 
-Made with [contrib.rocks](https://contrib.rocks).
+### Services
+
+- LogSnag (Events)
+- Nodemailer (Email)
+- Github Actions (CI/CD)
+- Trigger.dev (Background jobs)
+- Konnect (Payments)
+- Novu (Notifications)
+- Loops (Marketing email)
+- Dub (Short URLs)
+
+## Repo Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/2991986135d6e47299c2718c3ba0eaf4f7f4c677.svg "Repobeats analytics image")
