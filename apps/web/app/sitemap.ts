@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import { blog, legal } from '@repo/cms';
-import { env } from '@repo/env';
+import { blog, legal } from '@undrstnd/cms';
+import { env } from '@undrstnd/env';
 import type { MetadataRoute } from 'next';
 
 const appFolders = fs.readdirSync('app', { withFileTypes: true });

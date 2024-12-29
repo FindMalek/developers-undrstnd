@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@undrstnd/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "plugins": [
@@ -8,8 +8,8 @@
       }
     ],
     "paths": {
-      "@repo/*": ["../*"],
-      "@repo/design-system/*": ["./*"]
+      "@undrstnd/*": ["../*"],
+      "@undrstnd/design-system/*": ["./*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],

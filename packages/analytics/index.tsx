@@ -1,4 +1,4 @@
-import { env } from '@repo/env';
+import { env } from '@undrstnd/env';
 import type { ReactNode } from 'react';
 import { GoogleAnalytics } from './google';
 import { PostHogProvider } from './posthog/client';

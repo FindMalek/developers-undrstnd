@@ -1,5 +1,5 @@
 {
-  "name": "@repo/collaboration",
+  "name": "@undrstnd/collaboration",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,17 +7,17 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@repo/env": "workspace:*",
-    "@liveblocks/client": "^2.14.0",
-    "@liveblocks/node": "^2.14.0",
-    "@liveblocks/react": "^2.14.0",
+    "@undrstnd/env": "workspace:*",
+    "@liveblocks/client": "^2.15.1",
+    "@liveblocks/node": "^2.15.1",
+    "@liveblocks/react": "^2.15.1",
     "react": "^19.0.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.10.1",
-    "@types/react": "19.0.1",
+    "@undrstnd/typescript-config": "workspace:*",
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.2",
     "@types/react-dom": "^19.0.2"
   }
 }

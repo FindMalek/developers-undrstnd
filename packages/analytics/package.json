@@ -1,5 +1,5 @@
 {
-  "name": "@repo/analytics",
+  "name": "@undrstnd/analytics",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,18 +7,18 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@next/third-parties": "^15.1.0",
-    "@repo/env": "workspace:*",
+    "@next/third-parties": "^15.1.3",
+    "@undrstnd/env": "workspace:*",
     "@vercel/analytics": "^1.4.1",
-    "posthog-js": "^1.195.0",
-    "posthog-node": "^4.3.1",
+    "posthog-js": "^1.203.2",
+    "posthog-node": "^4.3.2",
     "react": "^19.0.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.10.1",
-    "@types/react": "19.0.1",
+    "@undrstnd/typescript-config": "workspace:*",
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.2",
     "@types/react-dom": "^19.0.2"
   }
 }

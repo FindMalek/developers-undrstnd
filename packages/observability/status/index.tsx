@@ -1,5 +1,5 @@
 import 'server-only';
-import { env } from '@repo/env';
+import { env } from '@undrstnd/env';
 import type { BetterStackResponse } from './types';
 
 export const Status = async () => {

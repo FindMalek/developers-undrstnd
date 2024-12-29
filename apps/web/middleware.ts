@@ -1,8 +1,11 @@
-import { authMiddleware } from '@repo/auth/middleware';
-import { env } from '@repo/env';
-import { parseError } from '@repo/observability/error';
-import { secure } from '@repo/security';
-import { noseconeConfig, noseconeMiddleware } from '@repo/security/middleware';
+import { authMiddleware } from '@undrstnd/auth/middleware';
+import { env } from '@undrstnd/env';
+import { parseError } from '@undrstnd/observability/error';
+import { secure } from '@undrstnd/security';
+import {
+  noseconeConfig,
+  noseconeMiddleware,
+} from '@undrstnd/security/middleware';
 import { NextResponse } from 'next/server';
 
 export const config = {

@@ -1,6 +1,6 @@
-import { withCMS } from '@repo/cms/next-config';
-import { env } from '@repo/env';
-import { config, withAnalyzer, withSentry } from '@repo/next-config';
+import { withCMS } from '@undrstnd/cms/next-config';
+import { env } from '@undrstnd/env';
+import { config, withAnalyzer, withSentry } from '@undrstnd/next-config';
 import type { NextConfig } from 'next';
 
 let nextConfig: NextConfig = { ...config };

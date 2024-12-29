@@ -4,9 +4,7 @@
   "bin": {
     "next-forge": "scripts/init.mjs"
   },
-  "files": [
-    "scripts/init.mjs"
-  ],
+  "files": ["scripts/init.mjs"],
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -23,18 +21,18 @@
     "@auto-it/all-contributors": "^11.3.0",
     "@auto-it/first-time-contributor": "^11.3.0",
     "@biomejs/biome": "1.9.4",
-    "@repo/typescript-config": "workspace:*",
+    "@undrstnd/typescript-config": "workspace:*",
     "turbo": "^2.3.3",
     "@turbo/gen": "^2.3.3",
     "typescript": "^5.7.2",
-    "ultracite": "^4.1.12"
+    "ultracite": "^4.1.14"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.2",
   "dependencies": {
-    "chalk": "^5.3.0",
+    "chalk": "^5.4.1",
     "commander": "^12.1.0"
   }
 }

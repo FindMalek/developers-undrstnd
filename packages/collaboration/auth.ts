@@ -1,6 +1,6 @@
 import 'server-only';
 import { Liveblocks as LiveblocksNode } from '@liveblocks/node';
-import { env } from '@repo/env';
+import { env } from '@undrstnd/env';
 
 type AuthenticateOptions = {
   userId: string;

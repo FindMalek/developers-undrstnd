@@ -1,6 +1,6 @@
 import 'server-only';
-import { auth } from '@repo/auth/server';
-import { env } from '@repo/env';
+import { auth } from '@undrstnd/auth/server';
+import { env } from '@undrstnd/env';
 import { Svix } from 'svix';
 
 export const send = async (eventType: string, payload: object) => {

@@ -1,6 +1,6 @@
-import { AnalyticsProvider } from '@repo/analytics';
-import { AuthProvider } from '@repo/auth/provider';
-import { env } from '@repo/env';
+import { AnalyticsProvider } from '@undrstnd/analytics';
+import { AuthProvider } from '@undrstnd/auth/provider';
+import { env } from '@undrstnd/env';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import type { ThemeProviderProps } from 'next-themes';
 import { Toaster } from './components/ui/sonner';

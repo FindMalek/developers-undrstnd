@@ -1,7 +1,7 @@
 'use client';
 
-import { ModeToggle } from '@repo/design-system/components/mode-toggle';
-import { Button } from '@repo/design-system/components/ui/button';
+import { ModeToggle } from '@undrstnd/design-system/components/mode-toggle';
+import { Button } from '@undrstnd/design-system/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,8 +9,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@repo/design-system/components/ui/navigation-menu';
-import { env } from '@repo/env';
+} from '@undrstnd/design-system/components/ui/navigation-menu';
+import { env } from '@undrstnd/env';
 import { Menu, MoveRight, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';

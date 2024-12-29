@@ -1,5 +1,8 @@
-import { authMiddleware } from '@repo/auth/middleware';
-import { noseconeConfig, noseconeMiddleware } from '@repo/security/middleware';
+import { authMiddleware } from '@undrstnd/auth/middleware';
+import {
+  noseconeConfig,
+  noseconeMiddleware,
+} from '@undrstnd/security/middleware';
 
 const securityHeaders = noseconeMiddleware(noseconeConfig);
 

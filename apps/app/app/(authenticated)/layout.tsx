@@ -1,8 +1,8 @@
-import { auth, currentUser } from '@repo/auth/server';
-import { SidebarProvider } from '@repo/design-system/components/ui/sidebar';
-import { env } from '@repo/env';
-import { showBetaFeature } from '@repo/feature-flags';
-import { secure } from '@repo/security';
+import { auth, currentUser } from '@undrstnd/auth/server';
+import { SidebarProvider } from '@undrstnd/design-system/components/ui/sidebar';
+import { env } from '@undrstnd/env';
+import { showBetaFeature } from '@undrstnd/feature-flags';
+import { secure } from '@undrstnd/security';
 import type { ReactNode } from 'react';
 import { PostHogIdentifier } from './components/posthog-identifier';
 import { GlobalSidebar } from './components/sidebar';

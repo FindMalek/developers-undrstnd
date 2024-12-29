@@ -1,5 +1,5 @@
 {
-  "name": "@repo/payments",
+  "name": "@undrstnd/payments",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,12 +7,12 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@repo/env": "workspace:*",
+    "@undrstnd/env": "workspace:*",
     "@stripe/agent-toolkit": "^0.2.0",
-    "stripe": "^17.4.0"
+    "stripe": "^17.5.0"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@undrstnd/typescript-config": "workspace:*",
     "typescript": "^5.7.2"
   }
 }
