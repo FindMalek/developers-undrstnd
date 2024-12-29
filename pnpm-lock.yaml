@@ -104,8 +104,8 @@ importers:
   apps/app:
     dependencies:
       '@prisma/client':
-        specifier: 6.0.1
-        version: 6.0.1(prisma@6.0.1)
+        specifier: 6.1.0
+        version: 6.1.0(prisma@6.0.1)
       '@repo/analytics':
         specifier: workspace:*
         version: link:../../packages/analytics
@@ -611,8 +611,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1(@neondatabase/serverless@0.10.4)
       '@prisma/client':
-        specifier: 6.0.1
-        version: 6.0.1(prisma@6.0.1)
+        specifier: 6.1.0
+        version: 6.1.0(prisma@6.0.1)
       '@repo/env':
         specifier: workspace:*
         version: link:../env
@@ -3189,8 +3189,8 @@ packages:
     peerDependencies:
       '@neondatabase/serverless': ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0 || ^0.10.0
 
-  '@prisma/client@6.0.1':
-    resolution: {integrity: sha512-60w7kL6bUxz7M6Gs/V+OWMhwy94FshpngVmOY05TmGD0Lhk+Ac0ZgtjlL6Wll9TD4G03t4Sq1wZekNVy+Xdlbg==}
+  '@prisma/client@6.1.0':
+    resolution: {integrity: sha512-AbQYc5+EJKm1Ydfq3KxwcGiy7wIbm4/QbjCKWWoNROtvy7d6a3gmAGkKjK0iUCzh+rHV8xDhD5Cge8ke/kiy5Q==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -12582,7 +12582,7 @@ snapshots:
       '@prisma/driver-adapter-utils': 6.0.1
       postgres-array: 3.0.2
 
-  '@prisma/client@6.0.1(prisma@6.0.1)':
+  '@prisma/client@6.1.0(prisma@6.0.1)':
     optionalDependencies:
       prisma: 6.0.1
 
