@@ -1,7 +1,7 @@
 import { blog } from '@undrstnd/cms';
 import { Feed } from '@undrstnd/cms/components/feed';
-import { Button } from '@undrstnd/design-system/components/ui/button';
 import { env } from '@undrstnd/env';
+import { Button } from '@undrstnd/ui';
 import { MoveRight, PhoneCall } from 'lucide-react';
 import { draftMode } from 'next/headers';
 import Link from 'next/link';

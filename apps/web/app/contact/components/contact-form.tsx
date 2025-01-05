@@ -1,15 +1,11 @@
 'use client';
 
-import { Button } from '@undrstnd/design-system/components/ui/button';
-import { Calendar } from '@undrstnd/design-system/components/ui/calendar';
-import { Input } from '@undrstnd/design-system/components/ui/input';
-import { Label } from '@undrstnd/design-system/components/ui/label';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@undrstnd/design-system/components/ui/popover';
-import { cn } from '@undrstnd/design-system/lib/utils';
+import { Button } from '@undrstnd/ui';
+import { Calendar } from '@undrstnd/ui';
+import { Label } from '@undrstnd/ui';
+import { Input } from '@undrstnd/ui';
+import { Popover, PopoverContent, PopoverTrigger } from '@undrstnd/ui';
+import { cn } from '@undrstnd/ui/lib';
 import { format } from 'date-fns';
 import { CalendarIcon, Check, MoveRight } from 'lucide-react';
 import { useState } from 'react';

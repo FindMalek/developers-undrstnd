@@ -5,7 +5,7 @@ import {
   type CarouselApi,
   CarouselContent,
   CarouselItem,
-} from '@undrstnd/design-system/components/ui/carousel';
+} from '@undrstnd/ui';
 import { useEffect, useState } from 'react';
 
 export const Cases = () => {

@@ -15,7 +15,7 @@
     "@undrstnd/analytics": "workspace:*",
     "@undrstnd/auth": "workspace:*",
     "@undrstnd/database": "workspace:*",
-    "@undrstnd/design-system": "workspace:*",
+    "@undrstnd/ui": "workspace:*",
     "@undrstnd/env": "workspace:*",
     "@undrstnd/observability": "workspace:*",
     "@undrstnd/payments": "workspace:*",

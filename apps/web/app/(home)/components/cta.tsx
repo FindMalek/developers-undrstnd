@@ -1,5 +1,5 @@
-import { Button } from '@undrstnd/design-system/components/ui/button';
 import { env } from '@undrstnd/env';
+import { Button } from '@undrstnd/ui';
 import { MoveRight, PhoneCall } from 'lucide-react';
 import Link from 'next/link';
 

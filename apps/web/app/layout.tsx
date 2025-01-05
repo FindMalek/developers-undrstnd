@@ -1,8 +1,8 @@
-import '@undrstnd/design-system/styles/globals.css';
+import '@undrstnd/ui/styles/globals.css';
 import './styles/web.css';
-import { DesignSystemProvider } from '@undrstnd/design-system';
-import { fonts } from '@undrstnd/design-system/lib/fonts';
-import { cn } from '@undrstnd/design-system/lib/utils';
+import { UIProvider } from '@undrstnd/ui';
+import { fonts } from '@undrstnd/ui/lib';
+import { cn } from '@undrstnd/ui/lib';
 import type { ReactNode } from 'react';
 import { Footer } from './components/footer';
 import { Header } from './components/header';
@@ -18,11 +18,11 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
     suppressHydrationWarning
   >
     <body>
-      <DesignSystemProvider>
+      <UIProvider>
         <Header />
         {children}
         <Footer />
-      </DesignSystemProvider>
+      </UIProvider>
     </body>
   </html>
 );

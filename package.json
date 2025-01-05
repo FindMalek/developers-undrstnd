@@ -1,10 +1,6 @@
 {
-  "name": "next-forge",
-  "version": "2.21.11",
-  "bin": {
-    "next-forge": "scripts/init.mjs"
-  },
-  "files": ["scripts/init.mjs"],
+  "name": "undrstnd-labs",
+  "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -13,7 +9,7 @@
     "test": "turbo test",
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
-    "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/design-system",
+    "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/ui",
     "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
     "clean": "git clean -xdf node_modules"
   },

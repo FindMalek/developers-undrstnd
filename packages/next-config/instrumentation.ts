@@ -1,6 +1,5 @@
-import { initt } from 'sentrynnextjsjs';
-import { env} from
-'@uundrstnddenv
+import { init } from '@sentry/nextjs';
+import { env } from '@undrstnd/env';
 
 const opts = {
   dsn: env.NEXT_PUBLIC_SENTRY_DSN,

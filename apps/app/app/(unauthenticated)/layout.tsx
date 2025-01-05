@@ -1,5 +1,5 @@
-import { ModeToggle } from '@undrstnd/design-system/components/mode-toggle';
 import { env } from '@undrstnd/env';
+import { ModeToggle } from '@undrstnd/ui';
 import { CommandIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';

@@ -1,16 +1,12 @@
 'use client';
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@undrstnd/design-system/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@undrstnd/ui';
 import {
   Carousel,
   type CarouselApi,
   CarouselContent,
   CarouselItem,
-} from '@undrstnd/design-system/components/ui/carousel';
+} from '@undrstnd/ui';
 import { User } from 'lucide-react';
 import { useEffect, useState } from 'react';
 

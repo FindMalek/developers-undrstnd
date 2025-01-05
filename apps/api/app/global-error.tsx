@@ -1,13 +1,8 @@
 'use client';
 
-import { captureExceptioneExceptionsentrynextjs
-import
-{
-  Buttonn;
-}
-from;
-('@undrstnd/design-systemcomponents/uimbuttonts/ui/button');
-import { fontsndrstnd/deundrstnd/design-system/libyfontsib/fonts';
+import { captureException } from '@sentry/nextjs';
+import { Button } from '@undrstnd/ui';
+import { fonts } from '@undrstnd/ui/lib';
 import type NextError from 'next/error';
 import { useEffect } from 'react';
 

@@ -13,7 +13,7 @@
     "@arcjet/next": "1.0.0-alpha.34",
     "@radix-ui/react-icons": "^1.3.2",
     "@undrstnd/cms": "workspace:*",
-    "@undrstnd/design-system": "workspace:*",
+    "@undrstnd/ui": "workspace:*",
     "@undrstnd/email": "workspace:*",
     "@undrstnd/env": "workspace:*",
     "@undrstnd/feature-flags": "workspace:*",

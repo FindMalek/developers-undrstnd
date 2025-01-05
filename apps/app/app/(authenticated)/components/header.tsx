@@ -1,3 +1,4 @@
+import { SidebarTrigger } from '@undrstnd/ui';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -5,9 +6,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@undrstnd/design-system/components/ui/breadcrumb';
-import { Separator } from '@undrstnd/design-system/components/ui/separator';
-import { SidebarTrigger } from '@undrstnd/design-system/components/ui/sidebar';
+} from '@undrstnd/ui';
+import { Separator } from '@undrstnd/ui';
 import { Fragment, type ReactNode } from 'react';
 
 type HeaderProps = {

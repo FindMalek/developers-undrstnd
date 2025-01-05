@@ -1,6 +1,6 @@
-import '@undrstnd/design-system/styles/globals.css';
-import { DesignSystemProvider } from '@undrstnd/design-system';
-import { fonts } from '@undrstnd/design-system/lib/fonts';
+import '@undrstnd/ui/styles/globals.css';
+import { UIProvider } from '@undrstnd/ui/';
+import { fonts } from '@undrstnd/ui/lib';
 import type { ReactNode } from 'react';
 
 type RootLayoutProperties = {
@@ -10,7 +10,7 @@ type RootLayoutProperties = {
 const RootLayout = ({ children }: RootLayoutProperties) => (
   <html lang="en" className={fonts} suppressHydrationWarning>
     <body>
-      <DesignSystemProvider>{children}</DesignSystemProvider>
+      <UIProvider>{children}</UIProvider>
     </body>
   </html>
 );

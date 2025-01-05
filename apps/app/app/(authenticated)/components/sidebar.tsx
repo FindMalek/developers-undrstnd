@@ -1,19 +1,6 @@
 'use client';
 
 import { OrganizationSwitcher, UserButton } from '@undrstnd/auth/client';
-import { ModeToggle } from '@undrstnd/design-system/components/mode-toggle';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@undrstnd/design-system/components/ui/collapsible';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@undrstnd/design-system/components/ui/dropdown-menu';
 import {
   Sidebar,
   SidebarContent,
@@ -31,8 +18,21 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from '@undrstnd/design-system/components/ui/sidebar';
-import { cn } from '@undrstnd/design-system/lib/utils';
+} from '@undrstnd/ui';
+import { ModeToggle } from '@undrstnd/ui';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@undrstnd/ui';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@undrstnd/ui';
+import { cn } from '@undrstnd/ui/lib';
 import {
   AnchorIcon,
   BookOpenIcon,
