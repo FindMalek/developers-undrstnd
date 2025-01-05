@@ -10,8 +10,12 @@
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/ui",
-    "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "clean": "git clean -xdf node_modules"
+    "clean": "git clean -xdf node_modules",
+    "db:generate": "turbo run generate --filter='./packages/database'",
+    "db:studio": "turbo run studio --filter='./packages/database'",
+    "db:pull": "turbo run pull --filter='./packages/database'",
+    "db:push": "turbo run push --filter='./packages/database'",
+    "db:format": "turbo run format --filter='./packages/database'"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",

@@ -1,8 +1,9 @@
-import { env } from '@undrstnd/env';
-import { config, withAnalyzer, withSentry } from '@undrstnd/next-config';
+import { env } from '@/env';
+import { config, withAnalyzer } from '@undrstnd/next-config';
+import { withLogtail, withSentry } from '@undrstnd/observability/next-config';
 import type { NextConfig } from 'next';
 
-let nextConfig: NextConfig = { ...config };
+let nextConfig: NextConfig = withLogtail({ ...config });
 
 if (env.VERCEL) {
   nextConfig = withSentry(nextConfig);
