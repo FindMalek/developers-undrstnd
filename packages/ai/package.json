@@ -7,16 +7,16 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.0.11",
+    "@ai-sdk/openai": "^1.0.13",
     "@undrstnd/env": "workspace:*",
-    "ai": "^4.0.22",
+    "ai": "^4.0.26",
     "react": "^19.0.0",
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@undrstnd/typescript-config": "workspace:*",
-    "@types/node": "22.10.2",
+    "@types/node": "22.10.5",
     "@types/react": "19.0.2",
     "@types/react-dom": "^19.0.2"
   }
