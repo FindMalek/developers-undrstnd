@@ -3,19 +3,19 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
-import { useIsMobile } from "@undrstnd/ui/hooks"
+import { useIsMobile } from "@undrstnd/ui/hooks/use-mobile"
 import { cn } from "@undrstnd/ui/lib"
-import { Button } from "@undrstnd/ui"
-import { Input } from "@undrstnd/ui"
-import { Separator } from "@undrstnd/ui"
-import { Sheet, SheetContent, SheetTitle } from "@undrstnd/ui"
-import { Skeleton } from "@undrstnd/ui"
+import { Button } from "@undrstnd/ui/components/ui/button"
+import { Input } from "@undrstnd/ui/components/ui/input"
+import { Separator } from "@undrstnd/ui/components/ui/separator"
+import { Sheet, SheetContent } from "@undrstnd/ui/components/ui/sheet"
+import { Skeleton } from "@undrstnd/ui/components/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@undrstnd/ui"
+} from "@undrstnd/ui/components/ui/tooltip"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
@@ -205,7 +205,6 @@ const Sidebar = React.forwardRef<
             }
             side={side}
           >
-            <SheetTitle className="sr-only" />
             <div className="flex h-full w-full flex-col">{children}</div>
           </SheetContent>
         </Sheet>
