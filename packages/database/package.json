@@ -8,7 +8,7 @@
     "build": "prisma generate --no-hints",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "generate": "turbo prisma generate",
+    "generate": "prisma generate",
     "studio": "prisma studio --port 5556",
     "pull": "prisma db pull",
     "push": "prisma db push",

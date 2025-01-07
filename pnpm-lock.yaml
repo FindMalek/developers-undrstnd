@@ -40,6 +40,67 @@ importers:
         specifier: ^4.1.14
         version: 4.1.14
 
+  apps/ai-api:
+    dependencies:
+      '@sentry/nextjs':
+        specifier: ^8.47.0
+        version: 8.47.0(@opentelemetry/core@1.29.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.56.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.29.0(@opentelemetry/api@1.9.0))(next@15.1.3(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.91.0(@swc/core@1.3.101(@swc/helpers@0.5.15)))
+      '@undrstnd/analytics':
+        specifier: workspace:*
+        version: link:../../packages/analytics
+      '@undrstnd/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
+      '@undrstnd/database':
+        specifier: workspace:*
+        version: link:../../packages/database
+      '@undrstnd/env':
+        specifier: workspace:*
+        version: link:../../packages/env
+      '@undrstnd/next-config':
+        specifier: workspace:*
+        version: link:../../packages/next-config
+      '@undrstnd/observability':
+        specifier: workspace:*
+        version: link:../../packages/observability
+      '@undrstnd/payments':
+        specifier: workspace:*
+        version: link:../../packages/payments
+      '@undrstnd/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      next:
+        specifier: 15.1.3
+        version: 15.1.3(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react:
+        specifier: 19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: 19.0.0
+        version: 19.0.0(react@19.0.0)
+      svix:
+        specifier: ^1.45.1
+        version: 1.45.1
+    devDependencies:
+      '@types/node':
+        specifier: 22.10.5
+        version: 22.10.5
+      '@types/react':
+        specifier: 19.0.2
+        version: 19.0.2
+      '@types/react-dom':
+        specifier: 19.0.2
+        version: 19.0.2(@types/react@19.0.2)
+      '@undrstnd/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      concurrently:
+        specifier: ^9.1.2
+        version: 9.1.2
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+
   apps/api:
     dependencies:
       '@sentry/nextjs':
@@ -15805,7 +15866,7 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 

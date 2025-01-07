@@ -7,15 +7,43 @@ generator client {
 }
 
 datasource db {
+  relationMode = "prisma"
   provider     = "postgresql"
   url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  directUrl    = env("DIRECT_URL")
 }
 
-// This is a stub model.
-// Delete it and add your own Prisma models.
+/**
+ * Represents a Page model.
+ * @property {number} id - The unique identifier for the page (auto-incremented).
+ * @property {string} email - The unique email associated with the page.
+ * @property {string | null} name - The optional name associated with the page.
+ */
 model Page {
   id    Int     @id @default(autoincrement())
+
   email String  @unique
   name  String?
+
+  @@map("pages")
+}
+
+/**
+ * Represents a Waitlist model.
+ * @property {number} id - The unique identifier for the waitlist entry (auto-incremented).
+ * @property {string} email - The email of the user joining the waitlist.
+ * @property {string} country - The country of the user joining the waitlist.
+ * @property {string} ipAddress - The IP address of the user joining the waitlist.
+ * @property {Date} createdAt - The timestamp when the waitlist entry was created.
+ */
+model Waitlist {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+
+  country   String
+  ipAddress String
+
+  createdAt DateTime @default(now())
+
+  @@map("waitlist")
 }
