@@ -1,5 +1,5 @@
 {
-  "name": "undrstnd-labs",
+  "name": "undrstnd-developers",
   "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
