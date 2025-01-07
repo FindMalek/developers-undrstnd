@@ -44,3 +44,6 @@ export * from './ui/toggle';
 export * from './ui/toast';
 export * from './ui/toaster';
 export * from './ui/separator';
+export * from './ui/border-number';
+export * from './ui/marquee';
+export * from './ui/orbiting-circles';

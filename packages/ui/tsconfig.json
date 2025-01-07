@@ -12,6 +12,10 @@
       "@undrstnd/ui/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../../apps/waitlist/components/flickering-grid.tsx"
+  ],
   "exclude": ["node_modules"]
 }
