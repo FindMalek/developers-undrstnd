@@ -1,7 +1,7 @@
 'use client';
 
 import { FlickeringGrid } from '@/components/flickering-grid';
-import { cn } from '@/lib/utils';
+import { cn } from '@undrstnd/ui/lib';
 import type React from 'react';
 import { forwardRef, useRef } from 'react';
 

@@ -1,11 +1,11 @@
 import { siteConfig } from '@/lib/config';
-import { cn, constructMetadata } from '@/lib/utils';
+import { constructMetadata } from '@/lib/utils';
 import { ModeToggle, TailwindIndicator, UIProvider } from '@undrstnd/ui';
-import { GeistMono } from 'geist/font/mono';
-import { GeistSans } from 'geist/font/sans';
+import { fonts } from '@undrstnd/ui/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import '@undrstnd/ui/styles/globals.css';
 import type { ReactNode } from 'react';
+import { cn } from '@undrstnd/ui/lib';
 
 export const metadata: Metadata = constructMetadata({
   title: `${siteConfig.name} | ${siteConfig.description}`,
@@ -24,11 +24,7 @@ type RootLayoutProperties = {
 };
 
 const RootLayout = ({ children }: RootLayoutProperties) => (
-  <html
-    lang="en"
-    suppressHydrationWarning
-    className={`${GeistSans.variable} ${GeistMono.variable}`}
-  >
+  <html lang="en" suppressHydrationWarning className={fonts}>
     <body
       className={cn(
         'mx-auto min-h-screen w-full scroll-smooth bg-background font-sans antialiased'

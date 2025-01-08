@@ -38,7 +38,9 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       const canvas = document.createElement('canvas');
       canvas.width = canvas.height = 1;
       const ctx = canvas.getContext('2d');
-      if (!ctx) return 'rgba(255, 0, 0,';
+      if (!ctx) {
+        return 'rgba(255, 0, 0,';
+      }
       ctx.fillStyle = color;
       ctx.fillRect(0, 0, 1, 1);
       const [r, g, b] = Array.from(ctx.getImageData(0, 0, 1, 1).data);
@@ -111,10 +113,14 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (!canvas || !container) return;
+    if (!canvas || !container) {
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      return;
+    }
 
     let animationFrameId: number;
     let gridParams: ReturnType<typeof setupCanvas>;
@@ -130,7 +136,9 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
     let lastTime = 0;
     const animate = (time: number) => {
-      if (!isInView) return;
+      if (!isInView) {
+        return;
+      }
 
       const deltaTime = (time - lastTime) / 1000;
       lastTime = time;

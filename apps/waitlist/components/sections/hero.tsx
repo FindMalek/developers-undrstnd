@@ -1,15 +1,14 @@
 'use client';
 
-import { AuroraText } from '@/components/aurora-text';
-import { Icons } from '@/components/icons';
+import { AuroraText } from '@undrstnd/ui';
 import { Section } from '@/components/section';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants, Icons } from '@undrstnd/ui';
 import { siteConfig } from '@/lib/config';
-import { cn } from '@/lib/utils';
+import { cn } from '@undrstnd/ui/lib';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Suspense, lazy, useEffect, useState } from 'react';
-
+import { lazy, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 const ease = [0.16, 1, 0.3, 1];
 
 function HeroPill() {
@@ -157,7 +156,7 @@ export function Hero() {
         </div>
         {!isMobile && (
           <div className="relative lg:col-span-1 lg:h-full">
-            <Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
               {showSpline && (
                 <motion.div
                   initial={{ opacity: 0 }}

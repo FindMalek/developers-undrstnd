@@ -13,6 +13,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "../../packages/ui/components/shared/tailwind-indicator.tsx"
+    "../../packages/ui/components/shared/tailwind-indicator.tsx",
+    "../../packages/ui/components/ui/aurora-text.tsx"
   ]
 }
