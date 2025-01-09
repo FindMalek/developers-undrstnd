@@ -1,6 +1,7 @@
 import '@undrstnd/ui/styles/globals.css';
-import { UIProvider } from '@undrstnd/ui/';
-import { fonts } from '@undrstnd/ui/lib';
+import { DesignSystemProvider } from '@undrstnd/ui';
+import { fonts } from '@undrstnd/ui/lib/fonts';
+import { Toolbar } from '@undrstnd/feature-flags/components/toolbar';
 import type { ReactNode } from 'react';
 
 type RootLayoutProperties = {
@@ -10,7 +11,8 @@ type RootLayoutProperties = {
 const RootLayout = ({ children }: RootLayoutProperties) => (
   <html lang="en" className={fonts} suppressHydrationWarning>
     <body>
-      <UIProvider>{children}</UIProvider>
+      <DesignSystemProvider>{children}</DesignSystemProvider>
+      <Toolbar />
     </body>
   </html>
 );

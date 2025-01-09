@@ -1,8 +1,8 @@
+import { env } from '@/env';
 import { auth, currentUser } from '@undrstnd/auth/server';
-import { env } from '@undrstnd/env';
+import { SidebarProvider } from '@undrstnd/ui';
 import { showBetaFeature } from '@undrstnd/feature-flags';
 import { secure } from '@undrstnd/security';
-import { SidebarProvider } from '@undrstnd/ui';
 import type { ReactNode } from 'react';
 import { PostHogIdentifier } from './components/posthog-identifier';
 import { GlobalSidebar } from './components/sidebar';
