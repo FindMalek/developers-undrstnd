@@ -17,8 +17,7 @@ export function MobileDrawer() {
   return (
     <Drawer>
       <DrawerTrigger>
-        <Icons.menu
-           className="text-2xl" />
+        <Icons.menu className="text-2xl" />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="px-6">

@@ -1,6 +1,10 @@
 import { siteConfig } from '@/lib/config';
 import { constructMetadata } from '@/lib/utils';
-import { ModeToggle, TailwindIndicator, DesignSystemProvider } from '@undrstnd/ui';
+import {
+  ModeToggle,
+  TailwindIndicator,
+  DesignSystemProvider,
+} from '@undrstnd/ui';
 import { fonts } from '@undrstnd/ui/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import '@undrstnd/ui/styles/globals.css';

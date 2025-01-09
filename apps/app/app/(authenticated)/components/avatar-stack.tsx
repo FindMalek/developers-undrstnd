@@ -1,16 +1,8 @@
 'use client';
 
 import { useOthers, useSelf } from '@undrstnd/collaboration/hooks';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@undrstnd/ui';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@undrstnd/ui';
+import { Avatar, AvatarFallback, AvatarImage } from '@undrstnd/ui';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@undrstnd/ui';
 import { tailwind } from '@undrstnd/tailwind-config';
 
 type PresenceAvatarProps = {
