@@ -1,5 +1,5 @@
+import { env } from '@/env';
 import { withCMS } from '@undrstnd/cms/next-config';
-import { env } from '@undrstnd/env';
 import { withToolbar } from '@undrstnd/feature-flags/lib/toolbar';
 import { config, withAnalyzer } from '@undrstnd/next-config';
 import { withLogtail, withSentry } from '@undrstnd/observability/next-config';

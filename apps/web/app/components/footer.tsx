@@ -1,4 +1,4 @@
-import { env } from '@undrstnd/env';
+import { env } from '@/env';
 import { Status } from '@undrstnd/observability/status';
 import Link from 'next/link';
 

@@ -1,5 +1,5 @@
 {
-  "name": "email",
+  "name": "@undstnd/email",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,15 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@react-email/components": "0.0.32",
+    "@react-email/components": "0.0.31",
     "@undrstnd/email": "workspace:*",
     "react": "19.0.0",
-    "react-email": "3.0.5"
+    "react-email": "3.0.4"
   },
   "devDependencies": {
     "@undrstnd/typescript-config": "workspace:*",
     "@types/node": "22.10.5",
-    "@types/react": "19.0.3",
+    "@types/react": "19.0.2",
     "typescript": "^5.7.2"
   }
 }

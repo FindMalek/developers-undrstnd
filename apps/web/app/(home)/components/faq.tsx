@@ -1,10 +1,10 @@
-import { Button } from '@undrstnd/ui';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@undrstnd/ui';
+import { Button } from '@undrstnd/ui';
 import { PhoneCall } from 'lucide-react';
 import Link from 'next/link';
 

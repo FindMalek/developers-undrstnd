@@ -1,4 +1,4 @@
-import { env } from '@undrstnd/env';
+import { env } from '@/env';
 import { Button } from '@undrstnd/ui';
 import { Check, Minus, MoveRight, PhoneCall } from 'lucide-react';
 import Link from 'next/link';

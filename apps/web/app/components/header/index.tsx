@@ -1,8 +1,8 @@
 'use client';
 
-import { env } from '@undrstnd/env';
-import { Button } from '@undrstnd/ui';
+import { env } from '@/env';
 import { ModeToggle } from '@undrstnd/ui';
+import { Button } from '@undrstnd/ui';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,8 +15,7 @@ import { Menu, MoveRight, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import Image from 'next/image';
-import Logo from './logo.svg';
+import { Icons } from '@undrstnd/ui';
 
 export const Header = () => {
   const navigationItems = [
@@ -119,13 +118,7 @@ export const Header = () => {
           </NavigationMenu>
         </div>
         <div className="flex items-center gap-2 lg:justify-center">
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={24}
-            height={24}
-            className="dark:invert"
-          />
+          <Icons.logo className="h-8 w-8 dark:invert" />
           <p className="whitespace-nowrap font-semibold">next-forge</p>
         </div>
         <div className="flex w-full justify-end gap-4">

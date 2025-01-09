@@ -1,10 +1,11 @@
+import { env } from '@/env';
 import { authMiddleware } from '@undrstnd/auth/middleware';
-import { env } from '@undrstnd/env';
 import { parseError } from '@undrstnd/observability/error';
 import { secure } from '@undrstnd/security';
 import {
-  noseconeConfig,
   noseconeMiddleware,
+  noseconeOptions,
+  noseconeOptionsWithToolbar,
 } from '@undrstnd/security/middleware';
 import { NextResponse } from 'next/server';
 
@@ -14,7 +15,9 @@ export const config = {
   matcher: ['/((?!_next/static|_next/image|ingest|favicon.ico).*)'],
 };
 
-const securityHeaders = noseconeMiddleware(noseconeConfig);
+const securityHeaders = env.FLAGS_SECRET
+  ? noseconeMiddleware(noseconeOptionsWithToolbar)
+  : noseconeMiddleware(noseconeOptions);
 
 export default authMiddleware(async (_auth, request) => {
   if (!env.ARCJET_KEY) {

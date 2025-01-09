@@ -1,8 +1,16 @@
 import { DiscordLogoIcon } from '@radix-ui/react-icons';
 import type React from 'react';
 type IconProps = React.HTMLAttributes<SVGElement>;
-import { BrainIcon, Code2Icon, GlobeIcon, PlugIcon, UsersIcon, ZapIcon } from "lucide-react"
-export const Icons = {
+import {
+  BrainIcon,
+  Code2Icon,
+  GlobeIcon,
+  PlugIcon,
+  UsersIcon,
+  ZapIcon,
+} from 'lucide-react';
+
+export const Icons: { [key: string]: React.FC<IconProps> } = {
   logo: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +28,7 @@ export const Icons = {
       <line x1="12" x2="20" y1="19" y2="19" />
     </svg>
   ),
-  discord: DiscordLogoIcon,
+  discord: DiscordLogoIcon as React.FC<IconProps>,
   twitter: (props: IconProps) => (
     <svg
       height="23"
@@ -148,5 +156,5 @@ export const Icons = {
   plug: PlugIcon,
   globe: GlobeIcon,
   code: Code2Icon,
-  zap: ZapIcon
+  zap: ZapIcon,
 };

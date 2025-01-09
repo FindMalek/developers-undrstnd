@@ -1,4 +1,4 @@
-import { capitalize } from '@undrstnd/ui/lib';
+import { capitalize } from '@undrstnd/ui/lib/utils';
 import type { ReactNode } from 'react';
 
 type SidebarProperties = {
