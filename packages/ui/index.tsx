@@ -1,7 +1,7 @@
 import { AnalyticsProvider } from '@undrstnd/analytics';
 import { AuthProvider } from '@undrstnd/auth/provider';
 import type { ThemeProviderProps } from 'next-themes';
-import { Sonner } from './components/ui/sonner';
+import { Toaster } from './components/ui/toaster';
 import { TooltipProvider } from './components/ui/tooltip';
 import { ThemeProvider } from './providers/theme';
 
@@ -15,7 +15,7 @@ export const DesignSystemProvider = ({
     <AuthProvider>
       <AnalyticsProvider>
         <TooltipProvider>{children}</TooltipProvider>
-        <Sonner />
+        <Toaster />
       </AnalyticsProvider>
     </AuthProvider>
   </ThemeProvider>
