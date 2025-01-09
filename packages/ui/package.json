@@ -38,7 +38,6 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "@undrstnd/analytics": "workspace:*",
     "@undrstnd/auth": "workspace:*",
-    "@undrstnd/env": "workspace:*",
     "@undrstnd/observability": "workspace:*",
     "@vercel/toolbar": "^0.1.30",
     "class-variance-authority": "^0.7.1",

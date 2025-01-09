@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@undrstnd/auth": "workspace:*",
-    "@undrstnd/env": "workspace:*",
     "svix": "^1.45.1"
   },
   "devDependencies": {

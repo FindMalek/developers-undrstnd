@@ -7,7 +7,6 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@undrstnd/env": "workspace:*",
     "@liveblocks/client": "^2.15.1",
     "@liveblocks/node": "^2.15.1",
     "@liveblocks/react": "^2.15.1",

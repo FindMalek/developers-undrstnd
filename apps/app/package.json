@@ -17,7 +17,6 @@
     "@undrstnd/collaboration": "workspace:*",
     "@undrstnd/database": "workspace:*",
     "@undrstnd/ui": "workspace:*",
-    "@undrstnd/env": "workspace:*",
     "@undrstnd/feature-flags": "workspace:*",
     "@undrstnd/next-config": "workspace:*",
     "@undrstnd/security": "workspace:*",

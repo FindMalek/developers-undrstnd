@@ -10,7 +10,6 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@undrstnd/env": "workspace:*",
     "basehub": "^8.0.0",
     "react": "^19.0.0"
   },

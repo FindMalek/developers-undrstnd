@@ -54,9 +54,6 @@ importers:
       '@undrstnd/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../../packages/env
       '@undrstnd/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
@@ -104,8 +101,11 @@ importers:
   apps/api:
     dependencies:
       '@sentry/nextjs':
-        specifier: ^8.48.0
+        specifier: ^8.47.0
         version: 8.48.0(@opentelemetry/core@1.29.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.56.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.29.0(@opentelemetry/api@1.9.0))(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.91.0(@swc/core@1.3.101(@swc/helpers@0.5.15)))
+      '@t3-oss/env-nextjs':
+        specifier: ^0.11.1
+        version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
       '@undrstnd/analytics':
         specifier: workspace:*
         version: link:../../packages/analytics
@@ -115,9 +115,9 @@ importers:
       '@undrstnd/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@undrstnd/env':
+      '@undrstnd/email':
         specifier: workspace:*
-        version: link:../../packages/env
+        version: link:../../packages/email
       '@undrstnd/next-config':
         specifier: workspace:*
         version: link:../../packages/next-config
@@ -142,16 +142,19 @@ importers:
       svix:
         specifier: ^1.45.1
         version: 1.45.1
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@types/node':
         specifier: 22.10.5
         version: 22.10.5
       '@types/react':
-        specifier: 19.0.3
-        version: 19.0.3
+        specifier: 19.0.2
+        version: 19.0.2
       '@types/react-dom':
         specifier: 19.0.2
-        version: 19.0.2(@types/react@19.0.3)
+        version: 19.0.2(@types/react@19.0.2)
       '@undrstnd/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -182,9 +185,6 @@ importers:
       '@undrstnd/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../../packages/env
       '@undrstnd/feature-flags':
         specifier: workspace:*
         version: link:../../packages/feature-flags
@@ -380,9 +380,6 @@ importers:
       '@undrstnd/email':
         specifier: workspace:*
         version: link:../../packages/email
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../../packages/env
       '@undrstnd/feature-flags':
         specifier: workspace:*
         version: link:../../packages/feature-flags
@@ -480,9 +477,6 @@ importers:
       '@ai-sdk/openai':
         specifier: ^1.0.14
         version: 1.0.14(zod@3.24.1)
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       ai:
         specifier: ^4.0.29
         version: 4.0.29(react@19.0.0)(zod@3.24.1)
@@ -517,9 +511,6 @@ importers:
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.4.1(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(svelte@5.2.7)(vue@3.5.13(typescript@5.7.2))
@@ -600,9 +591,6 @@ importers:
 
   packages/cms:
     dependencies:
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       basehub:
         specifier: ^8.0.0
         version: 8.0.0(@babel/runtime@7.24.6)(@types/react@19.0.3)(enquirer@2.4.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.2)
@@ -637,9 +625,6 @@ importers:
       '@liveblocks/react':
         specifier: ^2.15.1
         version: 2.15.1(react@19.0.0)
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -674,9 +659,6 @@ importers:
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -712,8 +694,8 @@ importers:
   packages/email:
     dependencies:
       '@react-email/components':
-        specifier: 0.0.32
-        version: 0.0.32(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.0.31
+        version: 0.0.31(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
@@ -734,30 +716,11 @@ importers:
         specifier: 22.10.5
         version: 22.10.5
       '@types/react':
-        specifier: 19.0.3
-        version: 19.0.3
+        specifier: 19.0.2
+        version: 19.0.2
       '@types/react-dom':
         specifier: ^19.0.2
-        version: 19.0.2(@types/react@19.0.3)
-      '@undrstnd/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-
-  packages/env:
-    dependencies:
-      '@t3-oss/env-nextjs':
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
-      zod:
-        specifier: ^3.24.1
-        version: 3.24.1
-    devDependencies:
-      '@types/node':
-        specifier: 22.10.5
-        version: 22.10.5
+        version: 19.0.2(@types/react@19.0.2)
       '@undrstnd/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -813,25 +776,22 @@ importers:
 
   packages/next-config:
     dependencies:
-      '@logtail/next':
-        specifier: ^0.1.7
-        version: 0.1.7(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@next/bundle-analyzer':
-        specifier: ^15.1.4
+        specifier: ^15.1.3
         version: 15.1.4(bufferutil@4.0.9)
       '@prisma/nextjs-monorepo-workaround-plugin':
-        specifier: ^6.2.0
+        specifier: ^6.1.0
         version: 6.2.0
-      '@sentry/nextjs':
-        specifier: ^8.48.0
-        version: 8.48.0(@opentelemetry/core@1.29.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.56.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.29.0(@opentelemetry/api@1.9.0))(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.91.0(@swc/core@1.3.101(@swc/helpers@0.5.15)))
-      '@vercel/toolbar':
-        specifier: ^0.1.30
-        version: 0.1.30(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(vite@5.4.10(@types/node@22.10.5)(terser@5.31.0))
+      '@t3-oss/env-core':
+        specifier: ^0.11.1
+        version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
+      '@t3-oss/env-nextjs':
+        specifier: ^0.11.1
+        version: 0.11.1(typescript@5.7.2)(zod@3.24.1)
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       '@undrstnd/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -897,9 +857,6 @@ importers:
 
   packages/rate-limit:
     dependencies:
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       '@upstash/ratelimit':
         specifier: ^2.0.5
         version: 2.0.5(@upstash/redis@1.34.3)
@@ -925,9 +882,6 @@ importers:
       '@undrstnd/database':
         specifier: workspace:*
         version: link:../database
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
     devDependencies:
       '@undrstnd/typescript-config':
         specifier: workspace:*
@@ -1102,9 +1056,6 @@ importers:
       '@undrstnd/auth':
         specifier: workspace:*
         version: link:../auth
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       '@undrstnd/observability':
         specifier: workspace:*
         version: link:../observability
@@ -1199,9 +1150,6 @@ importers:
       '@undrstnd/auth':
         specifier: workspace:*
         version: link:../auth
-      '@undrstnd/env':
-        specifier: workspace:*
-        version: link:../env
       svix:
         specifier: ^1.45.1
         version: 1.45.1
@@ -3424,6 +3372,12 @@ packages:
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
 
+  '@react-email/components@0.0.31':
+    resolution: {integrity: sha512-rQsTY9ajobncix9raexhBjC7O6cXUMc87eNez2gnB1FwtkUO8DqWZcktbtwOJi7GKmuAPTx0o/IOFtiBNXziKA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+
   '@react-email/components@0.0.32':
     resolution: {integrity: sha512-+1Wv7PyVgWfLoj5W0+CvBsJMIfMI6ibcFcIPXNkb2lhKQQASgxSoAedRL1rH0CCaBo6+63tg8y4baHzJonfZbw==}
     engines: {node: '>=18.0.0'}
@@ -3491,6 +3445,13 @@ packages:
 
   '@react-email/render@1.0.1':
     resolution: {integrity: sha512-W3gTrcmLOVYnG80QuUp22ReIT/xfLsVJ+n7ghSlG2BITB8evNABn1AO2rGQoXuK84zKtDAlxCdm3hRyIpZdGSA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^18.0 || ^19.0 || ^19.0.0-rc
+
+  '@react-email/render@1.0.3':
+    resolution: {integrity: sha512-VQ8g4SuIq/jWdfBTdTjb7B8Np0jj+OoD7VebfdHhLTZzVQKesR2aigpYqE/ZXmwj4juVxDm8T2b6WIIu48rPCg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
@@ -4170,6 +4131,9 @@ packages:
     resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
     peerDependencies:
       '@types/react': ^19.0.0
+
+  '@types/react@19.0.2':
+    resolution: {integrity: sha512-USU8ZI/xyKJwFTpjSVIrSeHBVAGagkHQKPNbxeWwql/vDmnTIBgx+TJnhFnj1NXgz8XfprU0egV2dROLGpsBEg==}
 
   '@types/react@19.0.3':
     resolution: {integrity: sha512-UavfHguIjnnuq9O67uXfgy/h3SRJbidAYvNjLceB+2RIKVRBzVsh0QO+Pw6BCSQqFS9xwzKfwstXx0m6AbAREA==}
@@ -7307,6 +7271,11 @@ packages:
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
     hasBin: true
 
   prettier@3.4.2:
@@ -11159,6 +11128,32 @@ snapshots:
     dependencies:
       react: 19.0.0
 
+  '@react-email/components@0.0.31(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@react-email/body': 0.0.11(react@19.0.0)
+      '@react-email/button': 0.0.19(react@19.0.0)
+      '@react-email/code-block': 0.0.11(react@19.0.0)
+      '@react-email/code-inline': 0.0.5(react@19.0.0)
+      '@react-email/column': 0.0.13(react@19.0.0)
+      '@react-email/container': 0.0.15(react@19.0.0)
+      '@react-email/font': 0.0.9(react@19.0.0)
+      '@react-email/head': 0.0.12(react@19.0.0)
+      '@react-email/heading': 0.0.15(react@19.0.0)
+      '@react-email/hr': 0.0.11(react@19.0.0)
+      '@react-email/html': 0.0.11(react@19.0.0)
+      '@react-email/img': 0.0.11(react@19.0.0)
+      '@react-email/link': 0.0.12(react@19.0.0)
+      '@react-email/markdown': 0.0.14(react@19.0.0)
+      '@react-email/preview': 0.0.12(react@19.0.0)
+      '@react-email/render': 1.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-email/row': 0.0.12(react@19.0.0)
+      '@react-email/section': 0.0.16(react@19.0.0)
+      '@react-email/tailwind': 1.0.4(react@19.0.0)
+      '@react-email/text': 0.0.11(react@19.0.0)
+      react: 19.0.0
+    transitivePeerDependencies:
+      - react-dom
+
   '@react-email/components@0.0.32(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@react-email/body': 0.0.11(react@19.0.0)
@@ -11230,6 +11225,14 @@ snapshots:
     dependencies:
       html-to-text: 9.0.5
       js-beautify: 1.15.1
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      react-promise-suspense: 0.3.4
+
+  '@react-email/render@1.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      html-to-text: 9.0.5
+      prettier: 3.3.3
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       react-promise-suspense: 0.3.4
@@ -12034,9 +12037,17 @@ snapshots:
       pg-protocol: 1.6.1
       pg-types: 2.2.0
 
+  '@types/react-dom@19.0.2(@types/react@19.0.2)':
+    dependencies:
+      '@types/react': 19.0.2
+
   '@types/react-dom@19.0.2(@types/react@19.0.3)':
     dependencies:
       '@types/react': 19.0.3
+
+  '@types/react@19.0.2':
+    dependencies:
+      csstype: 3.1.3
 
   '@types/react@19.0.3':
     dependencies:
@@ -15738,6 +15749,8 @@ snapshots:
       tunnel-agent: 0.6.0
 
   prettier@2.8.8: {}
+
+  prettier@3.3.3: {}
 
   prettier@3.4.2: {}
 

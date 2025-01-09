@@ -9,7 +9,6 @@
   "dependencies": {
     "@arcjet/next": "1.0.0-alpha.34",
     "@nosecone/next": "1.0.0-alpha.34",
-    "@undrstnd/env": "workspace:*",
     "@undrstnd/database": "workspace:*"
   },
   "devDependencies": {

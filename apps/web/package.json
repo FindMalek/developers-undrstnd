@@ -15,7 +15,6 @@
     "@undrstnd/cms": "workspace:*",
     "@undrstnd/ui": "workspace:*",
     "@undrstnd/email": "workspace:*",
-    "@undrstnd/env": "workspace:*",
     "@undrstnd/feature-flags": "workspace:*",
     "@undrstnd/next-config": "workspace:*",
     "@undrstnd/observability": "workspace:*",
