@@ -2,11 +2,12 @@ import typography from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import typographyConfig from './typography.config';
 
 export const config: Config = {
   darkMode: ['class'],
   content: [
-    './node_modules/@undrstnd/ui/**/*.{ts,tsx}',
+    './node_modules/@undrstnd/ui/components/**/*.{ts,tsx}',
     './node_modules/@undrstnd/ui/lib/**/*.{ts,tsx}',
     './node_modules/@undrstnd/ui/index.tsx',
     './components/**/*.{ts,tsx}',
@@ -86,27 +87,19 @@ export const config: Config = {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
-      typography: 'typographyConfig',
+      typography: typographyConfig,
     },
   },
   plugins: [animate, typography],

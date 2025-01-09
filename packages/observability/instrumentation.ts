@@ -1,5 +1,5 @@
-import { init } from '@sentry/nextjs';
 import { keys } from './keys';
+import { init } from '@sentry/nextjs';
 
 const opts = {
   dsn: keys().NEXT_PUBLIC_SENTRY_DSN,
