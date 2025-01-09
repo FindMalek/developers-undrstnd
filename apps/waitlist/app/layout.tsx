@@ -1,6 +1,10 @@
 import { siteConfig } from '@/lib/config';
 import { constructMetadata } from '@/lib/utils';
-import { ModeToggle, TailwindIndicator, UIProvider } from '@undrstnd/ui';
+import {
+  ModeToggle,
+  TailwindIndicator,
+  DesignSystemProvider,
+} from '@undrstnd/ui';
 import { fonts } from '@undrstnd/ui/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import '@undrstnd/ui/styles/globals.css';
@@ -30,11 +34,11 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
         'mx-auto min-h-screen w-full scroll-smooth bg-background font-sans antialiased'
       )}
     >
-      <UIProvider>
+      <DesignSystemProvider>
         {children}
         <ModeToggle />
         <TailwindIndicator />
-      </UIProvider>
+      </DesignSystemProvider>
     </body>
   </html>
 );

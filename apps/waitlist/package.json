@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "next lint",
-    "dev": "next dev -p 3002",
+    "dev": "next dev -p 3007",
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true pnpm build",
@@ -12,8 +12,10 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@undrstnd/observability": "workspace:*",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.57",
+    "@t3-oss/env-nextjs": "^0.11.1",
     "framer-motion": "^11.16.0",
     "next": "15.1.4",
     "next-themes": "^0.4.4",

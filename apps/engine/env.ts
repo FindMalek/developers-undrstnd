@@ -5,12 +5,7 @@ import { keys as observability } from '@undrstnd/observability/keys';
 import { createEnv } from '@t3-oss/env-nextjs';
 
 export const env = createEnv({
-  extends: [
-    analytics(),
-    core(),
-    database(),
-    observability(),
-  ],
+  extends: [analytics(), core(), database(), observability()],
   server: {},
   client: {},
   runtimeEnv: {},
