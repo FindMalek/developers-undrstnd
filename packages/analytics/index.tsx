@@ -16,6 +16,6 @@ export const AnalyticsProvider = ({ children }: AnalyticsProviderProps) => (
     <VercelAnalytics />
     {NEXT_PUBLIC_GA_MEASUREMENT_ID && (
       <GoogleAnalytics gaId={NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-    )}
+    )} 
   </PostHogProvider>
 );
