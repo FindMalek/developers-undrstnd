@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@undrstnd/ui/lib"
 import React, { forwardRef } from "react";
 
 interface BorderTextProps extends React.HTMLAttributes<HTMLDivElement> {

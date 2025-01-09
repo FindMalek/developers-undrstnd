@@ -1,12 +1,4 @@
 import { Icons } from '@undrstnd/ui';
-import {
-  BrainIcon,
-  CodeIcon,
-  GlobeIcon,
-  PlugIcon,
-  UsersIcon,
-  ZapIcon,
-} from 'lucide-react';
 
 export const BLUR_FADE_DELAY = 0.15;
 
@@ -40,37 +32,37 @@ export const siteConfig = {
       name: 'Simple Agent Workflows',
       description:
         'Easily create and manage AI agent workflows with intuitive APIs.',
-      icon: <BrainIcon className="h-6 w-6" />,
+      icon: <Icons.brain className="h-6 w-6" />,
     },
     {
       name: 'Multi-Agent Systems',
       description:
         'Build complex systems with multiple AI agents working together.',
-      icon: <UsersIcon className="h-6 w-6" />,
+      icon: <Icons.users className="h-6 w-6" />,
     },
     {
       name: 'Tool Integration',
       description:
         'Seamlessly integrate external tools and APIs into your agent workflows.',
-      icon: <PlugIcon className="h-6 w-6" />,
+      icon: <Icons.plug className="h-6 w-6" />,
     },
     {
       name: 'Cross-Language Support',
       description:
         'Available in all major programming languages for maximum flexibility.',
-      icon: <GlobeIcon className="h-6 w-6" />,
+      icon: <Icons.globe className="h-6 w-6" />,
     },
     {
       name: 'Customizable Agents',
       description:
         'Design and customize agents to fit your specific use case and requirements.',
-      icon: <CodeIcon className="h-6 w-6" />,
+      icon: <Icons.code className="h-6 w-6" />,
     },
     {
       name: 'Efficient Execution',
       description:
         'Optimize agent performance with built-in efficiency and scalability features.',
-      icon: <ZapIcon className="h-6 w-6" />,
+      icon: <Icons.zap className="h-6 w-6" />,
     },
   ],
   pricing: [

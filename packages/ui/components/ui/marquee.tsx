@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@undrstnd/ui/lib"
 
 interface MarqueeProps {
   className?: string;

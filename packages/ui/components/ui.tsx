@@ -47,3 +47,4 @@ export * from './ui/separator';
 export * from './ui/border-number';
 export * from './ui/marquee';
 export * from './ui/orbiting-circles';
+export * from './ui/aurora-text';

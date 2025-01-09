@@ -2,12 +2,12 @@ import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
 const server: Parameters<typeof createEnv>[0]['server'] = {
-  CLERK_SECRET_KEY: z.string().min(1).startsWith('sk_'),
+  CLERK_SECRET_KEY: z.string().min(1).startsWith('sk_').optional(),
   CLERK_WEBHOOK_SECRET: z.string().min(1).startsWith('whsec_').optional(),
-  RESEND_FROM: z.string().min(1).email(),
-  DATABASE_URL: z.string().min(1).url(),
-  RESEND_TOKEN: z.string().min(1).startsWith('re_'),
-  STRIPE_SECRET_KEY: z.string().min(1).startsWith('sk_'),
+  RESEND_FROM: z.string().min(1).email().optional(),
+  DATABASE_URL: z.string().min(1).url().optional(),
+  RESEND_TOKEN: z.string().min(1).startsWith('re_').optional(),
+  STRIPE_SECRET_KEY: z.string().min(1).startsWith('sk_').optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).startsWith('whsec_').optional(),
   BETTERSTACK_API_KEY: z.string().min(1).optional(),
   BETTERSTACK_URL: z.string().min(1).url().optional(),
@@ -21,7 +21,7 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
     .optional(),
   LIVEBLOCKS_SECRET: z.string().min(1).startsWith('sk_').optional(),
   OPENAI_API_KEY: z.string().min(1).startsWith('sk-').optional(),
-  BASEHUB_TOKEN: z.string().min(1).startsWith('bshb_pk_'),
+  BASEHUB_TOKEN: z.string().min(1).startsWith('bshb_pk_').optional(),
   UPSTASH_REDIS_REST_URL: z.string().min(1).url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
 
@@ -37,21 +37,29 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
 };
 
 const client: Parameters<typeof createEnv>[0]['client'] = {
-  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1).startsWith('pk_'),
-  NEXT_PUBLIC_CLERK_SIGN_IN_URL: z.string().min(1).startsWith('/'),
-  NEXT_PUBLIC_CLERK_SIGN_UP_URL: z.string().min(1).startsWith('/'),
-  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: z.string().min(1).startsWith('/'),
-  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: z.string().min(1).startsWith('/'),
-  NEXT_PUBLIC_APP_URL: z.string().min(1).url(),
-  NEXT_PUBLIC_WEB_URL: z.string().min(1).url(),
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z
+    .string()
+    .min(1)
+    .startsWith('pk_')
+    .optional(),
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL: z.string().min(1).startsWith('/').optional(),
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL: z.string().min(1).startsWith('/').optional(),
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: z
+    .string()
+    .min(1)
+    .startsWith('/')
+    .optional(),
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: z.string().min(1).startsWith('/').optional(),
+  NEXT_PUBLIC_APP_URL: z.string().min(1).url().optional(),
+  NEXT_PUBLIC_WEB_URL: z.string().min(1).url().optional(),
   NEXT_PUBLIC_API_URL: z.string().min(1).url().optional(),
   NEXT_PUBLIC_DOCS_URL: z.string().min(1).url().optional(),
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().min(1).startsWith('G-').optional(),
-  NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).startsWith('phc_'),
-  NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1).url(),
+  NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).startsWith('phc_').optional(),
+  NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1).url().optional(),
 
   // Added by Vercel
-  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().min(1),
+  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().min(1).optional(),
 };
 
 export const env = createEnv({

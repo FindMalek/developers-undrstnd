@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { lazy, useEffect, useState } from 'react';
 import { Suspense } from 'react';
+
 const ease = [0.16, 1, 0.3, 1];
 
 function HeroPill() {
