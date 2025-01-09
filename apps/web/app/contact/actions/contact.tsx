@@ -1,8 +1,8 @@
 'use server';
 
+import { env } from '@/env';
 import { resend } from '@undrstnd/email';
 import { ContactTemplate } from '@undrstnd/email/templates/contact';
-import { env } from '@undrstnd/env';
 import { parseError } from '@undrstnd/observability/error';
 import { createRateLimiter, slidingWindow } from '@undrstnd/rate-limit';
 import { headers } from 'next/headers';

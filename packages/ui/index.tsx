@@ -5,12 +5,12 @@ import { Sonner } from './components/ui/sonner';
 import { TooltipProvider } from './components/ui/tooltip';
 import { ThemeProvider } from './providers/theme';
 
-type UIProviderProperties = ThemeProviderProps;
+type DesignSystemProviderProperties = ThemeProviderProps;
 
-export const UIProvider = ({
+export const DesignSystemProvider = ({
   children,
   ...properties
-}: UIProviderProperties) => (
+}: DesignSystemProviderProperties) => (
   <ThemeProvider {...properties}>
     <AuthProvider>
       <AnalyticsProvider>

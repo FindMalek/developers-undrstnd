@@ -1,10 +1,10 @@
 import { blog } from '@undrstnd/cms';
 import { Feed } from '@undrstnd/cms/components/feed';
 import { Image } from '@undrstnd/cms/components/image';
+import { cn } from '@undrstnd/ui/lib/utils';
 import type { Blog, WithContext } from '@undrstnd/seo/json-ld';
 import { JsonLd } from '@undrstnd/seo/json-ld';
 import { createMetadata } from '@undrstnd/seo/metadata';
-import { cn } from '@undrstnd/ui/lib';
 import type { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Link from 'next/link';

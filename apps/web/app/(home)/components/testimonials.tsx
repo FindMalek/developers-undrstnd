@@ -1,6 +1,10 @@
 'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@undrstnd/ui';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@undrstnd/ui';
 import {
   Carousel,
   type CarouselApi,

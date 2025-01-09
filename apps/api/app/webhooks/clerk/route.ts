@@ -1,3 +1,4 @@
+import { env } from '@/env';
 import { analytics } from '@undrstnd/analytics/posthog/server';
 import type {
   DeletedObjectJSON,
@@ -6,7 +7,6 @@ import type {
   UserJSON,
   WebhookEvent,
 } from '@undrstnd/auth/server';
-import { env } from '@undrstnd/env';
 import { log } from '@undrstnd/observability/log';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';

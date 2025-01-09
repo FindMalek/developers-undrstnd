@@ -4,6 +4,18 @@
   "javascript": {
     "globals": ["Liveblocks"]
   },
+  "organizeImports": {
+    "enabled": false,
+    "include": ["**/*.ts", "**/*.tsx"],
+    "ignore": ["**/*.d.ts", "**/*.test.ts", "**/*.test.tsx"]
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      }
+    }
+  },
   "files": {
     "ignore": [
       "packages/ui/components/ui/**",

@@ -1,6 +1,6 @@
+import { env } from '@/env';
 import { blog } from '@undrstnd/cms';
 import { Feed } from '@undrstnd/cms/components/feed';
-import { env } from '@undrstnd/env';
 import { Button } from '@undrstnd/ui';
 import { MoveRight, PhoneCall } from 'lucide-react';
 import { draftMode } from 'next/headers';

@@ -5,6 +5,7 @@ import posthogRaw, { type PostHog } from 'posthog-js';
 import { PostHogProvider as PostHogProviderRaw } from 'posthog-js/react';
 import type { ReactNode } from 'react';
 
+console.log('PostHogProviderRaw', env.NEXT_PUBLIC_POSTHOG_KEY);
 export const analytics = posthogRaw.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
   api_host: '/ingest',
   ui_host: env.NEXT_PUBLIC_POSTHOG_HOST,

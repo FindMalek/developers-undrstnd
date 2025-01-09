@@ -19,8 +19,8 @@
   "devDependencies": {
     "@clerk/types": "^4.40.0",
     "@undrstnd/typescript-config": "workspace:*",
-    "@types/node": "22.10.3",
-    "@types/react": "19.0.2",
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.3",
     "@types/react-dom": "^19.0.2",
     "typescript": "^5.7.2"
   }

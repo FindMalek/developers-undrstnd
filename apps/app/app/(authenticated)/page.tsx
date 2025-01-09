@@ -1,6 +1,6 @@
+import { env } from '@/env';
 import { auth } from '@undrstnd/auth/server';
 import { database } from '@undrstnd/database';
-import { env } from '@undrstnd/env';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';

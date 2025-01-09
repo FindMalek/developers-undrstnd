@@ -1,6 +1,19 @@
 'use client';
 
 import { OrganizationSwitcher, UserButton } from '@undrstnd/auth/client';
+import { ModeToggle } from '@undrstnd/ui';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@undrstnd/ui';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@undrstnd/ui';
 import {
   Sidebar,
   SidebarContent,
@@ -18,19 +31,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from '@undrstnd/ui';
-import { ModeToggle } from '@undrstnd/ui';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@undrstnd/ui';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
 } from '@undrstnd/ui';
 import { cn } from '@undrstnd/ui/lib';
 import {

@@ -1,5 +1,5 @@
 {
-  "name": "undrstnd-labs",
+  "name": "undrstnd-developers",
   "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
@@ -11,11 +11,17 @@
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/ui",
     "clean": "git clean -xdf node_modules",
-    "db:generate": "turbo run generate --filter='./packages/database'",
-    "db:studio": "turbo run studio --filter='./packages/database'",
-    "db:pull": "turbo run pull --filter='./packages/database'",
-    "db:push": "turbo run push --filter='./packages/database'",
-    "db:format": "turbo run format --filter='./packages/database'"
+
+    "db:format": "cd packages/database && pnpm format",
+    "db:generate": "cd packages/database && pnpm generate",
+    "db:studio": "cd packages/database && pnpm studio",
+    "db:pull": "cd packages/database && pnpm pull",
+    "db:push": "cd packages/database && pnpm push",
+    "db:migrate": "cd packages/database && pnpm migrate",
+
+    "app:waitlist:dev": "cd apps/waitlist && pnpm dev",
+    "app:waitlist:build": "cd apps/waitlist && pnpm build",
+    "app:waitlist:start": "cd apps/waitlist && pnpm start"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
@@ -30,7 +36,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@9.15.3",
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^13.0.0"

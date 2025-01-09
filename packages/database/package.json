@@ -8,7 +8,7 @@
     "build": "prisma generate --no-hints",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "generate": "turbo prisma generate",
+    "generate": "prisma generate",
     "studio": "prisma studio --port 5556",
     "pull": "prisma db pull",
     "push": "prisma db push",
@@ -19,9 +19,8 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
-    "@prisma/adapter-neon": "^6.1.0",
-    "@prisma/client": "6.1.0",
-    "@undrstnd/env": "workspace:*",
+    "@prisma/adapter-neon": "^6.2.0",
+    "@prisma/client": "6.2.0",
     "server-only": "^0.0.1",
     "undici": "^7.2.0",
     "ws": "^8.18.0",
@@ -33,7 +32,7 @@
     "@types/node": "22.10.5",
     "@types/ws": "^8.5.13",
     "bufferutil": "^4.0.9",
-    "prisma": "6.1.0",
+    "prisma": "6.2.0",
     "typescript": "^5.7.2"
   }
 }

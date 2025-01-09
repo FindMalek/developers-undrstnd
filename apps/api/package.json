@@ -16,15 +16,17 @@
     "@undrstnd/auth": "workspace:*",
     "@undrstnd/database": "workspace:*",
     "@undrstnd/ui": "workspace:*",
-    "@undrstnd/env": "workspace:*",
     "@undrstnd/observability": "workspace:*",
     "@undrstnd/payments": "workspace:*",
-    "@sentry/nextjs": "^8.47.0",
+    "@undrstnd/email": "workspace:*",
     "@undrstnd/next-config": "workspace:*",
-    "next": "15.1.3",
+    "@sentry/nextjs": "^8.47.0",
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "next": "15.1.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "svix": "^1.45.1"
+    "svix": "^1.45.1",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@undrstnd/typescript-config": "workspace:*",
