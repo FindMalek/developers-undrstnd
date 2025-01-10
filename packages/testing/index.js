@@ -1,18 +1,18 @@
-const path = require('node:path');
-const react = require('@vitejs/plugin-react');
-const { defineConfig } = require('vitest/config');
+const path = require("node:path")
+const react = require("@vitejs/plugin-react")
+const { defineConfig } = require("vitest/config")
 
 const config = defineConfig({
   plugins: [react()],
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './'),
-      '@undrstnd': path.resolve(__dirname, '../../packages'),
+      "@": path.resolve(__dirname, "./"),
+      "@undrstnd": path.resolve(__dirname, "../../packages"),
     },
   },
-});
+})
 
-module.exports = config;
+module.exports = config

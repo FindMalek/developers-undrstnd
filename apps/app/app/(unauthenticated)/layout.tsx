@@ -1,22 +1,23 @@
-import { env } from '@/env';
-import { ModeToggle } from '@undrstnd/ui';
-import { CommandIcon } from 'lucide-react';
-import Link from 'next/link';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react"
+import Link from "next/link"
+import { ModeToggle } from "@undrstnd/ui"
+import { CommandIcon } from "lucide-react"
+
+import { env } from "@/env"
 
 type AuthLayoutProps = {
-  readonly children: ReactNode;
-};
+  readonly children: ReactNode
+}
 
 const AuthLayout = ({ children }: AuthLayoutProps) => (
   <div className="container relative grid h-dvh flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
-    <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
+    <div className="bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-r">
       <div className="absolute inset-0 bg-zinc-900" />
-      <div className="relative z-20 flex items-center font-medium text-lg">
+      <div className="relative z-20 flex items-center text-lg font-medium">
         <CommandIcon className="mr-2 h-6 w-6" />
         Acme Inc
       </div>
-      <div className="absolute top-4 right-4">
+      <div className="absolute right-4 top-4">
         <ModeToggle />
       </div>
       <div className="relative z-20 mt-auto">
@@ -33,18 +34,18 @@ const AuthLayout = ({ children }: AuthLayoutProps) => (
     <div className="lg:p-8">
       <div className="mx-auto flex w-full max-w-[400px] flex-col justify-center space-y-6">
         {children}
-        <p className="px-8 text-center text-muted-foreground text-sm">
-          By clicking continue, you agree to our{' '}
+        <p className="text-muted-foreground px-8 text-center text-sm">
+          By clicking continue, you agree to our{" "}
           <Link
-            href={new URL('/legal/terms', env.NEXT_PUBLIC_WEB_URL).toString()}
-            className="underline underline-offset-4 hover:text-primary"
+            href={new URL("/legal/terms", env.NEXT_PUBLIC_WEB_URL).toString()}
+            className="hover:text-primary underline underline-offset-4"
           >
             Terms of Service
-          </Link>{' '}
-          and{' '}
+          </Link>{" "}
+          and{" "}
           <Link
-            href={new URL('/legal/privacy', env.NEXT_PUBLIC_WEB_URL).toString()}
-            className="underline underline-offset-4 hover:text-primary"
+            href={new URL("/legal/privacy", env.NEXT_PUBLIC_WEB_URL).toString()}
+            className="hover:text-primary underline underline-offset-4"
           >
             Privacy Policy
           </Link>
@@ -53,6 +54,6 @@ const AuthLayout = ({ children }: AuthLayoutProps) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default AuthLayout;
+export default AuthLayout

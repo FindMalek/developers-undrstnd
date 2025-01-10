@@ -1,12 +1,13 @@
-import { type ApiData, verifyAccess } from '@vercel/flags';
-import { type NextRequest, NextResponse } from 'next/server';
-import * as flags from './index';
+import { NextResponse, type NextRequest } from "next/server"
+import { verifyAccess, type ApiData } from "@vercel/flags"
+
+import * as flags from "./index"
 
 export const getFlags = async (request: NextRequest) => {
-  const access = await verifyAccess(request.headers.get('Authorization'));
+  const access = await verifyAccess(request.headers.get("Authorization"))
 
   if (!access) {
-    return NextResponse.json(null, { status: 401 });
+    return NextResponse.json(null, { status: 401 })
   }
 
   const definitions = Object.fromEntries(
@@ -18,9 +19,9 @@ export const getFlags = async (request: NextRequest) => {
         options: flag.options,
       },
     ])
-  );
+  )
 
   return NextResponse.json<ApiData>({
     definitions,
-  });
-};
+  })
+}

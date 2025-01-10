@@ -20,7 +20,7 @@ datasource db {
  * @property {string | null} name - The optional name associated with the page.
  */
 model Page {
-  id    Int     @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
   email String  @unique
   name  String?
@@ -37,8 +37,8 @@ model Page {
  * @property {Date} createdAt - The timestamp when the waitlist entry was created.
  */
 model Waitlist {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id    Int    @id @default(autoincrement())
+  email String @unique
 
   country   String
   ipAddress String

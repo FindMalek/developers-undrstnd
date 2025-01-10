@@ -1,13 +1,14 @@
-import { env } from '@/env';
-import { blog } from '@undrstnd/cms';
-import { Feed } from '@undrstnd/cms/components/feed';
-import { Button } from '@undrstnd/ui';
-import { MoveRight, PhoneCall } from 'lucide-react';
-import { draftMode } from 'next/headers';
-import Link from 'next/link';
+import { draftMode } from "next/headers"
+import Link from "next/link"
+import { blog } from "@undrstnd/cms"
+import { Feed } from "@undrstnd/cms/components/feed"
+import { Button } from "@undrstnd/ui"
+import { MoveRight, PhoneCall } from "lucide-react"
+
+import { env } from "@/env"
 
 export const Hero = async () => {
-  const draft = await draftMode();
+  const draft = await draftMode()
 
   return (
     <div className="w-full">
@@ -17,7 +18,7 @@ export const Hero = async () => {
             <Feed queries={[blog.latestPostQuery]} draft={draft.isEnabled}>
               {/* biome-ignore lint/suspicious/useAwait: "Server Actions must be async" */}
               {async ([data]) => {
-                'use server';
+                "use server"
 
                 return (
                   <Button
@@ -30,15 +31,15 @@ export const Hero = async () => {
                       Read our latest article <MoveRight className="h-4 w-4" />
                     </Link>
                   </Button>
-                );
+                )
               }}
             </Feed>
           </div>
           <div className="flex flex-col gap-4">
-            <h1 className="max-w-2xl text-center font-regular text-5xl tracking-tighter md:text-7xl">
+            <h1 className="font-regular max-w-2xl text-center text-5xl tracking-tighter md:text-7xl">
               This is the start of something new
             </h1>
-            <p className="max-w-2xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl">
+            <p className="text-muted-foreground max-w-2xl text-center text-lg leading-relaxed tracking-tight md:text-xl">
               Managing a small business today is already tough. Avoid further
               complications by ditching outdated, tedious trade methods. Our
               goal is to streamline SMB trade, making it easier and faster than
@@ -60,5 +61,5 @@ export const Hero = async () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

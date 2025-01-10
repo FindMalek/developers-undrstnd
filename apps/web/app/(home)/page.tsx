@@ -1,24 +1,25 @@
-import { showBetaFeature } from '@undrstnd/feature-flags';
-import { createMetadata } from '@undrstnd/seo/metadata';
-import type { Metadata } from 'next';
-import { Cases } from './components/cases';
-import { CTA } from './components/cta';
-import { FAQ } from './components/faq';
-import { Features } from './components/features';
-import { Hero } from './components/hero';
-import { Stats } from './components/stats';
-import { Testimonials } from './components/testimonials';
+import type { Metadata } from "next"
+import { showBetaFeature } from "@undrstnd/feature-flags"
+import { createMetadata } from "@undrstnd/seo/metadata"
+
+import { Cases } from "./components/cases"
+import { CTA } from "./components/cta"
+import { FAQ } from "./components/faq"
+import { Features } from "./components/features"
+import { Hero } from "./components/hero"
+import { Stats } from "./components/stats"
+import { Testimonials } from "./components/testimonials"
 
 const meta = {
-  title: 'From zero to production in minutes.',
+  title: "From zero to production in minutes.",
   description:
     "next-forge is a production-grade boilerplate for modern Next.js apps. It's designed to have everything you need to build your new SaaS app as quick as possible. Authentication, billing, analytics, SEO, and more. It's all here.",
-};
+}
 
-export const metadata: Metadata = createMetadata(meta);
+export const metadata: Metadata = createMetadata(meta)
 
 const Home = async () => {
-  const betaFeature = await showBetaFeature();
+  const betaFeature = await showBetaFeature()
 
   return (
     <>
@@ -35,7 +36,7 @@ const Home = async () => {
       <FAQ />
       <CTA />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

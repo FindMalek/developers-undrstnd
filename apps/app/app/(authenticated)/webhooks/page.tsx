@@ -1,16 +1,16 @@
-import { webhooks } from '@undrstnd/webhooks';
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation"
+import { webhooks } from "@undrstnd/webhooks"
 
 export const metadata = {
-  title: 'Webhooks',
-  description: 'Send webhooks to your users.',
-};
+  title: "Webhooks",
+  description: "Send webhooks to your users.",
+}
 
 const WebhooksPage = async () => {
-  const response = await webhooks.getAppPortal();
+  const response = await webhooks.getAppPortal()
 
   if (!response?.url) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -23,7 +23,7 @@ const WebhooksPage = async () => {
         loading="lazy"
       />
     </div>
-  );
-};
+  )
+}
 
-export default WebhooksPage;
+export default WebhooksPage

@@ -1,11 +1,12 @@
-import { Section } from '@/components/section';
-import { Button } from '@undrstnd/ui';
+import { Button } from "@undrstnd/ui"
+
+import { Section } from "@/components/section"
 
 export function CTA() {
   return (
     <Section id="cta">
       <div className="relative mx-auto overflow-hidden border py-16 text-center">
-        <p className="mx-auto mb-6 max-w-3xl text-balance font-medium text-3xl text-foreground">
+        <p className="text-foreground mx-auto mb-6 max-w-3xl text-balance text-3xl font-medium">
           Ready to build your next AI agent?
         </p>
 
@@ -14,5 +15,5 @@ export function CTA() {
         </div>
       </div>
     </Section>
-  );
+  )
 }

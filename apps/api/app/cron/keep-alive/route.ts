@@ -1,18 +1,18 @@
-import { database } from '@undrstnd/database';
+import { database } from "@undrstnd/database"
 
 export const GET = async () => {
   const newPage = await database.page.create({
     data: {
-      name: 'cron-temp',
-      email: 'test@test.com',
+      name: "cron-temp",
+      email: "test@test.com",
     },
-  });
+  })
 
   await database.page.delete({
     where: {
       id: newPage.id,
     },
-  });
+  })
 
-  return new Response('OK', { status: 200 });
-};
+  return new Response("OK", { status: 200 })
+}

@@ -1,4 +1,5 @@
-import { VercelToolbar } from '@vercel/toolbar/next';
-import { keys } from '../keys';
+import { VercelToolbar } from "@vercel/toolbar/next"
 
-export const Toolbar = () => (keys().FLAGS_SECRET ? <VercelToolbar /> : null);
+import { keys } from "../keys"
+
+export const Toolbar = () => (keys().FLAGS_SECRET ? <VercelToolbar /> : null)

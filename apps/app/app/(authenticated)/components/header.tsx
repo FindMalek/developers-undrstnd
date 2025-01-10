@@ -1,3 +1,4 @@
+import { Fragment, type ReactNode } from "react"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -5,16 +6,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@undrstnd/ui';
-import { Separator } from '@undrstnd/ui';
-import { SidebarTrigger } from '@undrstnd/ui';
-import { Fragment, type ReactNode } from 'react';
+  Separator,
+  SidebarTrigger,
+} from "@undrstnd/ui"
 
 type HeaderProps = {
-  pages: string[];
-  page: string;
-  children?: ReactNode;
-};
+  pages: string[]
+  page: string
+  children?: ReactNode
+}
 
 export const Header = ({ pages, page, children }: HeaderProps) => (
   <header className="flex h-16 shrink-0 items-center justify-between gap-2">
@@ -40,4 +40,4 @@ export const Header = ({ pages, page, children }: HeaderProps) => (
     </div>
     {children}
   </header>
-);
+)

@@ -1,8 +1,6 @@
-import { Icons } from '@undrstnd/ui';
-import { siteConfig } from '@/lib/config';
-import { cn } from '@undrstnd/ui/lib';
-import { buttonVariants } from '@undrstnd/ui';
+import Link from "next/link"
 import {
+  buttonVariants,
   Drawer,
   DrawerContent,
   DrawerDescription,
@@ -10,8 +8,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@undrstnd/ui';
-import Link from 'next/link';
+  Icons,
+} from "@undrstnd/ui"
+import { cn } from "@undrstnd/ui/lib"
+
+import { siteConfig } from "@/lib/config"
 
 export function MobileDrawer() {
   return (
@@ -35,8 +36,8 @@ export function MobileDrawer() {
           <Link
             href="#"
             className={cn(
-              buttonVariants({ variant: 'default' }),
-              'group rounded-full text-white'
+              buttonVariants({ variant: "default" }),
+              "group rounded-full text-white"
             )}
           >
             {siteConfig.cta}
@@ -44,5 +45,5 @@ export function MobileDrawer() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

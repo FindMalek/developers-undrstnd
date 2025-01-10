@@ -1,6 +1,5 @@
-import { DiscordLogoIcon } from '@radix-ui/react-icons';
-import type React from 'react';
-type IconProps = React.HTMLAttributes<SVGElement>;
+import type React from "react"
+import { DiscordLogoIcon } from "@radix-ui/react-icons"
 import {
   BrainIcon,
   Code2Icon,
@@ -8,7 +7,9 @@ import {
   PlugIcon,
   UsersIcon,
   ZapIcon,
-} from 'lucide-react';
+} from "lucide-react"
+
+type IconProps = React.HTMLAttributes<SVGElement>
 
 export const Icons: { [key: string]: React.FC<IconProps> } = {
   logo: (props: IconProps) => (
@@ -157,4 +158,4 @@ export const Icons: { [key: string]: React.FC<IconProps> } = {
   globe: GlobeIcon,
   code: Code2Icon,
   zap: ZapIcon,
-};
+}

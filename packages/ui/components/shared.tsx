@@ -1,3 +1,3 @@
-export * from './shared/icons';
-export * from './shared/mode-toggle';
-export * from './shared/tailwind-indicator';
+export * from "./shared/icons"
+export * from "./shared/mode-toggle"
+export * from "./shared/tailwind-indicator"

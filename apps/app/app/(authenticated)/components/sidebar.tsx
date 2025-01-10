@@ -1,20 +1,17 @@
-'use client';
+"use client"
 
-import { OrganizationSwitcher, UserButton } from '@undrstnd/auth/client';
-import { ModeToggle } from '@undrstnd/ui';
+import type { ReactNode } from "react"
+import { OrganizationSwitcher, UserButton } from "@undrstnd/auth/client"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@undrstnd/ui';
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@undrstnd/ui';
-import {
+  ModeToggle,
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -31,8 +28,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from '@undrstnd/ui';
-import { cn } from '@undrstnd/ui/lib';
+} from "@undrstnd/ui"
+import { cn } from "@undrstnd/ui/lib"
 import {
   AnchorIcon,
   BookOpenIcon,
@@ -49,144 +46,143 @@ import {
   ShareIcon,
   SquareTerminalIcon,
   Trash2Icon,
-} from 'lucide-react';
-import type { ReactNode } from 'react';
+} from "lucide-react"
 
 type GlobalSidebarProperties = {
-  readonly children: ReactNode;
-};
+  readonly children: ReactNode
+}
 
 const data = {
   user: {
-    name: 'shadcn',
-    email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
     {
-      title: 'Playground',
-      url: '#',
+      title: "Playground",
+      url: "#",
       icon: SquareTerminalIcon,
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
+          title: "History",
+          url: "#",
         },
         {
-          title: 'Starred',
-          url: '#',
+          title: "Starred",
+          url: "#",
         },
         {
-          title: 'Settings',
-          url: '#',
+          title: "Settings",
+          url: "#",
         },
       ],
     },
     {
-      title: 'Models',
-      url: '#',
+      title: "Models",
+      url: "#",
       icon: BotIcon,
       items: [
         {
-          title: 'Genesis',
-          url: '#',
+          title: "Genesis",
+          url: "#",
         },
         {
-          title: 'Explorer',
-          url: '#',
+          title: "Explorer",
+          url: "#",
         },
         {
-          title: 'Quantum',
-          url: '#',
+          title: "Quantum",
+          url: "#",
         },
       ],
     },
     {
-      title: 'Documentation',
-      url: '#',
+      title: "Documentation",
+      url: "#",
       icon: BookOpenIcon,
       items: [
         {
-          title: 'Introduction',
-          url: '#',
+          title: "Introduction",
+          url: "#",
         },
         {
-          title: 'Get Started',
-          url: '#',
+          title: "Get Started",
+          url: "#",
         },
         {
-          title: 'Tutorials',
-          url: '#',
+          title: "Tutorials",
+          url: "#",
         },
         {
-          title: 'Changelog',
-          url: '#',
+          title: "Changelog",
+          url: "#",
         },
       ],
     },
     {
-      title: 'Settings',
-      url: '#',
+      title: "Settings",
+      url: "#",
       icon: Settings2Icon,
       items: [
         {
-          title: 'General',
-          url: '#',
+          title: "General",
+          url: "#",
         },
         {
-          title: 'Team',
-          url: '#',
+          title: "Team",
+          url: "#",
         },
         {
-          title: 'Billing',
-          url: '#',
+          title: "Billing",
+          url: "#",
         },
         {
-          title: 'Limits',
-          url: '#',
+          title: "Limits",
+          url: "#",
         },
       ],
     },
   ],
   navSecondary: [
     {
-      title: 'Webhooks',
-      url: '/webhooks',
+      title: "Webhooks",
+      url: "/webhooks",
       icon: AnchorIcon,
     },
     {
-      title: 'Support',
-      url: '#',
+      title: "Support",
+      url: "#",
       icon: LifeBuoyIcon,
     },
     {
-      title: 'Feedback',
-      url: '#',
+      title: "Feedback",
+      url: "#",
       icon: SendIcon,
     },
   ],
   projects: [
     {
-      name: 'Design Engineering',
-      url: '#',
+      name: "Design Engineering",
+      url: "#",
       icon: FrameIcon,
     },
     {
-      name: 'Sales & Marketing',
-      url: '#',
+      name: "Sales & Marketing",
+      url: "#",
       icon: PieChartIcon,
     },
     {
-      name: 'Travel',
-      url: '#',
+      name: "Travel",
+      url: "#",
       icon: MapIcon,
     },
   ],
-};
+}
 
 export const GlobalSidebar = ({ children }: GlobalSidebarProperties) => {
-  const sidebar = useSidebar();
+  const sidebar = useSidebar()
 
   return (
     <>
@@ -196,8 +192,8 @@ export const GlobalSidebar = ({ children }: GlobalSidebarProperties) => {
             <SidebarMenuItem>
               <div
                 className={cn(
-                  'h-[36px] overflow-hidden transition-all [&>div]:w-full',
-                  sidebar.open ? '' : '-mx-1'
+                  "h-[36px] overflow-hidden transition-all [&>div]:w-full",
+                  sidebar.open ? "" : "-mx-1"
                 )}
               >
                 <OrganizationSwitcher
@@ -325,9 +321,9 @@ export const GlobalSidebar = ({ children }: GlobalSidebarProperties) => {
                 showName
                 appearance={{
                   elements: {
-                    rootBox: 'flex overflow-hidden w-full',
-                    userButtonBox: 'flex-row-reverse',
-                    userButtonOuterIdentifier: 'truncate pl-0',
+                    rootBox: "flex overflow-hidden w-full",
+                    userButtonBox: "flex-row-reverse",
+                    userButtonOuterIdentifier: "truncate pl-0",
                   },
                 }}
               />
@@ -338,5 +334,5 @@ export const GlobalSidebar = ({ children }: GlobalSidebarProperties) => {
       </Sidebar>
       <SidebarInset>{children}</SidebarInset>
     </>
-  );
-};
+  )
+}

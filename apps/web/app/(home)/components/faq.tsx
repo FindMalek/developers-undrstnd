@@ -1,12 +1,12 @@
+import Link from "next/link"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@undrstnd/ui';
-import { Button } from '@undrstnd/ui';
-import { PhoneCall } from 'lucide-react';
-import Link from 'next/link';
+  Button,
+} from "@undrstnd/ui"
+import { PhoneCall } from "lucide-react"
 
 export const FAQ = () => (
   <div className="w-full py-20 lg:py-40">
@@ -15,10 +15,10 @@ export const FAQ = () => (
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <h4 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
+              <h4 className="font-regular max-w-xl text-left text-3xl tracking-tighter md:text-5xl">
                 This is the start of something new
               </h4>
-              <p className="max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg">
+              <p className="text-muted-foreground max-w-xl text-left text-lg leading-relaxed tracking-tight lg:max-w-lg">
                 Managing a small business today is already tough. Avoid further
                 complications by ditching outdated, tedious trade methods. Our
                 goal is to streamline SMB trade, making it easier and faster
@@ -52,4 +52,4 @@ export const FAQ = () => (
       </div>
     </div>
   </div>
-);
+)

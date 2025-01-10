@@ -8,13 +8,13 @@ import {
   Section,
   Tailwind,
   Text,
-} from '@react-email/components';
+} from "@react-email/components"
 
 type ContactTemplateProps = {
-  readonly name: string;
-  readonly email: string;
-  readonly message: string;
-};
+  readonly name: string
+  readonly email: string
+  readonly message: string
+}
 
 export const ContactTemplate = ({
   name,
@@ -29,7 +29,7 @@ export const ContactTemplate = ({
         <Container className="mx-auto py-12">
           <Section className="mt-8 rounded-md bg-zinc-200 p-px">
             <Section className="rounded-[5px] bg-white p-8">
-              <Text className="mt-0 mb-4 font-semibold text-2xl text-zinc-950">
+              <Text className="mb-4 mt-0 text-2xl font-semibold text-zinc-950">
                 New email from {name}
               </Text>
               <Text className="m-0 text-zinc-500">
@@ -43,7 +43,7 @@ export const ContactTemplate = ({
       </Body>
     </Html>
   </Tailwind>
-);
+)
 
 const ExampleContactEmail = () => (
   <ContactTemplate
@@ -51,6 +51,6 @@ const ExampleContactEmail = () => (
     email="jane@example.com"
     message="Hello, how do I get started?"
   />
-);
+)
 
-export default ExampleContactEmail;
+export default ExampleContactEmail

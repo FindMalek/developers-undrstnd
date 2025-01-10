@@ -1,11 +1,12 @@
-import { AnalyticsProvider } from '@undrstnd/analytics';
-import { AuthProvider } from '@undrstnd/auth/provider';
-import type { ThemeProviderProps } from 'next-themes';
-import { Toaster } from './components/ui/toaster';
-import { TooltipProvider } from './components/ui/tooltip';
-import { ThemeProvider } from './providers/theme';
+import { AnalyticsProvider } from "@undrstnd/analytics"
+import { AuthProvider } from "@undrstnd/auth/provider"
+import type { ThemeProviderProps } from "next-themes"
 
-type DesignSystemProviderProperties = ThemeProviderProps;
+import { Toaster } from "./components/ui/toaster"
+import { TooltipProvider } from "./components/ui/tooltip"
+import { ThemeProvider } from "./providers/theme"
+
+type DesignSystemProviderProperties = ThemeProviderProps
 
 export const DesignSystemProvider = ({
   children,
@@ -19,7 +20,7 @@ export const DesignSystemProvider = ({
       </AnalyticsProvider>
     </AuthProvider>
   </ThemeProvider>
-);
+)
 
-export * from './components/shared';
-export * from './components/ui';
+export * from "./components/shared"
+export * from "./components/ui"

@@ -1,15 +1,15 @@
-import { Toolbar } from '@undrstnd/cms/components/toolbar';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react"
+import { Toolbar } from "@undrstnd/cms/components/toolbar"
 
 type BlogLayoutProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 const BlogLayout = ({ children }: BlogLayoutProps) => (
   <>
     {children}
     <Toolbar />
   </>
-);
+)
 
-export default BlogLayout;
+export default BlogLayout

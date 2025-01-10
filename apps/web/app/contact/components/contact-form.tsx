@@ -1,17 +1,21 @@
-'use client';
+"use client"
 
-import { Button } from '@undrstnd/ui';
-import { Calendar } from '@undrstnd/ui';
-import { Input } from '@undrstnd/ui';
-import { Label } from '@undrstnd/ui';
-import { Popover, PopoverContent, PopoverTrigger } from '@undrstnd/ui';
-import { cn } from '@undrstnd/ui/lib/utils';
-import { format } from 'date-fns';
-import { CalendarIcon, Check, MoveRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState } from "react"
+import {
+  Button,
+  Calendar,
+  Input,
+  Label,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@undrstnd/ui"
+import { cn } from "@undrstnd/ui/lib/utils"
+import { format } from "date-fns"
+import { CalendarIcon, Check, MoveRight } from "lucide-react"
 
 export const ContactForm = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
     <div className="w-full py-20 lg:py-40">
@@ -20,10 +24,10 @@ export const ContactForm = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
+                <h4 className="font-regular max-w-xl text-left text-3xl tracking-tighter md:text-5xl">
                   Something new
                 </h4>
-                <p className="max-w-sm text-left text-lg text-muted-foreground leading-relaxed tracking-tight">
+                <p className="text-muted-foreground max-w-sm text-left text-lg leading-relaxed tracking-tight">
                   Managing a small business today is already tough. Avoid
                   further complications by ditching outdated, tedious trade
                   methods.
@@ -31,7 +35,7 @@ export const ContactForm = () => {
               </div>
             </div>
             <div className="flex flex-row items-start gap-6 text-left">
-              <Check className="mt-2 h-4 w-4 text-primary" />
+              <Check className="text-primary mt-2 h-4 w-4" />
               <div className="flex flex-col gap-1">
                 <p>Easy to use</p>
                 <p className="text-muted-foreground text-sm">
@@ -40,7 +44,7 @@ export const ContactForm = () => {
               </div>
             </div>
             <div className="flex flex-row items-start gap-6 text-left">
-              <Check className="mt-2 h-4 w-4 text-primary" />
+              <Check className="text-primary mt-2 h-4 w-4" />
               <div className="flex flex-col gap-1">
                 <p>Fast and reliable</p>
                 <p className="text-muted-foreground text-sm">
@@ -49,7 +53,7 @@ export const ContactForm = () => {
               </div>
             </div>
             <div className="flex flex-row items-start gap-6 text-left">
-              <Check className="mt-2 h-4 w-4 text-primary" />
+              <Check className="text-primary mt-2 h-4 w-4" />
               <div className="flex flex-col gap-1">
                 <p>Beautiful and modern</p>
                 <p className="text-muted-foreground text-sm">
@@ -69,12 +73,12 @@ export const ContactForm = () => {
                     <Button
                       variant="outline"
                       className={cn(
-                        'w-full max-w-sm justify-start text-left font-normal',
-                        !date && 'text-muted-foreground'
+                        "w-full max-w-sm justify-start text-left font-normal",
+                        !date && "text-muted-foreground"
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
-                      {date ? format(date, 'PPP') : <span>Pick a date</span>}
+                      {date ? format(date, "PPP") : <span>Pick a date</span>}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
@@ -108,5 +112,5 @@ export const ContactForm = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

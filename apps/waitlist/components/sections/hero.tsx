@@ -1,30 +1,30 @@
-'use client';
+"use client"
 
-import { AuroraText } from '@undrstnd/ui';
-import { Section } from '@/components/section';
-import { buttonVariants, Icons } from '@undrstnd/ui';
-import { siteConfig } from '@/lib/config';
-import { cn } from '@undrstnd/ui/lib';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { lazy, useEffect, useState } from 'react';
-import { Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from "react"
+import Link from "next/link"
+import { AuroraText, buttonVariants, Icons } from "@undrstnd/ui"
+import { cn } from "@undrstnd/ui/lib"
+import { motion } from "framer-motion"
 
-const ease = [0.16, 1, 0.3, 1];
+import { siteConfig } from "@/lib/config"
+
+import { Section } from "@/components/section"
+
+const ease = [0.16, 1, 0.3, 1]
 
 function HeroPill() {
   return (
     <motion.a
       href="/blog/introducing-dev-ai"
-      className="flex w-auto items-center space-x-2 whitespace-pre rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent"
+      className="bg-primary/20 ring-accent flex w-auto items-center space-x-2 whitespace-pre rounded-full px-2 py-1 ring-1"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease }}
     >
-      <div className="w-fit rounded-full bg-accent px-2 py-0.5 text-left font-medium text-primary text-xs sm:text-sm">
+      <div className="bg-accent text-primary w-fit rounded-full px-2 py-0.5 text-left text-xs font-medium sm:text-sm">
         🛠️ New
       </div>
-      <p className="font-medium text-primary text-xs sm:text-sm">
+      <p className="text-primary text-xs font-medium sm:text-sm">
         Introducing AI Agent SDK
       </p>
       <svg
@@ -41,16 +41,16 @@ function HeroPill() {
         />
       </svg>
     </motion.a>
-  );
+  )
 }
 
 function HeroTitles() {
   return (
     <div className="flex w-full max-w-3xl flex-col overflow-hidden pt-8">
       <motion.h1
-        className="text-left font-semibold text-4xl text-foreground leading-tighter tracking-tighter sm:text-5xl md:text-6xl"
-        initial={{ filter: 'blur(10px)', opacity: 0, y: 50 }}
-        animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
+        className="text-foreground leading-tighter text-left text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl"
+        initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
+        animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
         transition={{
           duration: 1,
           ease,
@@ -73,7 +73,7 @@ function HeroTitles() {
         </motion.span>
       </motion.h1>
       <motion.p
-        className="max-w-xl text-balance text-left text-muted-foreground leading-normal sm:text-lg sm:leading-normal"
+        className="text-muted-foreground max-w-xl text-balance text-left leading-normal sm:text-lg sm:leading-normal"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -85,7 +85,7 @@ function HeroTitles() {
         {siteConfig.hero.description}
       </motion.p>
     </div>
-  );
+  )
 }
 
 function HeroCTA() {
@@ -100,8 +100,8 @@ function HeroCTA() {
         <Link
           href="/download"
           className={cn(
-            buttonVariants({ variant: 'default' }),
-            'flex w-full gap-2 rounded-lg text-background sm:w-auto'
+            buttonVariants({ variant: "default" }),
+            "text-background flex w-full gap-2 rounded-lg sm:w-auto"
           )}
         >
           <Icons.logo className="h-6 w-6" />
@@ -109,7 +109,7 @@ function HeroCTA() {
         </Link>
       </motion.div>
       <motion.p
-        className="mt-3 text-left text-muted-foreground text-sm"
+        className="text-muted-foreground mt-3 text-left text-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.0, duration: 0.8 }}
@@ -117,35 +117,35 @@ function HeroCTA() {
         {siteConfig.hero.ctaDescription}
       </motion.p>
     </div>
-  );
+  )
 }
-const LazySpline = lazy(() => import('@splinetool/react-spline'));
+const LazySpline = lazy(() => import("@splinetool/react-spline"))
 
 export function Hero() {
-  const [showSpline, setShowSpline] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [showSpline, setShowSpline] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // Assuming 1024px is the breakpoint for lg
-    };
+      setIsMobile(window.innerWidth < 1024) // Assuming 1024px is the breakpoint for lg
+    }
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
 
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     // Don't show on mobile
     if (!isMobile) {
       const timer = setTimeout(() => {
-        setShowSpline(true);
-      }, 1000);
+        setShowSpline(true)
+      }, 1000)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [isMobile]);
+  }, [isMobile])
 
   return (
     <Section id="hero">
@@ -175,5 +175,5 @@ export function Hero() {
         )}
       </div>
     </Section>
-  );
+  )
 }

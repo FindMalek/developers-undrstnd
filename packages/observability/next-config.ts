@@ -1,5 +1,6 @@
-import { withSentryConfig } from '@sentry/nextjs';
-import { keys } from './keys';
+import { withSentryConfig } from "@sentry/nextjs"
+
+import { keys } from "./keys"
 
 export const sentryConfig: Parameters<typeof withSentryConfig>[1] = {
   org: keys().SENTRY_ORG,
@@ -22,7 +23,7 @@ export const sentryConfig: Parameters<typeof withSentryConfig>[1] = {
    * Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
    * side errors will fail.
    */
-  tunnelRoute: '/monitoring',
+  tunnelRoute: "/monitoring",
 
   // Hides source maps from generated client bundles
   hideSourceMaps: true,
@@ -37,15 +38,15 @@ export const sentryConfig: Parameters<typeof withSentryConfig>[1] = {
    * https://vercel.com/docs/cron-jobs
    */
   automaticVercelMonitors: true,
-};
+}
 
 export const withSentry = (sourceConfig: object): object => {
   const configWithTranspile = {
     ...sourceConfig,
-    transpilePackages: ['@sentry/nextjs'],
-  };
+    transpilePackages: ["@sentry/nextjs"],
+  }
 
-  return withSentryConfig(configWithTranspile, sentryConfig);
-};
+  return withSentryConfig(configWithTranspile, sentryConfig)
+}
 
-export { withLogtail } from '@logtail/next';
+export { withLogtail } from "@logtail/next"

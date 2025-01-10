@@ -1,13 +1,11 @@
-import { CSSProperties, memo } from "react";
-
+import { CSSProperties, memo } from "react"
 import { cn } from "@undrstnd/ui/lib"
 
-
 interface RippleProps {
-  mainCircleSize?: number;
-  mainCircleOpacity?: number;
-  numCircles?: number;
-  className?: string;
+  mainCircleSize?: number
+  mainCircleOpacity?: number
+  numCircles?: number
+  className?: string
 }
 
 export const Ripple = memo(function Ripple({
@@ -19,21 +17,21 @@ export const Ripple = memo(function Ripple({
   return (
     <div
       className={cn(
-        "pointer-events-none select-none absolute inset-0 [mask-image:linear-gradient(to_bottom,white,transparent)]",
+        "pointer-events-none absolute inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]",
         className
       )}
     >
       {Array.from({ length: numCircles }, (_, i) => {
-        const size = mainCircleSize + i * 70;
-        const opacity = mainCircleOpacity - i * 0.03;
-        const animationDelay = `${i * 0.06}s`;
-        const borderStyle = i === numCircles - 1 ? "dashed" : "solid";
-        const borderOpacity = 5 + i * 5;
+        const size = mainCircleSize + i * 70
+        const opacity = mainCircleOpacity - i * 0.03
+        const animationDelay = `${i * 0.06}s`
+        const borderStyle = i === numCircles - 1 ? "dashed" : "solid"
+        const borderOpacity = 5 + i * 5
 
         return (
           <div
             key={i}
-            className={`absolute animate-ripple rounded-full bg-foreground/25 shadow-xl border [--i:${i}]`}
+            className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl [--i:${i}]`}
             style={
               {
                 width: `${size}px`,
@@ -49,10 +47,10 @@ export const Ripple = memo(function Ripple({
               } as CSSProperties
             }
           />
-        );
+        )
       })}
     </div>
-  );
-});
+  )
+})
 
-Ripple.displayName = "Ripple";
+Ripple.displayName = "Ripple"

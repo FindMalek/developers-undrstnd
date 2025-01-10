@@ -1,1 +1,1 @@
-export { default } from '@undrstnd/ui/postcss.config.mjs';
+export { default } from "@undrstnd/ui/postcss.config.mjs"

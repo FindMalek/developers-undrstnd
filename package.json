@@ -5,20 +5,19 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "ultracite lint",
-    "format": "ultracite format",
+    "lint:fix": "ultracite lint --fix",
+    "format": "prettier . --write && pnpm db:format",
     "test": "turbo test",
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/ui",
     "clean": "git clean -xdf node_modules",
-
     "db:format": "cd packages/database && pnpm format",
     "db:generate": "cd packages/database && pnpm generate",
     "db:studio": "cd packages/database && pnpm studio",
     "db:pull": "cd packages/database && pnpm pull",
     "db:push": "cd packages/database && pnpm push",
     "db:migrate": "cd packages/database && pnpm migrate",
-
     "app:waitlist:dev": "cd apps/waitlist && pnpm dev",
     "app:waitlist:build": "cd apps/waitlist && pnpm build",
     "app:waitlist:start": "cd apps/waitlist && pnpm start"
@@ -30,8 +29,11 @@
     "@undrstnd/typescript-config": "workspace:*",
     "turbo": "^2.3.3",
     "@turbo/gen": "^2.3.3",
-    "typescript": "^5.7.2",
-    "ultracite": "^4.1.14"
+    "typescript": "^5.7.3",
+    "ultracite": "^4.1.14",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
   },
   "engines": {
     "node": ">=18"
