@@ -1,6 +1,7 @@
 import type React from "react"
 import {
   BrainIcon,
+  ChevronRight,
   Code2Icon,
   DollarSign,
   GlobeIcon,
@@ -152,4 +153,5 @@ export const Icons: { [key: string]: React.FC<IconProps> } = {
   tune: Music2Icon,
   instagram: FaInstagram,
   linkedIn: FaLinkedin,
+  chevronRight: ChevronRight,
 }
