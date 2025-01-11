@@ -8,6 +8,7 @@ import { constructMetadata } from "@/lib/utils"
 import { cn } from "@undrstnd/ui/lib"
 import { fonts } from "@undrstnd/ui/lib/fonts"
 
+import { Footer } from "@/components/layout/footer"
 import {
   DesignSystemProvider,
   ModeToggle,
@@ -39,7 +40,8 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
     >
       <DesignSystemProvider>
         {children}
-        <ModeToggle />
+        <Footer />
+        {process.env.NODE_ENV === "development" && <ModeToggle />}
         <TailwindIndicator />
       </DesignSystemProvider>
     </body>

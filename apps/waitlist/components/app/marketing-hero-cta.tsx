@@ -16,10 +16,10 @@ export function MarketingHeroCTA() {
         transition={{ delay: 0.8, duration: 0.8, ease }}
       >
         <Link
-          href="/download"
+          href={siteConfig.links.about}
           className={cn(
-            buttonVariants({ variant: "default" }),
-            "text-background flex w-full gap-2 rounded-lg sm:w-auto"
+            buttonVariants({ variant: "secondary" }),
+            "flex w-full gap-2 rounded-lg sm:w-auto"
           )}
         >
           <Icons.logo className="h-6 w-6" />
