@@ -1,6 +1,5 @@
+import { Section } from "@/components/layout/section"
 import { Button } from "@undrstnd/ui"
-
-import { Section } from "@/components/section"
 
 export function CTA() {
   return (

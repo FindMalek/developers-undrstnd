@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@undrstnd/ui/lib"
 import { Drawer as DrawerPrimitive } from "vaul"
+
+import { cn } from "@undrstnd/ui/lib"
 
 const Drawer = ({
   shouldScaleBackground = true,

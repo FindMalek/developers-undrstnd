@@ -1,6 +1,6 @@
-import { BorderText, Icons } from "@undrstnd/ui"
-
 import { siteConfig } from "@/lib/config"
+
+import { BorderText, Icons } from "@undrstnd/ui"
 
 export function Footer() {
   return (

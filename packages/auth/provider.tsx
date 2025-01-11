@@ -1,10 +1,10 @@
 "use client"
 
 import type { ComponentProps } from "react"
+import { tailwind } from "@undrstnd/tailwind-config"
 import { ClerkProvider } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
 import type { Theme } from "@clerk/types"
-import { tailwind } from "@undrstnd/tailwind-config"
 import { useTheme } from "next-themes"
 
 export const AuthProvider = (

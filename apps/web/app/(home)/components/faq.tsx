@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { PhoneCall } from "lucide-react"
+
 import {
   Accordion,
   AccordionContent,
@@ -6,7 +8,6 @@ import {
   AccordionTrigger,
   Button,
 } from "@undrstnd/ui"
-import { PhoneCall } from "lucide-react"
 
 export const FAQ = () => (
   <div className="w-full py-20 lg:py-40">

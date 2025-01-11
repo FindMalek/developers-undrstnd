@@ -8,6 +8,9 @@
     "rules": {
       "a11y": {
         "noSvgWithoutTitle": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "off"
       }
     }
   },

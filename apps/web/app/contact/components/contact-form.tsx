@@ -1,6 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import { cn } from "@undrstnd/ui/lib/utils"
+import { format } from "date-fns"
+import { CalendarIcon, Check, MoveRight } from "lucide-react"
+
 import {
   Button,
   Calendar,
@@ -10,9 +14,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@undrstnd/ui"
-import { cn } from "@undrstnd/ui/lib/utils"
-import { format } from "date-fns"
-import { CalendarIcon, Check, MoveRight } from "lucide-react"
 
 export const ContactForm = () => {
   const [date, setDate] = useState<Date | undefined>(new Date())

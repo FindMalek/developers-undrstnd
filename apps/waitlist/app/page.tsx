@@ -1,13 +1,13 @@
-import { CTA } from "@/components/sections/cta"
-import { Footer } from "@/components/sections/footer"
-import { Hero } from "@/components/sections/hero"
-import { Logos } from "@/components/sections/logos"
+import { CTA } from "@/components/app/cta"
+import { Footer } from "@/components/app/footer"
+import { MarketingHero } from "@/components/app/marketing-hero"
+import { MarketingLogos } from "@/components/app/marketing-logos"
 
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Logos />
+      <MarketingHero />
+      <MarketingLogos />
       <CTA />
       <Footer />
     </main>

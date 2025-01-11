@@ -2,6 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { Menu, MoveRight, X } from "lucide-react"
+
+import { env } from "@/env"
+
 import {
   Button,
   Icons,
@@ -13,9 +17,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@undrstnd/ui"
-import { Menu, MoveRight, X } from "lucide-react"
-
-import { env } from "@/env"
 
 export const Header = () => {
   const navigationItems = [

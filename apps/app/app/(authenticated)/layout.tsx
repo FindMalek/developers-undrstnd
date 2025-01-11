@@ -2,9 +2,10 @@ import type { ReactNode } from "react"
 import { auth, currentUser } from "@undrstnd/auth/server"
 import { showBetaFeature } from "@undrstnd/feature-flags"
 import { secure } from "@undrstnd/security"
-import { SidebarProvider } from "@undrstnd/ui"
 
 import { env } from "@/env"
+
+import { SidebarProvider } from "@undrstnd/ui"
 
 import { PostHogIdentifier } from "./components/posthog-identifier"
 import { GlobalSidebar } from "./components/sidebar"

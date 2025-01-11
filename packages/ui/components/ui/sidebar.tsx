@@ -1,8 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
-import { Slot } from "@radix-ui/react-slot"
 import { Button } from "@undrstnd/ui/components/ui/button"
 import { Input } from "@undrstnd/ui/components/ui/input"
 import { Separator } from "@undrstnd/ui/components/ui/separator"
@@ -15,8 +13,11 @@ import {
   TooltipTrigger,
 } from "@undrstnd/ui/components/ui/tooltip"
 import { useIsMobile } from "@undrstnd/ui/hooks/use-mobile"
-import { cn } from "@undrstnd/ui/lib"
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import { Slot } from "@radix-ui/react-slot"
 import { cva, VariantProps } from "class-variance-authority"
+
+import { cn } from "@undrstnd/ui/lib"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

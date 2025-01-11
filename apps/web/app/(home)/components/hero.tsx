@@ -2,10 +2,11 @@ import { draftMode } from "next/headers"
 import Link from "next/link"
 import { blog } from "@undrstnd/cms"
 import { Feed } from "@undrstnd/cms/components/feed"
-import { Button } from "@undrstnd/ui"
 import { MoveRight, PhoneCall } from "lucide-react"
 
 import { env } from "@/env"
+
+import { Button } from "@undrstnd/ui"
 
 export const Hero = async () => {
   const draft = await draftMode()

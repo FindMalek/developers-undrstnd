@@ -3,6 +3,26 @@
 import type { ReactNode } from "react"
 import { OrganizationSwitcher, UserButton } from "@undrstnd/auth/client"
 import {
+  AnchorIcon,
+  BookOpenIcon,
+  BotIcon,
+  ChevronRightIcon,
+  FolderIcon,
+  FrameIcon,
+  LifeBuoyIcon,
+  MapIcon,
+  MoreHorizontalIcon,
+  PieChartIcon,
+  SendIcon,
+  Settings2Icon,
+  ShareIcon,
+  SquareTerminalIcon,
+  Trash2Icon,
+} from "lucide-react"
+
+import { cn } from "@undrstnd/ui/lib"
+
+import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
@@ -29,24 +49,6 @@ import {
   SidebarMenuSubItem,
   useSidebar,
 } from "@undrstnd/ui"
-import { cn } from "@undrstnd/ui/lib"
-import {
-  AnchorIcon,
-  BookOpenIcon,
-  BotIcon,
-  ChevronRightIcon,
-  FolderIcon,
-  FrameIcon,
-  LifeBuoyIcon,
-  MapIcon,
-  MoreHorizontalIcon,
-  PieChartIcon,
-  SendIcon,
-  Settings2Icon,
-  ShareIcon,
-  SquareTerminalIcon,
-  Trash2Icon,
-} from "lucide-react"
 
 type GlobalSidebarProperties = {
   readonly children: ReactNode

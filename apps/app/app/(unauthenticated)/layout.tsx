@@ -1,9 +1,10 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { ModeToggle } from "@undrstnd/ui"
 import { CommandIcon } from "lucide-react"
 
 import { env } from "@/env"
+
+import { ModeToggle } from "@undrstnd/ui"
 
 type AuthLayoutProps = {
   readonly children: ReactNode

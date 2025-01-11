@@ -1,18 +1,18 @@
+import "@undrstnd/ui/styles/globals.css"
+
+import type { ReactNode } from "react"
 import type { Metadata, Viewport } from "next"
+
+import { siteConfig } from "@/lib/config"
+import { constructMetadata } from "@/lib/utils"
+import { cn } from "@undrstnd/ui/lib"
+import { fonts } from "@undrstnd/ui/lib/fonts"
+
 import {
   DesignSystemProvider,
   ModeToggle,
   TailwindIndicator,
 } from "@undrstnd/ui"
-import { fonts } from "@undrstnd/ui/lib/fonts"
-
-import { siteConfig } from "@/lib/config"
-import { constructMetadata } from "@/lib/utils"
-
-import "@undrstnd/ui/styles/globals.css"
-
-import type { ReactNode } from "react"
-import { cn } from "@undrstnd/ui/lib"
 
 export const metadata: Metadata = constructMetadata({
   title: `${siteConfig.name} | ${siteConfig.description}`,

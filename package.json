@@ -5,7 +5,6 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "ultracite lint",
-    "lint:fix": "ultracite lint --fix",
     "format": "prettier . --write && pnpm db:format",
     "test": "turbo test",
     "analyze": "turbo analyze",

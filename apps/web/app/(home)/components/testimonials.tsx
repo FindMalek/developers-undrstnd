@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { User } from "lucide-react"
+
 import {
   Avatar,
   AvatarFallback,
@@ -10,7 +12,6 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@undrstnd/ui"
-import { User } from "lucide-react"
 
 export const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>()

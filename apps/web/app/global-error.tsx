@@ -3,8 +3,10 @@
 import { useEffect } from "react"
 import type NextError from "next/error"
 import { captureException } from "@sentry/nextjs"
-import { Button } from "@undrstnd/ui"
+
 import { fonts } from "@undrstnd/ui/lib"
+
+import { Button } from "@undrstnd/ui"
 
 type GlobalErrorProperties = {
   readonly error: NextError & { digest?: string }

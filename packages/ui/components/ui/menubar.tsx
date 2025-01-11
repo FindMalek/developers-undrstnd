@@ -7,6 +7,7 @@ import {
   DotFilledIcon,
 } from "@radix-ui/react-icons"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
+
 import { cn } from "@undrstnd/ui/lib"
 
 const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu
