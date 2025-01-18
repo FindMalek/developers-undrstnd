@@ -1,5 +1,6 @@
-import Link from "next/link"
 import { Check, Minus, MoveRight, PhoneCall } from "lucide-react"
+
+import Link from "next/link"
 
 import { env } from "@/env"
 

@@ -1,8 +1,9 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
 
 import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
 import { MarketingHeroPill } from "@/components/app/marketing-hero-pill"

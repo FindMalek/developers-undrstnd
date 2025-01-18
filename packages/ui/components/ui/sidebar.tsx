@@ -1,5 +1,9 @@
 "use client"
 
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, VariantProps } from "class-variance-authority"
+
 import * as React from "react"
 import { Button } from "@undrstnd/ui/components/ui/button"
 import { Input } from "@undrstnd/ui/components/ui/input"
@@ -13,9 +17,6 @@ import {
   TooltipTrigger,
 } from "@undrstnd/ui/components/ui/tooltip"
 import { useIsMobile } from "@undrstnd/ui/hooks/use-mobile"
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@undrstnd/ui/lib"
 

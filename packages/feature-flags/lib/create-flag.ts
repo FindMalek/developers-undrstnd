@@ -1,6 +1,7 @@
+import { unstable_flag as flag } from "@vercel/flags/next"
+
 import { analytics } from "@undrstnd/analytics/posthog/server"
 import { auth } from "@undrstnd/auth/server"
-import { unstable_flag as flag } from "@vercel/flags/next"
 
 export const createFlag = (key: string) =>
   flag({

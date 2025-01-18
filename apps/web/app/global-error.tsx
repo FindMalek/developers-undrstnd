@@ -1,8 +1,9 @@
 "use client"
 
+import { captureException } from "@sentry/nextjs"
+
 import { useEffect } from "react"
 import type NextError from "next/error"
-import { captureException } from "@sentry/nextjs"
 
 import { fonts } from "@undrstnd/ui/lib"
 

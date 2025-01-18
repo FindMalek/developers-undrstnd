@@ -1,7 +1,8 @@
-import type { ComponentProps } from "react"
 import type { Message as MessageType } from "ai"
 import Markdown from "react-markdown"
 import { twMerge } from "tailwind-merge"
+
+import type { ComponentProps } from "react"
 
 type MessageProps = {
   data: MessageType

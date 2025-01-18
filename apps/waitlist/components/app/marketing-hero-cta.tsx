@@ -1,5 +1,6 @@
-import Link from "next/link"
 import { motion } from "framer-motion"
+
+import Link from "next/link"
 
 import { ease, siteConfig } from "@/lib/config"
 import { cn } from "@undrstnd/ui/lib"

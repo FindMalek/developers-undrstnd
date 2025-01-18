@@ -1,4 +1,3 @@
-import type React from "react"
 import {
   BrainIcon,
   ChevronRight,
@@ -18,6 +17,8 @@ import {
   FaLinkedin,
   FaXTwitter,
 } from "react-icons/fa6"
+
+import type React from "react"
 
 type IconProps = React.HTMLAttributes<SVGElement>
 

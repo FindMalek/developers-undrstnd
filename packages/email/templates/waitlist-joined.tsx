@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Body,
   Container,
@@ -12,11 +11,13 @@ import {
   Text,
 } from "@react-email/components"
 
+import React from "react"
+
 import { Footer } from "../components/footer"
 import { GetStarted } from "../components/get-started"
 import { Logo } from "../components/logo"
 
-export const baseUrl = "https://undrstnd.dev"
+const baseUrl = "https://email.undrstnd.dev"
 
 export const WaitlistJoinedTemplate = () => {
   const text = `Great news! You've been accepted to join the Undrstnd Developers beta. We're excited to have you on board!`
@@ -98,7 +99,7 @@ export const WaitlistJoinedTemplate = () => {
             <br />
 
             <Img
-              src={`${baseUrl}/email/founder.png`}
+              src={`${baseUrl}/founder.png`}
               alt="Founder"
               className="mx-auto my-0 block w-full"
             />

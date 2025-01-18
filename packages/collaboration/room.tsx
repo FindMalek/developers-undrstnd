@@ -1,6 +1,5 @@
 "use client"
 
-import type { ComponentProps, ReactNode } from "react"
 import type { ResolveMentionSuggestionsArgs } from "@liveblocks/client"
 import type { ResolveUsersArgs } from "@liveblocks/node"
 import {
@@ -8,6 +7,8 @@ import {
   LiveblocksProvider,
   RoomProvider,
 } from "@liveblocks/react/suspense"
+
+import type { ComponentProps, ReactNode } from "react"
 
 type RoomProps = ComponentProps<typeof LiveblocksProvider> & {
   id: string

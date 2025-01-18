@@ -3,3 +3,9 @@ export type Company = {
   imageUrl: string
   href: string
 }
+
+export type ResponseWaitlist = {
+  success: boolean
+  error?: string
+  warning?: string
+}

@@ -1,6 +1,7 @@
+import { CommandIcon } from "lucide-react"
+
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { CommandIcon } from "lucide-react"
 
 import { env } from "@/env"
 

@@ -1,6 +1,7 @@
+import type { ThemeProviderProps } from "next-themes"
+
 import { AnalyticsProvider } from "@undrstnd/analytics"
 import { AuthProvider } from "@undrstnd/auth/provider"
-import type { ThemeProviderProps } from "next-themes"
 
 import { Toaster } from "./components/ui/toaster"
 import { TooltipProvider } from "./components/ui/tooltip"

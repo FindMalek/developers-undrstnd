@@ -1,11 +1,12 @@
 "use server"
 
+import Fuse from "fuse.js"
+
 import {
   auth,
   clerkClient,
   type OrganizationMembership,
 } from "@undrstnd/auth/server"
-import Fuse from "fuse.js"
 
 const getName = (user: OrganizationMembership): string | undefined => {
   let name = user.publicUserData?.firstName

@@ -1,12 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import { useFormStatus } from "react-dom"
+
+import { useState } from "react"
+import { toast } from "@undrstnd/ui/hooks"
 
 import { Section } from "@/components/layout/section"
 import { Icons } from "@undrstnd/ui"
 
-import { addWaitlist } from "@/actions/waitlist"
+import { addWaitlistAndSendEmail } from "@/actions/waitlist"
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -63,7 +65,23 @@ export function MarketingWaitlist() {
                 setSubmitted(true)
 
                 const email = formData.get("email") as string
-                await addWaitlist(email)
+
+                const result = await addWaitlistAndSendEmail(email)
+                if (!result.success) {
+                  toast({
+                    title: "Error",
+                    description: result.error,
+                    variant: "destructive",
+                  })
+                } else if (result.warning) {
+                  toast({
+                    title: result.warning,
+                  })
+                } else {
+                  toast({
+                    title: "Successfully joined the waitlist!",
+                  })
+                }
               }}
             >
               <fieldset className="relative z-50 min-w-[300px] max-w-full">

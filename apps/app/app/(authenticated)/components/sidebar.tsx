@@ -1,7 +1,5 @@
 "use client"
 
-import type { ReactNode } from "react"
-import { OrganizationSwitcher, UserButton } from "@undrstnd/auth/client"
 import {
   AnchorIcon,
   BookOpenIcon,
@@ -19,6 +17,9 @@ import {
   SquareTerminalIcon,
   Trash2Icon,
 } from "lucide-react"
+
+import type { ReactNode } from "react"
+import { OrganizationSwitcher, UserButton } from "@undrstnd/auth/client"
 
 import { cn } from "@undrstnd/ui/lib"
 

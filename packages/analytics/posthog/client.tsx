@@ -1,8 +1,9 @@
 "use client"
 
-import type { ReactNode } from "react"
 import posthogRaw, { type PostHog } from "posthog-js"
 import { PostHogProvider as PostHogProviderRaw } from "posthog-js/react"
+
+import type { ReactNode } from "react"
 
 import { keys } from "../keys"
 

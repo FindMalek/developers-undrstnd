@@ -1,5 +1,6 @@
-import { NextResponse, type NextRequest } from "next/server"
 import { verifyAccess, type ApiData } from "@vercel/flags"
+
+import { NextResponse, type NextRequest } from "next/server"
 
 import * as flags from "./index"
 

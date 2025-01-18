@@ -1,3 +1,5 @@
+import { Webhook } from "svix"
+
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
 import { analytics } from "@undrstnd/analytics/posthog/server"
@@ -9,7 +11,6 @@ import type {
   WebhookEvent,
 } from "@undrstnd/auth/server"
 import { log } from "@undrstnd/observability/log"
-import { Webhook } from "svix"
 
 import { env } from "@/env"
 

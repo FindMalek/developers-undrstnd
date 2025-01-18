@@ -1,5 +1,6 @@
-import type { HTMLAttributes } from "react"
 import { twMerge } from "tailwind-merge"
+
+import type { HTMLAttributes } from "react"
 
 type ThreadProps = HTMLAttributes<HTMLDivElement>
 

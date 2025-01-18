@@ -6,11 +6,11 @@ module.exports = {
   trailingComma: "es5",
   importOrder: [
     "^@/styles/(.*)$",
+    "^@undrstnd/ui/styles/globals.css$",
     "",
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
     "^@undrstnd/(?!ui(?:/lib(?:/fonts)?)?$)(.*)$",
-    "<THIRD_PARTY_MODULES>",
     "",
     "^types$",
     "^@/env(.*)$",

@@ -1,5 +1,6 @@
-import type { ComponentProps } from "react"
 import { RichText } from "basehub/react-rich-text"
+
+import type { ComponentProps } from "react"
 
 type TableOfContentsProperties = Omit<
   ComponentProps<typeof RichText>,

@@ -1,3 +1,6 @@
+import { ArrowLeftIcon } from "@radix-ui/react-icons"
+import Balancer from "react-wrap-balancer"
+
 import type { Metadata } from "next"
 import { draftMode } from "next/headers"
 import Link from "next/link"
@@ -9,8 +12,6 @@ import { Image } from "@undrstnd/cms/components/image"
 import { TableOfContents } from "@undrstnd/cms/components/toc"
 import { JsonLd } from "@undrstnd/seo/json-ld"
 import { createMetadata } from "@undrstnd/seo/metadata"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
-import Balancer from "react-wrap-balancer"
 
 import { env } from "@/env"
 

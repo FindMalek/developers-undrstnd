@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { User } from "lucide-react"
+
+import { useEffect, useState } from "react"
 
 import {
   Avatar,

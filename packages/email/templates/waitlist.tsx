@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Body,
   Container,
@@ -12,14 +11,15 @@ import {
   Text,
 } from "@react-email/components"
 
+import React from "react"
+
 import { Footer } from "../components/footer"
-import { GetStarted } from "../components/get-started"
 import { Logo } from "../components/logo"
 
-export const baseUrl = "https://undrstnd.dev"
+const baseUrl = "https://email.undrstnd.dev"
 
 export const WaitlistTemplate = () => {
-  const text = `Great news! You've been accepted to join the Undrstnd Developers beta. We're excited to have you on board!`
+  const text = `Thanks for joining the Undrstnd Developers waitlist! We'll notify you soon about your beta access.`
 
   return (
     <Html>
@@ -56,36 +56,30 @@ export const WaitlistTemplate = () => {
           >
             <Logo />
             <Heading className="mx-0 my-[30px] p-0 text-center text-[21px] font-normal text-[#121212]">
-              You're In! Welcome to Undrstnd Developers
+              You're on the Waitlist!
             </Heading>
 
             <br />
 
             <span className="font-medium">Hi there,</span>
             <Text className="text-[#121212]">
-              Exciting news! You've been accepted to join our beta program. I'm
-              Malek, the founder of Undrstnd Developers, and I'm thrilled to
-              welcome you to our community.
+              Thank you for your interest in Undrstnd Developers! We've received your request to join our beta program and added you to our waitlist.
               <br />
               <br />
-              You're now part of a select group of developers who will get early
-              access to our platform. We're building something special, and your
-              feedback during this beta phase will be invaluable in shaping the
-              future of Undrstnd Developers.
+              We're currently reviewing applications and will notify you soon when your access is granted. We're excited about the possibility of having you try our platform!
               <br />
               <br />
-              As an early member, you'll have direct access to new features as
-              they're released and the opportunity to influence our development
-              roadmap.
+              While you wait, you can follow us on{" "}
+              <Link
+                href="https://go.undrstnd.dev/x"
+                className="text-[#121212] underline"
+              >
+                Twitter
+              </Link>{" "}
+              to stay updated on our latest developments.
               <br />
               <br />
-              There's no suprise you might encounter some bugs, we are a small
-              team and we are working hard to make sure everything is working
-              smoothly.
-              <br />
-              <br />
-              Have questions or want to share your thoughts? Feel free to reply
-              directly to this email or{" "}
+              Have any questions? Feel free to reach out to us at{" "}
               <Link
                 href="https://cal.com/findmalek"
                 className="text-[#121212] underline"
@@ -98,19 +92,17 @@ export const WaitlistTemplate = () => {
             <br />
 
             <Img
-              src={`${baseUrl}/email/founder.png`}
+            // TODO: Change it to a cool thumbnail from branding
+              src={`${baseUrl}/founder.png`}
               alt="Founder"
               className="mx-auto my-0 block w-full"
             />
 
             <Text className="text-[#707070]">
-              Looking forward to building together,
+              Best regards,
+              <br />
+              The Undrstnd Developers Team
             </Text>
-
-            <br />
-            <br />
-
-            <GetStarted />
 
             <br />
 

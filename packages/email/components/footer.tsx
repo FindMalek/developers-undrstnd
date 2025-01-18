@@ -1,4 +1,3 @@
-import React from "react"
 import {
   Column,
   Hr,
@@ -8,6 +7,8 @@ import {
   Section,
   Text,
 } from "@react-email/components"
+
+import React from "react"
 
 export const baseUrl = "https://undrstnd.dev"
 
