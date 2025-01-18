@@ -1,6 +1,6 @@
 {
   "name": "@undrstnd/database",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
@@ -18,14 +18,20 @@
     "format": "prisma format"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "@prisma/adapter-neon": "^6.2.1",
     "@prisma/client": "6.2.1",
-    "server-only": "^0.0.1",
     "@t3-oss/env-nextjs": "^0.11.1",
+    "server-only": "^0.0.1",
+    "undici": "^7.2.2",
+    "ws": "^8.18.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
     "@undrstnd/typescript-config": "workspace:*",
-    "@types/node": "22.10.5",
+    "@types/node": "22.10.7",
+    "@types/ws": "^8.5.13",
+    "bufferutil": "^4.0.9",
     "prisma": "6.2.1",
     "typescript": "^5.7.3"
   }
