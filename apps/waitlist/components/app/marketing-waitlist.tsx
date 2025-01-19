@@ -68,6 +68,7 @@ export function MarketingWaitlist() {
 
                 const result = await addWaitlistAndSendEmail(email)
                 if (!result.success) {
+                  console.error(result)
                   toast({
                     title: "Error",
                     description: result.error,
