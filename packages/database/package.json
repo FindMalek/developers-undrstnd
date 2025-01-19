@@ -15,7 +15,8 @@
     "reset": "prisma migrate reset --force",
     "deploy": "prisma migrate deploy",
     "migrate": "prisma migrate dev",
-    "format": "prisma format"
+    "format": "prisma format",
+    "postinstall": "prisma generate --no-hints"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
