@@ -11,6 +11,7 @@
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "bump-ui": "npx shadcn@latest add --all --overwrite -c packages/ui",
     "clean": "git clean -xdf node_modules",
+    "postinstall": "pnpm db:generate",
     "db:format": "cd packages/database && pnpm format",
     "db:generate": "cd packages/database && pnpm generate",
     "db:studio": "cd packages/database && pnpm studio",
