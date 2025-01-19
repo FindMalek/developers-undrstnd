@@ -10,7 +10,7 @@
     "analyze": "ANALYZE=true pnpm build",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "postinstall": "pnpm db:generate"
+    "postinstall": "turbo run generate"
   },
   "dependencies": {
     "@undrstnd/observability": "workspace:*",
