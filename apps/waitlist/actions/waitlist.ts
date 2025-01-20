@@ -38,14 +38,14 @@ async function getClientIP(): Promise<string> {
 }
 
 export async function addWaitlist(email: string) {
-  const ip = await getClientIP()
-  const country = await getCountryFromIP(ip)
+  // const ip = await getClientIP()
+  // const country = await getCountryFromIP(ip)
 
   return await database.waitlist.create({
     data: {
       email,
-      country,
-      ipAddress: ip,
+      country: "US",
+      ipAddress: "ip",
     },
   })
 }

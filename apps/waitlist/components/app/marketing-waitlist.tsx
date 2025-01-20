@@ -41,24 +41,17 @@ export function MarketingWaitlist() {
         <p className="text-foreground mx-auto mb-6 max-w-3xl text-balance text-3xl font-medium">
           Ready to supercharge your development with AI?
         </p>
+        <p className="text-foreground mx-auto mb-6 max-w-3xl text-balance text-lg">
+          Join the waitlist to get early access to Undrstnd Developers.
+        </p>
 
         <div className="flex justify-center">
           {isSubmitted ? (
             <div className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1 sm:max-w-[330px]">
-              <p>Subscribed</p>
-
-              <svg
-                width="17"
-                height="17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Check</title>
-                <path
-                  d="m14.546 4.724-8 8-3.667-3.667.94-.94 2.727 2.72 7.06-7.053.94.94Z"
-                  fill="#fff"
-                />
-              </svg>
+              <p>
+                Added to waitlist!
+              </p>
+              <Icons.check className="size-4" />
             </div>
           ) : (
             <form
