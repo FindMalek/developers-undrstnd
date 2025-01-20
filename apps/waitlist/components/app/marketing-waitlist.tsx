@@ -7,6 +7,7 @@ import { toast } from "@undrstnd/ui/hooks"
 
 import { Section } from "@/components/layout/section"
 import { Icons } from "@undrstnd/ui"
+import { log } from '@undrstnd/observability/log';
 
 import { addWaitlistAndSendEmail } from "@/actions/waitlist"
 
@@ -68,7 +69,7 @@ export function MarketingWaitlist() {
 
                 const result = await addWaitlistAndSendEmail(email)
                 if (!result.success) {
-                  console.error(result)
+                  log.error(result.error ?? "Unknown error")
                   toast({
                     title: "Error",
                     description: result.error,

@@ -2,6 +2,7 @@ import { keys } from "../keys"
 import { WaitlistTemplate } from "../templates/waitlist"
 import { WaitlistJoinedTemplate } from "../templates/waitlist-joined"
 import { Resend } from "resend"
+import { log } from '@undrstnd/observability/log';
 
 interface SendEmailOptions {
   to: string[]
@@ -28,7 +29,7 @@ export class ResendService {
   }
 
   async sendWaitlistJoinedEmail(to: string[]) {
-    console.log("Sending waitlist joined email to", to)
+    log.info("Sending waitlist joined email to", to)
     return this.sendEmail({
       to,
       subject: "Welcome to Undrstnd Developers Waitlist!",
@@ -37,7 +38,7 @@ export class ResendService {
   }
 
   async sendWaitlistAcceptedEmail(to: string[]) {
-    console.log("Sending waitlist accepted email to", to)
+    log.info("Sending waitlist accepted email to", to)
     return this.sendEmail({
       to,
       subject: "You're In! Welcome to Undrstnd Developers",
