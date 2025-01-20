@@ -3,7 +3,7 @@
 import { headers } from "next/headers"
 import { database } from "@undrstnd/database"
 import { ResendService } from "@undrstnd/email/services/resend.service"
-
+import { log } from "@undrstnd/observability/log"
 import { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
@@ -88,6 +88,7 @@ export async function addWaitlistAndSendEmail(
       success: true,
     }
   } catch (error) {
+    log.error("Failed to add to waitlist", { error })
     return {
       success: false,
       error: "Failed to add to waitlist",
