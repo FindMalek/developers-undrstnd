@@ -1,3 +1,9 @@
-import { log as logtail } from "@logtail/next"
+import { Logger } from "@logtail/next"
 
-export const log = process.env.NODE_ENV === "production" ? logtail : console
+import { keys } from "./keys"
+
+const logger = new Logger({
+  token: keys().BETTERSTACK_API_KEY,
+})
+
+export const log = process.env.NODE_ENV === "production" ? logger : console

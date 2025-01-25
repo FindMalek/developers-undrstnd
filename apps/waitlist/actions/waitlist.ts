@@ -5,6 +5,7 @@ import { database } from "@undrstnd/database"
 import { ResendService } from "@undrstnd/email/services/resend.service"
 import { log } from "@undrstnd/observability/log"
 import { ResponseWaitlist } from "@/types"
+import { analytics } from "@undrstnd/analytics/posthog/client"
 
 async function getCountryFromIP(ip: string): Promise<string> {
   try {
@@ -38,14 +39,14 @@ async function getClientIP(): Promise<string> {
 }
 
 export async function addWaitlist(email: string) {
-  // const ip = await getClientIP()
-  // const country = await getCountryFromIP(ip)
+  const ip = await getClientIP()
+  const country = await getCountryFromIP(ip)
 
   return await database.waitlist.create({
     data: {
       email,
-      country: "US",
-      ipAddress: "ip",
+      country,
+      ipAddress: ip,
     },
   })
 }
@@ -66,6 +67,8 @@ export async function addWaitlistAndSendEmail(
   try {
     const exists = await isOnWaitlist(email)
     if (exists) {
+      analytics.capture("Waitlist Email Already Exists")
+      log.info("Waitlist Email Already Exists", { email })
       return {
         success: true,
         warning: "Email is already on the waitlist",
@@ -77,12 +80,17 @@ export async function addWaitlistAndSendEmail(
     const emailService = new ResendService()
     const emailResult = await emailService.sendWaitlistJoinedEmail([email])
 
+    log.info("Waitlist Email Added", { email })
     if (!emailResult.success) {
       return {
         success: true,
         warning: "Added to waitlist but failed to send email",
       }
     }
+
+    analytics.capture("Waitlist Email Added", {
+      distinctId: email,
+    })
 
     return {
       success: true,

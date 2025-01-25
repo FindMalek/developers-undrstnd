@@ -22,6 +22,12 @@ export class ResendService {
         react,
       })
 
+      log.info("Email sent", {
+        data: JSON.stringify(data, null, 2),
+        to,
+        subject,
+      })
+
       return { success: true, data }
     } catch (error) {
       return { success: false, error }
