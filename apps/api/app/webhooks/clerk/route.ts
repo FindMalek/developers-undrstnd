@@ -2,7 +2,7 @@ import { Webhook } from "svix"
 
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
-import { analytics } from "@undrstnd/analytics/posthog/server"
+import { getAnalytics } from "@undrstnd/analytics/posthog/server"
 import type {
   DeletedObjectJSON,
   OrganizationJSON,

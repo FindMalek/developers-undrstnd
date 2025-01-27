@@ -9,6 +9,7 @@ import {
   PlugIcon,
   UsersIcon,
   ZapIcon,
+  CheckIcon,
 } from "lucide-react"
 import {
   FaDiscord,
@@ -155,4 +156,5 @@ export const Icons: { [key: string]: React.FC<IconProps> } = {
   instagram: FaInstagram,
   linkedIn: FaLinkedin,
   chevronRight: ChevronRight,
+  check: CheckIcon,
 }
