@@ -75,22 +75,22 @@ export async function addWaitlistAndSendEmail(
       }
     }
 
-    await addWaitlist(email)
+    // await addWaitlist(email)
 
-    const emailService = new ResendService()
-    const emailResult = await emailService.sendWaitlistJoinedEmail([email])
+    // const emailService = new ResendService()
+    // const emailResult = await emailService.sendWaitlistJoinedEmail([email])
 
-    log.info("Waitlist Email Added", { email })
-    if (!emailResult.success) {
-      return {
-        success: true,
-        warning: "Added to waitlist but failed to send email",
-      }
-    }
+    // log.info("Waitlist Email Added", { email })
+    // if (!emailResult.success) {
+    //   return {
+    //     success: true,
+    //     warning: "Added to waitlist but failed to send email",
+    //   }
+    // }
 
-    analytics.capture("Waitlist Email Added", {
-      distinctId: email,
-    })
+    // analytics.capture("Waitlist Email Added", {
+    //   distinctId: email,
+    // })
 
     return {
       success: true,
