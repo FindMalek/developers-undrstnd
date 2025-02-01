@@ -28,7 +28,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@types/node": "22.10.5",
+    "@types/node": "22.13.0",
     "@undrstnd/typescript-config": "workspace:*",
     "@types/react": "19.0.4",
     "@types/react-dom": "19.0.2",
