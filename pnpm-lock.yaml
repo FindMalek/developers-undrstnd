@@ -647,8 +647,8 @@ importers:
         specifier: ^2.15.2
         version: 2.15.2
       '@liveblocks/react':
-        specifier: ^2.15.2
-        version: 2.15.2(react@19.0.0)
+        specifier: ^2.19.0
+        version: 2.19.0(react@19.0.0)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.7.3)(zod@3.24.1)
@@ -2308,14 +2308,20 @@ packages:
   '@liveblocks/client@2.15.2':
     resolution: {integrity: sha512-6N6EmKaJ8wYZ4WelHdKUEel1AYamFcHo3F23es8kbZXcGmThxOdae2upRplF1i/vtaCVKsbAAuhPNVpWqh887Q==}
 
+  '@liveblocks/client@2.19.0':
+    resolution: {integrity: sha512-jIPGHEhMty09skypU9bRXcqyUWhVeOhAJ8qE4cBKKbtzq25BEZi/fxJMNhasKzEISH5X+N23DFPEvhZtnh7IYw==}
+
   '@liveblocks/core@2.15.2':
     resolution: {integrity: sha512-t2k5tTSkWgwQyfc4BRuu+ZXW8gX0epo+h2NE2C571i4ascQHZw3g4giD+pPQ+9tW0k3FGBqV841ZdDN+db7wfQ==}
+
+  '@liveblocks/core@2.19.0':
+    resolution: {integrity: sha512-mW4DROOgPIT/XLA8xJBwk5eptm06ZMd3nuKs/AuEEKRvjpA2XT0cMfAvj8An2UPS7gv9/MnJEAd/YST3ovvxaw==}
 
   '@liveblocks/node@2.15.2':
     resolution: {integrity: sha512-kz45+6mh5xa3tlz+3BSlYRS3iwTnOg5RpN0H6/GsS5NxizGxX95Mqie9BzdntoxoVm01gl4SJxOn5IQcCbkJoQ==}
 
-  '@liveblocks/react@2.15.2':
-    resolution: {integrity: sha512-UC/s6sysb1aMlBaeoLas/hSAmURIxgi8n1xSSGh7FAlF88all8vhT47RfXt9Y1VLmfD3EEmBeH3DnNSWw89dSg==}
+  '@liveblocks/react@2.19.0':
+    resolution: {integrity: sha512-DhQYaYjty0dwlLDEPY8bVBgaC4bA2wWA9GzC3c5VNfokhyAV63GPG5saS+SLUeFvqJoO0J7tFZV62HWUD+QVSw==}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
 
@@ -9830,7 +9836,13 @@ snapshots:
     dependencies:
       '@liveblocks/core': 2.15.2
 
+  '@liveblocks/client@2.19.0':
+    dependencies:
+      '@liveblocks/core': 2.19.0
+
   '@liveblocks/core@2.15.2': {}
+
+  '@liveblocks/core@2.19.0': {}
 
   '@liveblocks/node@2.15.2':
     dependencies:
@@ -9841,10 +9853,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@liveblocks/react@2.15.2(react@19.0.0)':
+  '@liveblocks/react@2.19.0(react@19.0.0)':
     dependencies:
-      '@liveblocks/client': 2.15.2
-      '@liveblocks/core': 2.15.2
+      '@liveblocks/client': 2.19.0
+      '@liveblocks/core': 2.19.0
       react: 19.0.0
 
   '@logtail/next@0.1.7(next@15.1.4(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
