@@ -1,5 +1,5 @@
-import { copyFile, mkdir, readFile, rm } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { copyFile, mkdir, readFile, rm } from "node:fs/promises"
+import { dirname, join } from "node:path"
 import {
   cancel,
   intro,
@@ -8,73 +8,74 @@ import {
   outro,
   select,
   spinner,
-} from '@clack/prompts';
+} from "@clack/prompts"
+
 import {
-  url,
   allInternalContent,
   cleanFileName,
   exec,
   getAvailableVersions,
   tempDirName,
-} from './utils.js';
+  url,
+} from "./utils.js"
 
 const compareVersions = (a: string, b: string) => {
-  const [aMajor, aMinor, aPatch] = a.split('.').map(Number);
-  const [bMajor, bMinor, bPatch] = b.split('.').map(Number);
+  const [aMajor, aMinor, aPatch] = a.split(".").map(Number)
+  const [bMajor, bMinor, bPatch] = b.split(".").map(Number)
   if (aMajor !== bMajor) {
-    return aMajor - bMajor;
+    return aMajor - bMajor
   }
   if (aMinor !== bMinor) {
-    return aMinor - bMinor;
+    return aMinor - bMinor
   }
-  return aPatch - bPatch;
-};
+  return aPatch - bPatch
+}
 
 const createTemporaryDirectory = async (name: string) => {
-  const cwd = process.cwd();
-  const tempDir = join(cwd, name);
+  const cwd = process.cwd()
+  const tempDir = join(cwd, name)
 
-  await rm(tempDir, { recursive: true, force: true });
-  await mkdir(tempDir, { recursive: true });
-};
+  await rm(tempDir, { recursive: true, force: true })
+  await mkdir(tempDir, { recursive: true })
+}
 
 const cloneRepository = async (name: string) =>
-  await exec(`git clone ${url} ${name}`);
+  await exec(`git clone ${url} ${name}`)
 
 const getFiles = async (version: string) => {
-  await exec(`git checkout ${version}`);
+  await exec(`git checkout ${version}`)
 
-  const response = await exec('git ls-files');
-  const files = response.stdout.toString().trim().split('\n');
+  const response = await exec("git ls-files")
+  const files = response.stdout.toString().trim().split("\n")
 
-  return files;
-};
+  return files
+}
 
 const updateFiles = async (files: string[]) => {
-  const cwd = process.cwd();
-  const tempDir = join(cwd, tempDirName);
+  const cwd = process.cwd()
+  const tempDir = join(cwd, tempDirName)
 
   for (const file of files) {
-    const sourcePath = join(tempDir, file);
-    const destPath = join(cwd, file);
+    const sourcePath = join(tempDir, file)
+    const destPath = join(cwd, file)
 
     // Ensure destination directory exists
-    await mkdir(dirname(destPath), { recursive: true });
+    await mkdir(dirname(destPath), { recursive: true })
 
-    await copyFile(sourcePath, destPath);
+    await copyFile(sourcePath, destPath)
   }
-};
+}
 
 const deleteTemporaryDirectory = async () =>
-  await rm(tempDirName, { recursive: true, force: true });
+  await rm(tempDirName, { recursive: true, force: true })
 
 const getCurrentVersion = async (): Promise<string | undefined> => {
-  const packageJsonPath = join(process.cwd(), 'package.json');
-  const packageJsonContents = await readFile(packageJsonPath, 'utf-8');
-  const packageJson = JSON.parse(packageJsonContents) as { version?: string };
+  const packageJsonPath = join(process.cwd(), "package.json")
+  const packageJsonContents = await readFile(packageJsonPath, "utf-8")
+  const packageJson = JSON.parse(packageJsonContents) as { version?: string }
 
-  return packageJson.version;
-};
+  return packageJson.version
+}
 
 const selectVersion = async (
   label: string,
@@ -86,26 +87,26 @@ const selectVersion = async (
     options: availableVersions.map((v) => ({ value: v, label: `v${v}` })),
     initialValue,
     maxItems: 10,
-  });
+  })
 
   if (isCancel(version)) {
-    cancel('Operation cancelled.');
-    process.exit(0);
+    cancel("Operation cancelled.")
+    process.exit(0)
   }
 
-  return version.toString();
-};
+  return version.toString()
+}
 
 const getDiff = async (
   from: { version: string; files: string[] },
   to: { version: string; files: string[] }
 ) => {
-  const filesToUpdate: string[] = [];
+  const filesToUpdate: string[] = []
 
   for (const file of to.files) {
     // Skip internal content that is meant to be deleted during init
     if (allInternalContent.some((ic) => file.startsWith(ic))) {
-      continue;
+      continue
     }
 
     const hasChanged =
@@ -117,71 +118,71 @@ const getDiff = async (
         )
       )
         .toString()
-        .trim() !== '';
+        .trim() !== ""
 
     if (hasChanged) {
-      filesToUpdate.push(file);
+      filesToUpdate.push(file)
     }
   }
 
-  return filesToUpdate;
-};
+  return filesToUpdate
+}
 
 export const update = async (options: { from?: string; to?: string }) => {
   try {
-    intro("Let's update your next-forge project!");
+    intro("Let's update your next-forge project!")
 
-    const cwd = process.cwd();
-    const availableVersions = await getAvailableVersions();
-    let currentVersion = await getCurrentVersion();
+    const cwd = process.cwd()
+    const availableVersions = await getAvailableVersions()
+    let currentVersion = await getCurrentVersion()
 
     // Ditch the project version if it is not in the available versions
     if (currentVersion && !availableVersions.includes(currentVersion)) {
-      currentVersion = undefined;
+      currentVersion = undefined
     }
 
     const fromVersion =
       options.from ||
-      (await selectVersion('from', availableVersions, currentVersion));
+      (await selectVersion("from", availableVersions, currentVersion))
 
     if (fromVersion === availableVersions[0]) {
-      outro('You are already on the latest version!');
-      return;
+      outro("You are already on the latest version!")
+      return
     }
 
     const upgradeableVersions = availableVersions.filter(
       (v) => compareVersions(v, fromVersion) > 0
-    );
+    )
 
-    const [nextVersion] = upgradeableVersions;
+    const [nextVersion] = upgradeableVersions
 
     const toVersion =
       options.to ||
-      (await selectVersion('to', upgradeableVersions, nextVersion));
+      (await selectVersion("to", upgradeableVersions, nextVersion))
 
-    const from = `v${fromVersion}`;
-    const to = `v${toVersion}`;
+    const from = `v${fromVersion}`
+    const to = `v${toVersion}`
 
-    const s = spinner();
+    const s = spinner()
 
-    s.start(`Preparing to update from ${from} to ${to}...`);
+    s.start(`Preparing to update from ${from} to ${to}...`)
 
-    s.message('Creating temporary directory...');
-    await createTemporaryDirectory(tempDirName);
+    s.message("Creating temporary directory...")
+    await createTemporaryDirectory(tempDirName)
 
-    s.message('Cloning next-forge...');
-    await cloneRepository(tempDirName);
+    s.message("Cloning next-forge...")
+    await cloneRepository(tempDirName)
 
-    s.message('Moving into repository...');
-    process.chdir(tempDirName);
+    s.message("Moving into repository...")
+    process.chdir(tempDirName)
 
-    s.message(`Getting files from version ${from}...`);
-    const fromFiles = await getFiles(from);
+    s.message(`Getting files from version ${from}...`)
+    const fromFiles = await getFiles(from)
 
-    s.message(`Getting files from version ${to}...`);
-    const toFiles = await getFiles(to);
+    s.message(`Getting files from version ${to}...`)
+    const toFiles = await getFiles(to)
 
-    s.message(`Computing diff between versions ${from} and ${to}...`);
+    s.message(`Computing diff between versions ${from} and ${to}...`)
     const diff = await getDiff(
       {
         version: from,
@@ -191,24 +192,24 @@ export const update = async (options: { from?: string; to?: string }) => {
         version: to,
         files: toFiles,
       }
-    );
+    )
 
-    s.message('Moving back to original directory...');
-    process.chdir(cwd);
+    s.message("Moving back to original directory...")
+    process.chdir(cwd)
 
-    s.message(`Updating ${diff.length} files...`);
-    await updateFiles(diff);
+    s.message(`Updating ${diff.length} files...`)
+    await updateFiles(diff)
 
-    s.message('Cleaning up...');
-    await deleteTemporaryDirectory();
+    s.message("Cleaning up...")
+    await deleteTemporaryDirectory()
 
-    s.stop(`Successfully updated project from ${from} to ${to}!`);
+    s.stop(`Successfully updated project from ${from} to ${to}!`)
 
-    outro('Please review and test the changes carefully.');
+    outro("Please review and test the changes carefully.")
   } catch (error) {
-    const message = error instanceof Error ? error.message : `${error}`;
+    const message = error instanceof Error ? error.message : `${error}`
 
-    log.error(`Failed to update project: ${message}`);
-    process.exit(1);
+    log.error(`Failed to update project: ${message}`)
+    process.exit(1)
   }
-};
+}

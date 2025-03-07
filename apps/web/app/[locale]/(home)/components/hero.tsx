@@ -1,14 +1,16 @@
-import { env } from '@/env';
-import { blog } from '@repo/cms';
-import { Feed } from '@repo/cms/components/feed';
-import { Button } from '@repo/design-system/components/ui/button';
-import type { Dictionary } from '@repo/internationalization';
-import { MoveRight, PhoneCall } from 'lucide-react';
-import Link from 'next/link';
+import { MoveRight, PhoneCall } from "lucide-react"
+
+import Link from "next/link"
+import { blog } from "@repo/cms"
+import { Feed } from "@repo/cms/components/feed"
+import { Button } from "@repo/design-system/components/ui/button"
+import type { Dictionary } from "@repo/internationalization"
+
+import { env } from "@/env"
 
 type HeroProps = {
-  dictionary: Dictionary;
-};
+  dictionary: Dictionary
+}
 
 export const Hero = async ({ dictionary }: HeroProps) => (
   <div className="w-full">
@@ -18,24 +20,24 @@ export const Hero = async ({ dictionary }: HeroProps) => (
           <Feed queries={[blog.latestPostQuery]}>
             {/* biome-ignore lint/suspicious/useAwait: "Server Actions must be async" */}
             {async ([data]) => {
-              'use server';
+              "use server"
 
               return (
                 <Button variant="secondary" size="sm" className="gap-4" asChild>
                   <Link href={`/blog/${data.blog.posts.item?._slug}`}>
-                    {dictionary.web.home.hero.announcement}{' '}
+                    {dictionary.web.home.hero.announcement}{" "}
                     <MoveRight className="h-4 w-4" />
                   </Link>
                 </Button>
-              );
+              )
             }}
           </Feed>
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="max-w-2xl text-center font-regular text-5xl tracking-tighter md:text-7xl">
+          <h1 className="font-regular max-w-2xl text-center text-5xl tracking-tighter md:text-7xl">
             {dictionary.web.home.meta.title}
           </h1>
-          <p className="max-w-2xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight md:text-xl">
+          <p className="text-muted-foreground max-w-2xl text-center text-lg leading-relaxed tracking-tight md:text-xl">
             {dictionary.web.home.meta.description}
           </p>
         </div>
@@ -54,4 +56,4 @@ export const Hero = async ({ dictionary }: HeroProps) => (
       </div>
     </div>
   </div>
-);
+)

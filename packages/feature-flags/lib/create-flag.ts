@@ -1,20 +1,21 @@
-import { analytics } from '@repo/analytics/posthog/server';
-import { auth } from '@repo/auth/server';
-import { flag } from 'flags/next';
+import { flag } from "flags/next"
+
+import { analytics } from "@repo/analytics/posthog/server"
+import { auth } from "@repo/auth/server"
 
 export const createFlag = (key: string) =>
   flag({
     key,
     defaultValue: false,
     async decide() {
-      const { userId } = await auth();
+      const { userId } = await auth()
 
       if (!userId) {
-        return this.defaultValue as boolean;
+        return this.defaultValue as boolean
       }
 
-      const isEnabled = await analytics.isFeatureEnabled(key, userId);
+      const isEnabled = await analytics.isFeatureEnabled(key, userId)
 
-      return isEnabled ?? (this.defaultValue as boolean);
+      return isEnabled ?? (this.defaultValue as boolean)
     },
-  });
+  })

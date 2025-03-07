@@ -27,10 +27,10 @@
   content: counter(line);
   counter-increment: line;
 
-  @apply inline-block w-4 mr-8 text-muted-foreground text-right;
+  @apply text-muted-foreground mr-8 inline-block w-4 text-right;
 }
 
 .shiki[title]:before {
   content: attr(title);
-  @apply inline-block text-muted-foreground text-right mb-6 text-sm;
+  @apply text-muted-foreground mb-6 inline-block text-right text-sm;
 }

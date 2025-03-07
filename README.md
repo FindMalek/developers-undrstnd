@@ -1,25 +1,51 @@
-# next-forge
+# **Undrstnd Developers**
 
-**Production-grade Turborepo template for Next.js apps.**
+Easy, cheap and fast AI integration for devs.
 
-<div>
-  <img src="https://img.shields.io/npm/dy/next-forge" alt="" />
-  <img src="https://img.shields.io/npm/v/next-forge" alt="" />
-  <img src="https://img.shields.io/github/license/haydenbleasel/next-forge" alt="" />
-</div>
+[Website](https://dev.undrstnd.com),
+[Issues](https://github.com/undrstnd-labs/developers/issues),
+[PRs](https://go.undrstnd.dev/gh),
+[Discord](https://go.undrstnd.dev/dc),
+[LinkedIn](https://go.undrstnd.dev/li),
+[Facebook](https://go.undrstnd.dev/fb)
 
-[next-forge](https://github.com/haydenbleasel/next-forge) is a [Next.js](https://nextjs.org/) project boilerplate for modern web application. It is designed to be a comprehensive starting point for new apps, providing a solid, opinionated foundation with a minimal amount of configuration.
+## Under active development
 
-Clone the repo using:
+> Undrstnd Developers is dedicated to delivering a high-quality product and has been actively improving code quality and best practices. Our philosophy centers around providing a seamless and enjoyable user experience, with a focus on reliability, efficiency, and security. We're excited about the progress made and continue to innovate and improve the platform for our users.
 
-```sh
-npx next-forge@latest init
-```
+## App Architecture
 
-Then read the [docs](https://docs.next-forge.com) for more information.
+- PNpm
+- React
+- TypeScript
+- Nextjs
+- TailwindCSS
+- Shadcn
+- Prisma
+- OpenAI
 
-<a href="https://github.com/haydenbleasel/next-forge/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=haydenbleasel/next-forge" />
-</a>
+### Hosting
 
-Made with [contrib.rocks](https://contrib.rocks).
+- Neon (Database)
+- Supabase (Storage, realtime)
+- Vercel (Website, edge-config, analytics and metrics)
+- Github (Codebase, issues, PRs, actions)
+
+### Services
+
+- Clerk (Authentication)
+- Sentry (Error tracking)
+- Arcjet (Security)
+- BetterStack (Logging)
+- PostHog (Analytics)
+- Google Analytics (Analytics)
+- Github Actions (CI/CD)
+- Trigger.dev (Background jobs)
+- Stripe (Payments)
+- Dub (Short URLs)
+- Resend (Email)
+- Vercel AI SDK (AI)
+
+## Repo Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/2991986135d6e47299c2718c3ba0eaf4f7f4c677.svg "Repobeats analytics image")

@@ -4,8 +4,9 @@
  * https://docs.sentry.io/platforms/javascript/guides/nextjs/
  */
 
-import { init, replayIntegration } from '@sentry/nextjs';
-import { keys } from './keys';
+import { init, replayIntegration } from "@sentry/nextjs"
+
+import { keys } from "./keys"
 
 export const initializeSentry = (): ReturnType<typeof init> =>
   init({
@@ -33,4 +34,4 @@ export const initializeSentry = (): ReturnType<typeof init> =>
         blockAllMedia: true,
       }),
     ],
-  });
+  })

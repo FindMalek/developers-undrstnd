@@ -1,12 +1,13 @@
-import '@repo/design-system/styles/globals.css';
-import { DesignSystemProvider } from '@repo/design-system';
-import { fonts } from '@repo/design-system/lib/fonts';
-import { Toolbar } from '@repo/feature-flags/components/toolbar';
-import type { ReactNode } from 'react';
+import "@repo/design-system/styles/globals.css"
+
+import type { ReactNode } from "react"
+import { DesignSystemProvider } from "@repo/design-system"
+import { fonts } from "@repo/design-system/lib/fonts"
+import { Toolbar } from "@repo/feature-flags/components/toolbar"
 
 type RootLayoutProperties = {
-  readonly children: ReactNode;
-};
+  readonly children: ReactNode
+}
 
 const RootLayout = ({ children }: RootLayoutProperties) => (
   <html lang="en" className={fonts} suppressHydrationWarning>
@@ -15,6 +16,6 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
       <Toolbar />
     </body>
   </html>
-);
+)
 
-export default RootLayout;
+export default RootLayout

@@ -1,17 +1,19 @@
-import { env } from '@/env';
-import { Button } from '@repo/design-system/components/ui/button';
-import { Check, Minus, MoveRight, PhoneCall } from 'lucide-react';
-import Link from 'next/link';
+import { Check, Minus, MoveRight, PhoneCall } from "lucide-react"
+
+import Link from "next/link"
+import { Button } from "@repo/design-system/components/ui/button"
+
+import { env } from "@/env"
 
 const Pricing = () => (
   <div className="w-full py-20 lg:py-40">
     <div className="container mx-auto">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <div className="flex flex-col gap-2">
-          <h2 className="max-w-xl text-center font-regular text-3xl tracking-tighter md:text-5xl">
+          <h2 className="font-regular max-w-xl text-center text-3xl tracking-tighter md:text-5xl">
             Prices that make sense!
           </h2>
-          <p className="max-w-xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight">
+          <p className="text-muted-foreground max-w-xl text-center text-lg leading-relaxed tracking-tight">
             Managing a small business today is already tough.
           </p>
         </div>
@@ -74,39 +76,39 @@ const Pricing = () => (
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">SSO</div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             AI Assistant
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="text-muted-foreground h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             Version Control
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="text-muted-foreground h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
@@ -126,31 +128,31 @@ const Pricing = () => (
             Multiplayer Mode
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="text-muted-foreground h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             Orchestration
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="text-muted-foreground h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="text-primary h-4 w-4" />
           </div>
         </div>
       </div>
     </div>
   </div>
-);
+)
 
-export default Pricing;
+export default Pricing

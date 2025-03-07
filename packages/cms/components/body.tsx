@@ -1,1 +1,1 @@
-export { RichText as Body } from 'basehub/react-rich-text';
+export { RichText as Body } from "basehub/react-rich-text"

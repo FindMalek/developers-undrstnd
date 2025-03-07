@@ -1,23 +1,23 @@
-'use server';
+"use server"
 
 import {
-  type OrganizationMembership,
   auth,
   clerkClient,
-} from '@repo/auth/server';
-import { tailwind } from '@repo/tailwind-config';
+  type OrganizationMembership,
+} from "@repo/auth/server"
+import { tailwind } from "@repo/tailwind-config"
 
 const getName = (user: OrganizationMembership): string | undefined => {
-  let name = user.publicUserData?.firstName;
+  let name = user.publicUserData?.firstName
 
   if (name && user.publicUserData?.lastName) {
-    name = `${name} ${user.publicUserData.lastName}`;
+    name = `${name} ${user.publicUserData.lastName}`
   } else if (!name) {
-    name = user.publicUserData?.identifier;
+    name = user.publicUserData?.identifier
   }
 
-  return name;
-};
+  return name
+}
 
 const colors = [
   tailwind.theme.colors.red[500],
@@ -37,46 +37,46 @@ const colors = [
   tailwind.theme.colors.fuchsia[500],
   tailwind.theme.colors.pink[500],
   tailwind.theme.colors.rose[500],
-];
+]
 
 export const getUsers = async (
   userIds: string[]
 ): Promise<
   | {
-      data: Liveblocks['UserMeta']['info'][];
+      data: Liveblocks["UserMeta"]["info"][]
     }
   | {
-      error: unknown;
+      error: unknown
     }
 > => {
   try {
-    const { orgId } = await auth();
+    const { orgId } = await auth()
 
     if (!orgId) {
-      throw new Error('Not logged in');
+      throw new Error("Not logged in")
     }
 
-    const clerk = await clerkClient();
+    const clerk = await clerkClient()
 
     const members = await clerk.organizations.getOrganizationMembershipList({
       organizationId: orgId,
       limit: 100,
-    });
+    })
 
-    const data: Liveblocks['UserMeta']['info'][] = members.data
+    const data: Liveblocks["UserMeta"]["info"][] = members.data
       .filter(
         (user) =>
           user.publicUserData?.userId &&
           userIds.includes(user.publicUserData.userId)
       )
       .map((user) => ({
-        name: getName(user) ?? 'Unknown user',
-        picture: user.publicUserData?.imageUrl ?? '',
+        name: getName(user) ?? "Unknown user",
+        picture: user.publicUserData?.imageUrl ?? "",
         color: colors[Math.floor(Math.random() * colors.length)],
-      }));
+      }))
 
-    return { data };
+    return { data }
   } catch (error) {
-    return { error };
+    return { error }
   }
-};
+}

@@ -1,5 +1,5 @@
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { createEnv } from "@t3-oss/env-nextjs"
+import { z } from "zod"
 
 export const keys = () =>
   createEnv({
@@ -9,4 +9,4 @@ export const keys = () =>
     runtimeEnv: {
       DATABASE_URL: process.env.DATABASE_URL,
     },
-  });
+  })
