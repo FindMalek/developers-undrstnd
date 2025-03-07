@@ -1,5 +1,5 @@
 {
-  "name": "@undrstnd-labs/developers",
+  "name": "repo-labs/developers",
   "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
