@@ -20,6 +20,7 @@
     "@repo/design-system": "workspace:*",
     "@repo/rate-limit": "workspace:*",
     "@repo/security": "workspace:*",
+    "@repo/auth": "workspace:*",
     "@repo/testing": "workspace:*",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.58",

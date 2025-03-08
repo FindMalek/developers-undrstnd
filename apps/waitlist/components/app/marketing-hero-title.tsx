@@ -1,8 +1,7 @@
 import { motion } from "framer-motion"
+import { AuroraText } from "repo/ui"
 
 import { ease, siteConfig } from "@/lib/config"
-
-import { AuroraText } from "repo/ui"
 
 export function MarketingHeroTitle() {
   return (

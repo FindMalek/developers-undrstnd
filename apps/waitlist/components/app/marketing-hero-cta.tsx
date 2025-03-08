@@ -1,11 +1,10 @@
 import { motion } from "framer-motion"
+import { buttonVariants, Icons } from "repo/ui"
+import { cn } from "repo/ui/lib"
 
 import Link from "next/link"
 
 import { ease, siteConfig } from "@/lib/config"
-import { cn } from "repo/ui/lib"
-
-import { buttonVariants, Icons } from "repo/ui"
 
 export function MarketingHeroCTA() {
   return (

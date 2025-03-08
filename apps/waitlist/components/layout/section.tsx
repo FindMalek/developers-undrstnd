@@ -1,9 +1,9 @@
 "use client"
 
+import { cn } from "repo/ui/lib"
+
 import type React from "react"
 import { forwardRef, useRef } from "react"
-
-import { cn } from "repo/ui/lib"
 
 import { FlickeringGrid } from "@/components/layout/flickering-grid"
 

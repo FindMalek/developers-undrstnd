@@ -1,6 +1,6 @@
-import { siteConfig } from "@/lib/config"
-
 import { BorderText, Icons } from "repo/ui"
+
+import { siteConfig } from "@/lib/config"
 
 export function Footer() {
   return (

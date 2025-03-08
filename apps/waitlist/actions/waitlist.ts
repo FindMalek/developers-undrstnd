@@ -3,8 +3,8 @@
 import { headers } from "next/headers"
 import { database } from "@repo/database"
 import { log } from "@repo/observability/log"
-import { ResponseWaitlist } from "@/types"
 
+import { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
   try {
@@ -62,7 +62,7 @@ export async function isOnWaitlist(email: string) {
 
 export async function addWaitlistAndSendEmail(
   email: string
- ): Promise<ResponseWaitlist> {
+): Promise<ResponseWaitlist> {
   log.info("Adding waitlist and sending email", { email })
   log.error("Error", { error: "test" })
 

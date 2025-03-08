@@ -352,6 +352,9 @@ importers:
 
   apps/waitlist:
     dependencies:
+      '@repo/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
       '@repo/design-system':
         specifier: workspace:*
         version: link:../../packages/design-system

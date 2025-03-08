@@ -1,13 +1,13 @@
 "use client"
 
 import { useFormStatus } from "react-dom"
-
-import { useState } from "react"
+import { log } from "repo/observability/log"
+import { Icons } from "repo/ui"
 import { toast } from "repo/ui/hooks"
 
+import { useState } from "react"
+
 import { Section } from "@/components/layout/section"
-import { Icons } from "repo/ui"
-import { log } from 'repo/observability/log';
 
 import { addWaitlistAndSendEmail } from "@/actions/waitlist"
 
@@ -48,9 +48,7 @@ export function MarketingWaitlist() {
         <div className="flex justify-center">
           {isSubmitted ? (
             <div className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1 sm:max-w-[330px]">
-              <p>
-                Added to waitlist!
-              </p>
+              <p>Added to waitlist!</p>
               <Icons.check className="size-4" />
             </div>
           ) : (

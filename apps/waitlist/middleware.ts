@@ -1,12 +1,13 @@
-import { NextResponse } from "next/server"
-import { authMiddleware } from "@repo/auth/middleware"
-import { parseError } from "@repo/observability/error"
-import { secure } from "@repo/security"
 import {
   noseconeMiddleware,
   noseconeOptions,
   noseconeOptionsWithToolbar,
 } from "repo/security/middleware"
+
+import { NextResponse } from "next/server"
+import { authMiddleware } from "@repo/auth/middleware"
+import { parseError } from "@repo/observability/error"
+import { secure } from "@repo/security"
 
 import { env } from "@/env"
 

@@ -1,19 +1,16 @@
 import "repo/ui/styles/globals.css"
 
+import { DesignSystemProvider, ModeToggle, TailwindIndicator } from "repo/ui"
+import { cn } from "repo/ui/lib"
+import { fonts } from "repo/ui/lib/fonts"
+
 import type { ReactNode } from "react"
 import type { Metadata, Viewport } from "next"
 
 import { siteConfig } from "@/lib/config"
 import { constructMetadata } from "@/lib/utils"
-import { cn } from "repo/ui/lib"
-import { fonts } from "repo/ui/lib/fonts"
 
 import { Footer } from "@/components/layout/footer"
-import {
-  DesignSystemProvider,
-  ModeToggle,
-  TailwindIndicator,
-} from "repo/ui"
 
 export const metadata: Metadata = constructMetadata({
   title: `${siteConfig.name} | ${siteConfig.description}`,

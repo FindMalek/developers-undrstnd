@@ -1,6 +1,6 @@
-import type { Company } from "@/types"
-
 import { Icons } from "repo/ui"
+
+import type { Company } from "@/types"
 
 export const BLUR_FADE_DELAY = 0.15
 
