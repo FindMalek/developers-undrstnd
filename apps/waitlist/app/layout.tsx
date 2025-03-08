@@ -1,11 +1,12 @@
-import "repo/ui/styles/globals.css"
-
-import { DesignSystemProvider, ModeToggle, TailwindIndicator } from "repo/ui"
-import { cn } from "repo/ui/lib"
-import { fonts } from "repo/ui/lib/fonts"
+import "@repo/design-system/styles/globals.css"
 
 import type { ReactNode } from "react"
 import type { Metadata, Viewport } from "next"
+import { DesignSystemProvider } from "@repo/design-system"
+import { TailwindIndicator } from "@repo/design-system/components/layout/tailwind-indicator"
+import { ModeToggle } from "@repo/design-system/components/shared/mode-toggle"
+import { fonts } from "@repo/design-system/lib/fonts"
+import { cn } from "@repo/design-system/lib/utils"
 
 import { siteConfig } from "@/lib/config"
 import { constructMetadata } from "@/lib/utils"

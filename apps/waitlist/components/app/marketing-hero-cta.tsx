@@ -1,9 +1,9 @@
 import { motion } from "framer-motion"
-import { buttonVariants } from "@repo/design-system/components/ui/button"
-import { cn } from "@repo/design-system/lib/utils"
-import { Icons } from "@repo/design-system/components/shared/icons"
 
 import Link from "next/link"
+import { Icons } from "@repo/design-system/components/shared/icons"
+import { buttonVariants } from "@repo/design-system/components/ui/button"
+import { cn } from "@repo/design-system/lib/utils"
 
 import { ease, siteConfig } from "@/lib/config"
 

@@ -1,5 +1,6 @@
 import {
   BrainIcon,
+  CheckIcon,
   ChevronRight,
   Code2Icon,
   DollarSign,
@@ -9,7 +10,6 @@ import {
   PlugIcon,
   UsersIcon,
   ZapIcon,
-  CheckIcon,
 } from "lucide-react"
 import {
   FaDiscord,

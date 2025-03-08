@@ -1,4 +1,5 @@
-import { BorderText, Icons } from "repo/ui"
+import { BorderText } from "@repo/design-system/components/fancy/border-number"
+import { Icons } from "@repo/design-system/components/shared/icons"
 
 import { siteConfig } from "@/lib/config"
 

@@ -1,4 +1,4 @@
-import { Icons } from "repo/ui"
+import { Icons } from "@repo/design-system/components/shared/icons"
 
 import type { Company } from "@/types"
 

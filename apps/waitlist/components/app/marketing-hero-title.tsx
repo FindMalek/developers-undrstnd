@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+
 import { AuroraText } from "@repo/design-system/components/fancy/aurora-text"
 
 import { ease, siteConfig } from "@/lib/config"
