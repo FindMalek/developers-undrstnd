@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@undrstnd-labs/app",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000 --turbopack",

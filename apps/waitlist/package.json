@@ -1,10 +1,10 @@
 {
-  "name": "@repo/waitlist",
+  "name": "@undrstnd-labs/waitlist",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "lint": "next lint",
-    "dev": "NODE_OPTIONS='--inspect' next dev -p 3007",
+    "dev": "NODE_OPTIONS='--inspect' next dev -p 3006",
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true pnpm build",
@@ -14,6 +14,13 @@
   },
   "dependencies": {
     "@repo/observability": "workspace:*",
+    "@repo/next-config": "workspace:*",
+    "@repo/email": "workspace:*",
+    "@repo/feature-flags": "workspace:*",
+    "@repo/design-system": "workspace:*",
+    "@repo/rate-limit": "workspace:*",
+    "@repo/security": "workspace:*",
+    "@repo/testing": "workspace:*",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.58",
     "@t3-oss/env-nextjs": "^0.11.1",
@@ -23,7 +30,6 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@repo/tailwind-config": "workspace:*",
-    "@repo/design-system": "workspace:*",
     "usehooks-ts": "^3.1.0",
     "vaul": "^1.1.2"
   },

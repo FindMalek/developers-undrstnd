@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@undrstnd-labs/ai-engine",
   "private": true,
   "scripts": {
     "dev": "pnpm next dev -p 3005 --turbopack",

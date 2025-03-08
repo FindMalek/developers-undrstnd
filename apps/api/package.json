@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@undrstnd-labs/api",
   "private": true,
   "scripts": {
     "dev": "concurrently \"pnpm:next\" \"pnpm:stripe\"",
