@@ -21,7 +21,7 @@ import {
 import type { ReactNode } from "react"
 import Link from "next/link"
 import { OrganizationSwitcher, UserButton } from "@repo/auth/client"
-import { ModeToggle } from "@repo/design-system/components/mode-toggle"
+import { ModeToggle } from "@repo/design-system/components/shared/mode-toggle"
 import { Button } from "@repo/design-system/components/ui/button"
 import {
   Collapsible,

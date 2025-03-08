@@ -2,8 +2,8 @@
 
 import { useFormStatus } from "react-dom"
 import { log } from "repo/observability/log"
-import { Icons } from "repo/ui"
-import { toast } from "repo/ui/hooks"
+import { Icons } from "@repo/design-system/components/shared/icons"
+import { toast } from "@repo/design-system/hooks/use-toast"
 
 import { useState } from "react"
 
