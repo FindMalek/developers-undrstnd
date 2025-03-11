@@ -3,7 +3,7 @@
 import { headers } from "next/headers"
 import { database } from "@repo/database"
 import { log } from "@repo/observability/log"
-
+import { analytics } from '@repo/analytics/posthog/server';
 import { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
@@ -66,47 +66,42 @@ export async function addWaitlistAndSendEmail(
   log.info("Adding waitlist and sending email", { email })
   log.error("Error", { error: "test" })
 
-  return {
-    success: true,
-    warning: "test",
+  try {
+    const exists = await isOnWaitlist(email)
+    if (exists) {
+      analytics.capture("Waitlist Email Already Exists")
+      log.info("Waitlist Email Already Exists", { email })
+      return {
+        success: true,
+        warning: "Email is already on the waitlist",
+      }
+    }
+
+    // await addWaitlist(email)
+
+    // const emailService = new ResendService()
+    // const emailResult = await emailService.sendWaitlistJoinedEmail([email])
+
+    // log.info("Waitlist Email Added", { email })
+    // if (!emailResult.success) {
+    //   return {
+    //     success: true,
+    //     warning: "Added to waitlist but failed to send email",
+    //   }
+    // }
+
+    // analytics.capture("Waitlist Email Added", {
+    //   distinctId: email,
+    // })
+
+    return {
+      success: true,
+    }
+  } catch (error) {
+    log.error("Failed to add to waitlist", { error })
+    return {
+      success: false,
+      error: "Failed to add to waitlist",
+    }
   }
-
-  // try {
-  //   const exists = await isOnWaitlist(email)
-  //   if (exists) {
-  //     analytics.capture("Waitlist Email Already Exists")
-  //     log.info("Waitlist Email Already Exists", { email })
-  //     return {
-  //       success: true,
-  //       warning: "Email is already on the waitlist",
-  //     }
-  //   }
-
-  //   // await addWaitlist(email)
-
-  //   // const emailService = new ResendService()
-  //   // const emailResult = await emailService.sendWaitlistJoinedEmail([email])
-
-  //   // log.info("Waitlist Email Added", { email })
-  //   // if (!emailResult.success) {
-  //   //   return {
-  //   //     success: true,
-  //   //     warning: "Added to waitlist but failed to send email",
-  //   //   }
-  //   // }
-
-  //   // analytics.capture("Waitlist Email Added", {
-  //   //   distinctId: email,
-  //   // })
-
-  //   return {
-  //     success: true,
-  //   }
-  // } catch (error) {
-  //   log.error("Failed to add to waitlist", { error })
-  //   return {
-  //     success: false,
-  //     error: "Failed to add to waitlist",
-  //   }
-  // }
 }

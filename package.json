@@ -1,5 +1,5 @@
 {
-  "name": "repo-labs/developers",
+  "name": "@undrstnd-labs/developers",
   "version": "0.1.0",
   "scripts": {
     "build": "turbo build",
@@ -16,12 +16,15 @@
     "db:format": "cd packages/database && npx prisma format",
     "db:generate": "cd packages/database && npx prisma generate",
     "db:studio": "cd packages/studio && pnpm dev",
-    "db:pull": "cd packages/database && npx prisma dbpull",
+    "db:pull": "cd packages/database && npx prisma db pull",
     "db:push": "cd packages/database && npx prisma db push",
-    "db:migrate": "cd packages/database && pnpm prisma migrate dev  && pnpm db:push",
+    "db:migrate": "cd packages/database && pnpm prisma migrate dev  && pnpm -w run db:push",
     "app:ai-engine:dev": "cd apps/ai-engine && pnpm dev",
     "app:ai-engine:build": "cd apps/ai-engine && pnpm build",
-    "app:ai-engine:start": "cd apps/ai-engine && pnpm start"
+    "app:ai-engine:start": "cd apps/ai-engine && pnpm start",
+    "app:waitlist:dev": "cd apps/waitlist && pnpm dev",
+    "app:waitlist:build": "cd apps/waitlist && pnpm build",
+    "app:waitlist:start": "cd apps/waitlist && pnpm start"
   },
   "devDependencies": {
     "@auto-it/first-time-contributor": "^11.3.0",
