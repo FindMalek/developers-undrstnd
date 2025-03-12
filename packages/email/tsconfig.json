@@ -1,7 +1,7 @@
 {
   "extends": "@undrstnd/typescript-config/nextjs.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "include": ["./*.ts", "./*.tsx"],
   "exclude": ["node_modules"]
