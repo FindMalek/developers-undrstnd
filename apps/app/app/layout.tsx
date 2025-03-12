@@ -1,9 +1,9 @@
-import "@repo/design-system/styles/globals.css"
+import "@undrstnd/design-system/styles/globals.css"
 
 import type { ReactNode } from "react"
-import { DesignSystemProvider } from "@repo/design-system"
-import { fonts } from "@repo/design-system/lib/fonts"
-import { Toolbar } from "@repo/feature-flags/components/toolbar"
+import { DesignSystemProvider } from "@undrstnd/design-system"
+import { fonts } from "@undrstnd/design-system/lib/fonts"
+import { Toolbar } from "@undrstnd/feature-flags/components/toolbar"
 
 type RootLayoutProperties = {
   readonly children: ReactNode

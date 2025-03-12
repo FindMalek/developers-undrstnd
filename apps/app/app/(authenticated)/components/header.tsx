@@ -6,9 +6,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@repo/design-system/components/ui/breadcrumb"
-import { Separator } from "@repo/design-system/components/ui/separator"
-import { SidebarTrigger } from "@repo/design-system/components/ui/sidebar"
+} from "@undrstnd/design-system/components/ui/breadcrumb"
+import { Separator } from "@undrstnd/design-system/components/ui/separator"
+import { SidebarTrigger } from "@undrstnd/design-system/components/ui/sidebar"
 
 type HeaderProps = {
   pages: string[]

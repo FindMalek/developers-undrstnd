@@ -3,7 +3,7 @@
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
 
 import * as React from "react"
-import { cn } from "@repo/design-system/lib/utils"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 const HoverCard = HoverCardPrimitive.Root
 

@@ -4,8 +4,8 @@ import {
   auth,
   clerkClient,
   type OrganizationMembership,
-} from "@repo/auth/server"
-import { tailwind } from "@repo/tailwind-config"
+} from "@undrstnd/auth/server"
+import { tailwind } from "@undrstnd/tailwind-config"
 
 const getName = (user: OrganizationMembership): string | undefined => {
   let name = user.publicUserData?.firstName

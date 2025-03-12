@@ -2,7 +2,7 @@ import "server-only"
 
 import { Svix } from "svix"
 
-import { auth } from "@repo/auth/server"
+import { auth } from "@undrstnd/auth/server"
 
 import { keys } from "../keys"
 

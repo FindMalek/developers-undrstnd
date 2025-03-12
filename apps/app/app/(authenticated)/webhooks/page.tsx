@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { webhooks } from "@repo/webhooks"
+import { webhooks } from "@undrstnd/webhooks"
 
 export const metadata = {
   title: "Webhooks",

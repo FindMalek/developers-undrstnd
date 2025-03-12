@@ -4,8 +4,8 @@ import { captureException } from "@sentry/nextjs"
 
 import { useEffect } from "react"
 import type NextError from "next/error"
-import { Button } from "@repo/design-system/components/ui/button"
-import { fonts } from "@repo/design-system/lib/fonts"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import { fonts } from "@undrstnd/design-system/lib/fonts"
 
 type GlobalErrorProperties = {
   readonly error: NextError & { digest?: string }

@@ -1,7 +1,7 @@
 import type { ThemeProviderProps } from "next-themes"
 
-import { AnalyticsProvider } from "@repo/analytics"
-import { AuthProvider } from "@repo/auth/provider"
+import { AnalyticsProvider } from "@undrstnd/analytics"
+import { AuthProvider } from "@undrstnd/auth/provider"
 
 import { Toaster } from "./components/ui/sonner"
 import { TooltipProvider } from "./components/ui/tooltip"

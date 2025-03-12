@@ -1,10 +1,9 @@
 "use server"
 
 import { headers } from "next/headers"
-import { analytics } from "@repo/analytics/posthog/server"
-import { database } from "@repo/database"
-import { log } from "@repo/observability/log"
-
+import { database } from "@undrstnd/database"
+import { log } from "@undrstnd/observability/log"
+import { analytics } from '@undrstnd/analytics/posthog/server';
 import { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {

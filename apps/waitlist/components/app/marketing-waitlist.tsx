@@ -1,11 +1,11 @@
 "use client"
 
 import { useFormStatus } from "react-dom"
-import { log } from "repo/observability/log"
+import { log } from "@undrstnd/observability/log"
 
 import { useState } from "react"
-import { Icons } from "@repo/design-system/components/shared/icons"
-import { toast } from "@repo/design-system/hooks/use-toast"
+import { Icons } from "@undrstnd/design-system/components/shared/icons"
+import { toast } from "@undrstnd/design-system/hooks/use-toast"
 
 import { Section } from "@/components/layout/section"
 

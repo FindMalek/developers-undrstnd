@@ -7,14 +7,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@repo/design-system/components/ui/avatar"
+} from "@undrstnd/design-system/components/ui/avatar"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
-} from "@repo/design-system/components/ui/carousel"
-import type { Dictionary } from "@repo/internationalization"
+} from "@undrstnd/design-system/components/ui/carousel"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type TestimonialsProps = {
   dictionary: Dictionary

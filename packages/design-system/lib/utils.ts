@@ -3,7 +3,7 @@ import type { ClassValue } from "clsx"
 import { toast } from "sonner"
 import { twMerge } from "tailwind-merge"
 
-import { parseError } from "@repo/observability/error"
+import { parseError } from "@undrstnd/observability/error"
 
 export const cn = (...inputs: ClassValue[]): string => twMerge(clsx(inputs))
 

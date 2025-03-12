@@ -2,7 +2,7 @@ import { CommandIcon } from "lucide-react"
 
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { ModeToggle } from "@repo/design-system/components/shared/mode-toggle"
+import { ModeToggle } from "@undrstnd/design-system/components/shared/mode-toggle"
 
 import { env } from "@/env"
 

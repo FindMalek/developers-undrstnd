@@ -1,3 +1,3 @@
-import { initializeSentry } from "@repo/observability/client"
+import { initializeSentry } from "@undrstnd/observability/client"
 
 initializeSentry()

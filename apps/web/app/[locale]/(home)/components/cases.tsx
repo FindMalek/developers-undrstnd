@@ -6,8 +6,8 @@ import {
   CarouselContent,
   CarouselItem,
   type CarouselApi,
-} from "@repo/design-system/components/ui/carousel"
-import type { Dictionary } from "@repo/internationalization"
+} from "@undrstnd/design-system/components/ui/carousel"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type CasesProps = {
   dictionary: Dictionary

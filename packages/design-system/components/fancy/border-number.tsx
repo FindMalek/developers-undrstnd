@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react"
-import { cn } from "@repo/design-system/lib/utils"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 interface BorderTextProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
-import { showBetaFeature } from "@repo/feature-flags"
-import { getDictionary } from "@repo/internationalization"
-import { createMetadata } from "@repo/seo/metadata"
+import { showBetaFeature } from "@undrstnd/feature-flags"
+import { getDictionary } from "@undrstnd/internationalization"
+import { createMetadata } from "@undrstnd/seo/metadata"
 
 import { Cases } from "./components/cases"
 import { CTA } from "./components/cta"

@@ -1,10 +1,12 @@
 {
-  "extends": ["@undrstnd/typescript-config/nextjs.json"],
+  "extends": [
+    "@undrstnd/typescript-config/nextjs.json",
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "repo/*": ["../../packages/*"]
+      "@undrstnd/*": ["../../packages/*"]
     }
   },
   "include": [
@@ -12,8 +14,6 @@
     "next.config.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "../../packages/ui/components/shared/tailwind-indicator.tsx",
-    "../../packages/ui/components/ui/aurora-text.tsx"
+    ".next/types/**/*.ts"
   ]
 }

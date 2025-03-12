@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { cn } from "@repo/design-system/lib/utils"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 export function AuroraText({
   className,

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { Toolbar } from "@repo/cms/components/toolbar"
+import { Toolbar } from "@undrstnd/cms/components/toolbar"
 
 type LegalLayoutProps = {
   children: ReactNode

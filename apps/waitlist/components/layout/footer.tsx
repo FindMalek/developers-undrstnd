@@ -1,5 +1,5 @@
-import { BorderText } from "@repo/design-system/components/fancy/border-number"
-import { Icons } from "@repo/design-system/components/shared/icons"
+import { BorderText } from "@undrstnd/design-system/components/fancy/border-number"
+import { Icons } from "@undrstnd/design-system/components/shared/icons"
 
 import { siteConfig } from "@/lib/config"
 
