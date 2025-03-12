@@ -9,15 +9,15 @@
  * @property createdAt - Timestamp when the waitlist entry was created. Type: DateTime. Defaults to current time.
  */
 model Waitlist {
-    id    String @id @default(cuid())
-    email String @unique
+  id    String @id @default(cuid())
+  email String @unique
 
-    country  String?
-    city     String?
-    ip       String?
-    joinedAt DateTime?
+  country  String?
+  city     String?
+  ip       String?
+  joinedAt DateTime?
 
-    createdAt DateTime @default(now())
+  createdAt DateTime @default(now())
 
-    @@map("waitlist")
+  @@map("waitlist")
 }

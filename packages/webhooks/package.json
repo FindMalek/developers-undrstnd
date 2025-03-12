@@ -1,5 +1,5 @@
 {
-  "name": "@repo/webhooks",
+  "name": "@undrstnd/webhooks",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,13 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@repo/auth": "workspace:*",
+    "@undrstnd/auth": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
     "svix": "^1.61.3",
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@undrstnd/typescript-config": "workspace:*",
     "typescript": "^5.8.2"
   }
 }

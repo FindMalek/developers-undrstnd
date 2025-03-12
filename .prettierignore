@@ -9,3 +9,7 @@ yarn.lock
 package-lock.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
+
+packages/database/generated/
+packages/database/prisma/generated/
+apps/email/.react-email/

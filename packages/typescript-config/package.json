@@ -1,5 +1,5 @@
 {
-  "name": "@repo/typescript-config",
+  "name": "@undrstnd/typescript-config",
   "version": "0.0.0",
   "private": true,
   "scripts": {
