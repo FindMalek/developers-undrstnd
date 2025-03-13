@@ -93,8 +93,7 @@ export async function addWaitlistAndSendEmail(
       }
     }
 
-    analytics.capture({
-      event: "Waitlist Email Added",
+    analytics.capture("Waitlist Email Added", {
       distinctId: email,
     })
 

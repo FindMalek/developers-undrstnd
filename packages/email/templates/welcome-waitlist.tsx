@@ -10,20 +10,14 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { Footer } from "../components/footer";
-import { GetStarted } from "../components/get-started";
-import { Logo } from "../components/logo";
-import { keys } from "../keys";
+import { Footer } from "@/components/footer";
+import { Logo } from "@/components/logo";
+import { keys } from "@/keys";
 
-interface Props {
-  fullName: string;
-}
+const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL;
 
-const baseUrl = keys().NEXT_PUBLIC_WAITLIST_URL;
-
-export const WelcomeEmail = ({ fullName = "Viktor Hofte" }: Props) => {
-  const firstName = fullName.split(" ").at(0);
-  const text = `Hi ${firstName}, Welcome to Midday! I'm Pontus, one of the founders. It's really important to us that you have a great experience ramping up.`;
+export function WelcomeWaitlist() {
+  const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`;
 
   return (
     <Html>
@@ -60,57 +54,47 @@ export const WelcomeEmail = ({ fullName = "Viktor Hofte" }: Props) => {
           >
             <Logo />
             <Heading className="text-[#121212] text-[21px] font-normal text-center p-0 my-[30px] mx-0">
-              Welcome to Midday
+              Welcome to Undrstnd Developers
             </Heading>
 
             <br />
 
-            <span className="font-medium">Hi {firstName},</span>
+            <span className="font-medium">Hi there,</span>
             <Text className="text-[#121212]">
-              Welcome to Midday! I'm Pontus, one of the founders.
+              Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs.
               <br />
               <br />
-              We built Midday from over 10 years of running our own businesses,
-              knowing firsthand the challenges that come with it. Midday is
-              self-funded and built together with our customers, and it’s
-              important to us that you know we’re here when you need us.
+              After 5 years of launching startups and projects, I founded Undrstnd Labs with a clear mission:
+              to create innovative AI-powered products for the developer community while maintaining a strong
+              commitment to open source. We believe in building tools that empower developers and make their
+              work more efficient and enjoyable.
               <br />
               <br />
-              Take your time to explore Midday at your own pace. If you ever
-              want to chat with us founders, you can schedule a time{" "}
+              We're excited to have you join our community. If you'd like to discuss ideas, provide feedback,
+              or just have a chat about development, you can schedule a time with me{" "}
               <Link
-                href="https://cal.com/pontus-midday/15min"
+                href="https://cal.com/findmalek"
                 className="text-[#121212] underline"
               >
                 here
               </Link>
               <br />
               <br />
-              If there’s anything we can do to help, just reply. We’re always
-              one message away.
+              Feel free to reach out anytime - we're committed to building this together with our community.
             </Text>
 
             <br />
 
-            <Img
-              src={`${baseUrl}/email/founders.jpeg`}
-              alt="Founders"
-              className="my-0 mx-auto block w-full"
-            />
-
-            <Text className="text-[#707070]">Best regards, founders</Text>
+            <Text className="text-[#707070]">Best regards,</Text>
+            <Text className="text-[#707070]">Malek Gara-Hellal</Text>
+            <Text className="text-[#707070]">Founder, Undrstnd Labs</Text>
 
             <Img
-              src={`${baseUrl}/email/signature.png`}
+              src={`${baseUrl}/signature.jpg`}
               alt="Signature"
-              className="block w-full w-[143px] h-[20px]"
+              className="block w-[143px] h-[20px]"
             />
-
             <br />
-            <br />
-
-            <GetStarted />
-
             <br />
 
             <Footer />
@@ -119,6 +103,4 @@ export const WelcomeEmail = ({ fullName = "Viktor Hofte" }: Props) => {
       </Tailwind>
     </Html>
   );
-};
-
-export default WelcomeEmail;
+}
