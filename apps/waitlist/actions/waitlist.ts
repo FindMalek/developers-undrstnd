@@ -1,11 +1,12 @@
 "use server"
 
 import { headers } from "next/headers"
-import { database } from "@undrstnd/database"
-import { log } from "@undrstnd/observability/log"
 import { analytics } from "@undrstnd/analytics/posthog/server"
-import { ResponseWaitlist } from "@/types"
+import { database } from "@undrstnd/database"
 import { resend } from "@undrstnd/email"
+import { log } from "@undrstnd/observability/log"
+
+import { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
   try {

@@ -1,11 +1,6 @@
-import {
-  Container,
-  Link,
-  Text,
-  Section,
-} from "@react-email/components";
+import { Container, Link, Section, Text } from "@react-email/components"
 
-import { siteConfig } from "@undrstnd/seo/config";
+import { siteConfig } from "@undrstnd/seo/config"
 
 export function Footer() {
   return (
@@ -13,9 +8,7 @@ export function Footer() {
       <Section className="my-5">
         <Container className="flex items-center justify-between">
           <Container>
-            <Text className="text-lg font-bold">
-              {siteConfig.name}
-            </Text>
+            <Text className="text-lg font-bold">{siteConfig.name}</Text>
           </Container>
 
           <Container className="flex space-x-4">
@@ -56,5 +49,5 @@ export function Footer() {
         </Text>
       </Section>
     </Container>
-  );
+  )
 }
