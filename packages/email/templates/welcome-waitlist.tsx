@@ -17,7 +17,9 @@ import { Logo } from "../components/logo"
 
 const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL
 
-export function WelcomeWaitlist() {
+interface IWelcomeWaitlistProps {}
+
+export const WelcomeWaitlist: React.FC<IWelcomeWaitlistProps> = () => {
   const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
 
   return (
@@ -110,3 +112,6 @@ export function WelcomeWaitlist() {
     </Html>
   )
 }
+
+// Add a default export for React Email preview
+export default WelcomeWaitlist

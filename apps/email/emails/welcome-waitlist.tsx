@@ -1,5 +1,5 @@
-import { WelcomeWaitlist } from "@undrstnd/email/templates/welcome-waitlist"
+import WelcomeWaitlist from "@undrstnd/email/templates/welcome-waitlist"
 
-const ExampleWelcomeWaitlistEmail = () => <WelcomeWaitlist />
-
-export default ExampleWelcomeWaitlistEmail
+export default function WelcomeWaitlistEmail() {
+    return <WelcomeWaitlist />
+}
