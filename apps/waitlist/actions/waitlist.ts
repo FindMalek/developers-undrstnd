@@ -84,7 +84,7 @@ export async function addWaitlistAndSendEmail(
 
     await addWaitlist(email)
 
-    const emailResult = await resend.sendWaitlistJoinedEmail([email])
+    const emailResult = await resend.sendWaitlistJoinedEmail({ email })
 
     log.info("Waitlist Email Added", { email })
     if (!emailResult.success) {
@@ -94,7 +94,8 @@ export async function addWaitlistAndSendEmail(
       }
     }
 
-    analytics.capture("Waitlist Email Added", {
+    analytics.capture({
+      event: "Waitlist Email Added",
       distinctId: email,
     })
 

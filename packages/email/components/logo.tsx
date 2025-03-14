@@ -1,4 +1,4 @@
-import { keys } from "@/keys"
+import { keys } from "../keys"
 import { Img, Section } from "@react-email/components"
 
 const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL

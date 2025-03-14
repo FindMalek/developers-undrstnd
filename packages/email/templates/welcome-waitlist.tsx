@@ -1,4 +1,4 @@
-import { keys } from "@/keys"
+import { keys } from "../keys"
 import {
   Body,
   Container,
@@ -12,8 +12,8 @@ import {
   Text,
 } from "@react-email/components"
 
-import { Footer } from "@/components/footer"
-import { Logo } from "@/components/logo"
+import { Footer } from "../components/footer"
+import { Logo } from "../components/logo"
 
 const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL
 
