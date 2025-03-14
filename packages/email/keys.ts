@@ -8,13 +8,11 @@ export const keys = () =>
       RESEND_TOKEN: z.string().min(1).startsWith("re_"),
     },
     client: {
-      NEXT_PUBLIC_WAITLIST_URL: z.string().url(),
       NEXT_PUBLIC_EMAIL_URL: z.string().url(),
     },
     runtimeEnv: {
       RESEND_FROM: process.env.RESEND_FROM,
       RESEND_TOKEN: process.env.RESEND_TOKEN,
-      NEXT_PUBLIC_WAITLIST_URL: process.env.NEXT_PUBLIC_WAITLIST_URL,
       NEXT_PUBLIC_EMAIL_URL: process.env.NEXT_PUBLIC_EMAIL_URL,
     },
   })
