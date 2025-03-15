@@ -38,7 +38,7 @@ export function Footer() {
               <Link
                 key={index}
                 href={link.url}
-                className="text-muted-foreground hover:text-foreground text-[15px]/normal font-medium transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
+                className="text-muted-foreground px-2 hover:text-foreground text-[15px]/normal font-medium transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
               >
                 {link.text}
               </Link>
@@ -53,7 +53,7 @@ export function Footer() {
         <Container>
           <BorderText
             text={site.footer.brandText}
-            className="overflow-hidden font-mono text-[clamp(3rem,15vw,10rem)] font-medium tracking-tighter"
+            className="overflow-hidden font-mono text-4xl font-medium tracking-tighter"
           />
         </Container>
       </Container>
