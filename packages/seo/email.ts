@@ -53,5 +53,3 @@ export const siteEmail = {
     brandText: "Undrstnd Labs",
   },
 }
-
-export const baseUrl = "https://email.undrstnd.dev"
