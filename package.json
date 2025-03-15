@@ -24,7 +24,10 @@
     "app:ai-engine:start": "cd apps/ai-engine && pnpm start",
     "app:waitlist:dev": "cd apps/waitlist && pnpm dev",
     "app:waitlist:build": "cd apps/waitlist && pnpm build",
-    "app:waitlist:start": "cd apps/waitlist && pnpm start"
+    "app:waitlist:start": "cd apps/waitlist && pnpm start",
+    "app:email:dev": "cd apps/email && pnpm dev",
+    "app:email:build": "cd apps/email && pnpm build",
+    "app:email:export": "cd apps/email && pnpm export"
   },
   "devDependencies": {
     "@auto-it/first-time-contributor": "^11.3.0",

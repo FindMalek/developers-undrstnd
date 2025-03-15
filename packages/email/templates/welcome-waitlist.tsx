@@ -1,4 +1,3 @@
-import { keys } from "../keys"
 import {
   Body,
   Container,
@@ -14,12 +13,11 @@ import {
 
 import { Footer } from "../components/footer"
 import { Logo } from "../components/logo"
+import { keys } from "../keys"
 
 const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL
 
-interface IWelcomeWaitlistProps {}
-
-export const WelcomeWaitlist: React.FC<IWelcomeWaitlistProps> = () => {
+export function WelcomeWaitlist() {
   const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
 
   return (
@@ -112,6 +110,3 @@ export const WelcomeWaitlist: React.FC<IWelcomeWaitlistProps> = () => {
     </Html>
   )
 }
-
-// Add a default export for React Email preview
-export default WelcomeWaitlist
