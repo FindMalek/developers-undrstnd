@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Page" ALTER COLUMN "name" DROP NOT NULL;
