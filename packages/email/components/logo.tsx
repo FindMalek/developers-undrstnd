@@ -1,6 +1,6 @@
 import { Img, Section } from "@react-email/components"
 
-import { BASE_URL } from "../lib/consts"
+const BASE_URL = "https://email.undrstnd.dev"
 
 export function Logo() {
   return (

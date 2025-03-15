@@ -13,7 +13,8 @@ import {
 
 import { Footer } from "../components/footer"
 import { Logo } from "../components/logo"
-import { BASE_URL } from "../lib/consts"
+
+const BASE_URL = "https://email.undrstnd.dev"
 
 export function WelcomeWaitlist() {
   const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
