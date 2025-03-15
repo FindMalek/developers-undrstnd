@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <Container className="px-7 py-5">
       <Section className="my-5">
-        <Container className="flex items-center justify-between">
+        {/* <Container className="flex items-center justify-between">
           <Container>
             <Text className="font-bold text-lg">{siteConfig.name}</Text>
           </Container>
@@ -22,10 +22,10 @@ export function Footer() {
               </Link>
             ))}
           </Container>
-        </Container>
+        </Container> */}
       </Section>
 
-      <Section>
+      {/* <Section>
         <Container>
           {siteConfig.footer.links.map((link, index) => (
             <Link
@@ -47,7 +47,10 @@ export function Footer() {
         <Text className="font-medium font-mono text-4xl tracking-tighter">
           {siteConfig.footer.brandText}
         </Text>
-      </Section>
+      </Section> */}
+      <Text>
+        <Link href="https://undrstnd.dev">Undrstnd Labs</Link>
+      </Text>
     </Container>
   );
 }
