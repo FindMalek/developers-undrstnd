@@ -13,9 +13,7 @@ import {
 
 import { Footer } from "../components/footer"
 import { Logo } from "../components/logo"
-import { keys } from "../keys"
-
-const baseUrl = keys().EMAIL_URL
+import { BASE_URL } from "../lib/consts"
 
 export function WelcomeWaitlist() {
   const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
@@ -96,7 +94,7 @@ export function WelcomeWaitlist() {
             <Text className="text-[#707070]">Founder, Undrstnd Labs</Text>
 
             <Img
-              src={`${baseUrl}/signature.jpg`}
+              src={`${BASE_URL}/signature.jpg`}
               alt="Signature"
               className="block h-[20px] w-[143px]"
             />

@@ -1,14 +1,12 @@
 import { Img, Section } from "@react-email/components"
 
-import { keys } from "../keys"
-
-const baseUrl = keys().EMAIL_URL
+import { BASE_URL } from "../lib/consts"
 
 export function Logo() {
   return (
     <Section className="mt-[32px]">
       <Img
-        src={`${baseUrl}/logo.png`}
+        src={`${BASE_URL}/logo.png`}
         width="45"
         height="45"
         alt="Undrstnd Developers"
