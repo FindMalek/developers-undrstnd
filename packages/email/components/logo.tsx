@@ -2,7 +2,7 @@ import { Img, Section } from "@react-email/components"
 
 import { keys } from "../keys"
 
-const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL
+const baseUrl = keys().EMAIL_URL
 
 export function Logo() {
   return (

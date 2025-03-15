@@ -15,7 +15,7 @@ import { Footer } from "../components/footer"
 import { Logo } from "../components/logo"
 import { keys } from "../keys"
 
-const baseUrl = keys().NEXT_PUBLIC_EMAIL_URL
+const baseUrl = keys().EMAIL_URL
 
 export function WelcomeWaitlist() {
   const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
