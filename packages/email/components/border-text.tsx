@@ -5,12 +5,16 @@ interface BorderTextProps {
     text: string
 }
 
-export function BorderText({ text, }: BorderTextProps) {
+export function BorderText({ text }: BorderTextProps) {
     return (
         <Tailwind>
-            <Container className="flex items-center justify-center">
+            <Container className="mx-auto my-4 text-center">
                 <Text
-                    className={"overflow-hidden font-mono text-[clamp(3rem,15vw,10rem)] font-medium tracking-tighter pointer-events-none relative text-center leading-none before:bg-gradient-to-b before:from-neutral-300 before:to-neutral-200/70 before:to-80% before:bg-clip-text before:text-transparent before:content-[var(--text)] after:absolute after:inset-0 after:bg-neutral-400/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-[var(--text)] after:[text-shadow:0_1px_0_white] dark:before:from-neutral-700/70 dark:before:to-neutral-800/30 dark:after:bg-neutral-600/70 dark:after:mix-blend-lighten dark:after:[text-shadow:0_1px_0_black]"}
+                    className="overflow-hidden font-mono text-6xl font-medium tracking-tighter"
+                    style={{
+                        color: "#6B7280", // Text color similar to the border text effect
+                        textShadow: "1px 1px 0px #E5E7EB, -1px -1px 0px #E5E7EB", // Simple border effect
+                    }}
                 >
                     {text}
                 </Text>

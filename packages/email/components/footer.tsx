@@ -15,7 +15,7 @@ import { siteEmail as site } from "@undrstnd/seo/email"
 export function Footer() {
   return (
     <Tailwind>
-      <Container className="container flex flex-col gap-y-5 rounded-lg px-7 py-5">
+      <Container className="w-full max-w-[600px] mx-auto flex flex-col gap-y-5 rounded-lg px-7 py-5">
         <Section className="flex items-center justify-between">
           <Container className="flex items-center gap-x-2">
             <Icons.logo className="h-5 w-5" />
