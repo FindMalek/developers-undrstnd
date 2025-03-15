@@ -1,1 +1,1 @@
-export { config as default } from "@undrstnd/tailwind-config/config"
+export { config as default } from '@undrstnd/tailwind-config/config';

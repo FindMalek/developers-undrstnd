@@ -1,21 +1,21 @@
-import type { Metadata } from "next"
+import type { Metadata } from 'next';
 
-import { siteConfig } from "@/lib/config"
+import { siteConfig } from '@/lib/config';
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL || siteConfig.url}${path}`
+  return `${process.env.NEXT_PUBLIC_APP_URL || siteConfig.url}${path}`;
 }
 
 export function constructMetadata({
   title = siteConfig.name,
   description = siteConfig.description,
-  image = absoluteUrl("/og"),
+  image = absoluteUrl('/og'),
   ...props
 }: {
-  title?: string
-  description?: string
-  image?: string
-  [key: string]: Metadata[keyof Metadata]
+  title?: string;
+  description?: string;
+  image?: string;
+  [key: string]: Metadata[keyof Metadata];
 }): Metadata {
   return {
     title: {
@@ -37,10 +37,10 @@ export function constructMetadata({
           alt: title,
         },
       ],
-      type: "website",
-      locale: "en_US",
+      type: 'website',
+      locale: 'en_US',
     },
-    icons: "/favicon.ico",
+    icons: '/favicon.ico',
     metadataBase: new URL(siteConfig.url),
     authors: [
       {
@@ -49,5 +49,5 @@ export function constructMetadata({
       },
     ],
     ...props,
-  }
+  };
 }

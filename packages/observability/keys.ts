@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-nextjs"
-import { z } from "zod"
+import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 export const keys = () =>
   createEnv({
@@ -22,4 +22,4 @@ export const keys = () =>
       SENTRY_PROJECT: process.env.SENTRY_PROJECT,
       NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
     },
-  })
+  });

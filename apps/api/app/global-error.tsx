@@ -1,21 +1,21 @@
-"use client"
+'use client';
 
-import { captureException } from "@sentry/nextjs"
+import { captureException } from '@sentry/nextjs';
 
-import { useEffect } from "react"
-import type NextError from "next/error"
-import { Button } from "@undrstnd/design-system/components/ui/button"
-import { fonts } from "@undrstnd/design-system/lib/fonts"
+import { Button } from '@undrstnd/design-system/components/ui/button';
+import { fonts } from '@undrstnd/design-system/lib/fonts';
+import type NextError from 'next/error';
+import { useEffect } from 'react';
 
 type GlobalErrorProperties = {
-  readonly error: NextError & { digest?: string }
-  readonly reset: () => void
-}
+  readonly error: NextError & { digest?: string };
+  readonly reset: () => void;
+};
 
 const GlobalError = ({ error, reset }: GlobalErrorProperties) => {
   useEffect(() => {
-    captureException(error)
-  }, [error])
+    captureException(error);
+  }, [error]);
 
   return (
     <html lang="en" className={fonts}>
@@ -24,7 +24,7 @@ const GlobalError = ({ error, reset }: GlobalErrorProperties) => {
         <Button onClick={() => reset()}>Try again</Button>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default GlobalError
+export default GlobalError;

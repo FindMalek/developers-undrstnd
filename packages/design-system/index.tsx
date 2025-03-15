@@ -1,13 +1,13 @@
-import type { ThemeProviderProps } from "next-themes"
+import type { ThemeProviderProps } from 'next-themes';
 
-import { AnalyticsProvider } from "@undrstnd/analytics"
-import { AuthProvider } from "@undrstnd/auth/provider"
+import { AnalyticsProvider } from '@undrstnd/analytics';
+import { AuthProvider } from '@undrstnd/auth/provider';
 
-import { Toaster } from "./components/ui/sonner"
-import { TooltipProvider } from "./components/ui/tooltip"
-import { ThemeProvider } from "./providers/theme"
+import { Toaster } from './components/ui/sonner';
+import { TooltipProvider } from './components/ui/tooltip';
+import { ThemeProvider } from './providers/theme';
 
-type DesignSystemProviderProperties = ThemeProviderProps
+type DesignSystemProviderProperties = ThemeProviderProps;
 
 export const DesignSystemProvider = ({
   children,
@@ -21,4 +21,4 @@ export const DesignSystemProvider = ({
       </AnalyticsProvider>
     </AuthProvider>
   </ThemeProvider>
-)
+);

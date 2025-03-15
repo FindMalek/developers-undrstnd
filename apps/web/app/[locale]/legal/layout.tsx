@@ -1,15 +1,15 @@
-import type { ReactNode } from "react"
-import { Toolbar } from "@undrstnd/cms/components/toolbar"
+import { Toolbar } from '@undrstnd/cms/components/toolbar';
+import type { ReactNode } from 'react';
 
 type LegalLayoutProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const LegalLayout = ({ children }: LegalLayoutProps) => (
   <>
     {children}
     <Toolbar />
   </>
-)
+);
 
-export default LegalLayout
+export default LegalLayout;

@@ -1,13 +1,13 @@
-"use client"
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion } from 'framer-motion';
 
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { companies } from "@/lib/config"
+import { companies } from '@/lib/config';
 
-import { Section } from "@/components/layout/section"
+import { Section } from '@/components/layout/section';
 
 export function MarketingLogos() {
   return (
@@ -18,7 +18,7 @@ export function MarketingLogos() {
             <Link
               key={idx}
               href={item.href}
-              className="group flex items-center justify-center border-r border-t p-4 last:border-r-0 sm:last:border-r [&:nth-child(-n+2)]:border-t-0 sm:[&:nth-child(-n+3)]:border-t-0 md:[&:nth-child(-n+6)]:border-t-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r md:[&:nth-child(3)]:border-r sm:[&:nth-child(3n)]:border-r-0 md:[&:nth-child(3n)]:border-r md:[&:nth-child(6n)]:border-r-0"
+              className="group flex items-center justify-center border-t border-r p-4 last:border-r-0 sm:last:border-r [&:nth-child(-n+2)]:border-t-0 sm:[&:nth-child(-n+3)]:border-t-0 md:[&:nth-child(-n+6)]:border-t-0 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r md:[&:nth-child(3)]:border-r sm:[&:nth-child(3n)]:border-r-0 md:[&:nth-child(3n)]:border-r md:[&:nth-child(6n)]:border-r-0"
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -28,7 +28,7 @@ export function MarketingLogos() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
                     duration: 0.5,
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                     delay: Math.random() * 0.5,
                   }}
                 >
@@ -47,5 +47,5 @@ export function MarketingLogos() {
         </div>
       </div>
     </Section>
-  )
+  );
 }

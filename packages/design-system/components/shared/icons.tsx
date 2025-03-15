@@ -10,18 +10,18 @@ import {
   PlugIcon,
   UsersIcon,
   ZapIcon,
-} from "lucide-react"
+} from 'lucide-react';
 import {
   FaDiscord,
   FaGithub,
   FaInstagram,
   FaLinkedin,
   FaXTwitter,
-} from "react-icons/fa6"
+} from 'react-icons/fa6';
 
-import type React from "react"
+import type React from 'react';
 
-type IconProps = React.HTMLAttributes<SVGElement>
+type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons: { [key: string]: React.FC<IconProps> } = {
   logo: (props: IconProps) => (
@@ -157,4 +157,4 @@ export const Icons: { [key: string]: React.FC<IconProps> } = {
   linkedIn: FaLinkedin,
   chevronRight: ChevronRight,
   check: CheckIcon,
-}
+};

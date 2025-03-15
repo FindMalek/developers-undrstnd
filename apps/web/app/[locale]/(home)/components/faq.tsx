@@ -1,18 +1,18 @@
-import { PhoneCall } from "lucide-react"
+import { PhoneCall } from 'lucide-react';
 
-import Link from "next/link"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@undrstnd/design-system/components/ui/accordion"
-import { Button } from "@undrstnd/design-system/components/ui/button"
-import type { Dictionary } from "@undrstnd/internationalization"
+} from '@undrstnd/design-system/components/ui/accordion';
+import { Button } from '@undrstnd/design-system/components/ui/button';
+import type { Dictionary } from '@undrstnd/internationalization';
+import Link from 'next/link';
 
 type FAQProps = {
-  dictionary: Dictionary
-}
+  dictionary: Dictionary;
+};
 
 export const FAQ = ({ dictionary }: FAQProps) => (
   <div className="w-full py-20 lg:py-40">
@@ -21,17 +21,17 @@ export const FAQ = ({ dictionary }: FAQProps) => (
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <h4 className="font-regular max-w-xl text-left text-3xl tracking-tighter md:text-5xl">
+              <h4 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
                 {dictionary.web.home.faq.title}
               </h4>
-              <p className="text-muted-foreground max-w-xl text-left text-lg leading-relaxed tracking-tight lg:max-w-lg">
+              <p className="max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg">
                 {dictionary.web.home.faq.description}
               </p>
             </div>
             <div className="">
               <Button className="gap-4" variant="outline" asChild>
                 <Link href="/contact">
-                  {dictionary.web.home.faq.cta}{" "}
+                  {dictionary.web.home.faq.cta}{' '}
                   <PhoneCall className="h-4 w-4" />
                 </Link>
               </Button>
@@ -57,4 +57,4 @@ export const FAQ = ({ dictionary }: FAQProps) => (
       </div>
     </div>
   </div>
-)
+);

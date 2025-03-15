@@ -1,6 +1,6 @@
-import { MarketingHero } from "@/components/app/marketing-hero"
-import { MarketingLogos } from "@/components/app/marketing-logos"
-import { MarketingWaitlist } from "@/components/app/marketing-waitlist"
+import { MarketingHero } from '@/components/app/marketing-hero';
+import { MarketingLogos } from '@/components/app/marketing-logos';
+import { MarketingWaitlist } from '@/components/app/marketing-waitlist';
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
       <MarketingLogos />
       <MarketingWaitlist />
     </main>
-  )
+  );
 }

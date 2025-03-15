@@ -1,6 +1,6 @@
-import { withVercelToolbar } from "@vercel/toolbar/plugins/next"
+import { withVercelToolbar } from '@vercel/toolbar/plugins/next';
 
-import { keys } from "../keys"
+import { keys } from '../keys';
 
 export const withToolbar = (config: object) =>
-  keys().FLAGS_SECRET ? withVercelToolbar()(config) : config
+  keys().FLAGS_SECRET ? withVercelToolbar()(config) : config;

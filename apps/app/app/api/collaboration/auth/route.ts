@@ -1,6 +1,6 @@
-import { auth, currentUser } from "@undrstnd/auth/server"
-import { authenticate } from "@undrstnd/collaboration/auth"
-import { tailwind } from "@undrstnd/tailwind-config"
+import { auth, currentUser } from '@undrstnd/auth/server';
+import { authenticate } from '@undrstnd/collaboration/auth';
+import { tailwind } from '@undrstnd/tailwind-config';
 
 const COLORS = [
   tailwind.theme.colors.red[500],
@@ -20,14 +20,14 @@ const COLORS = [
   tailwind.theme.colors.fuchsia[500],
   tailwind.theme.colors.pink[500],
   tailwind.theme.colors.rose[500],
-]
+];
 
 export const POST = async () => {
-  const user = await currentUser()
-  const { orgId } = await auth()
+  const user = await currentUser();
+  const { orgId } = await auth();
 
   if (!user || !orgId) {
-    return new Response("Unauthorized", { status: 401 })
+    return new Response('Unauthorized', { status: 401 });
   }
 
   return authenticate({
@@ -39,5 +39,5 @@ export const POST = async () => {
       avatar: user.imageUrl ?? undefined,
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
     },
-  })
-}
+  });
+};

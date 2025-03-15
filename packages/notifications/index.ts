@@ -1,7 +1,7 @@
-import { Knock } from "@knocklabs/node"
+import { Knock } from '@knocklabs/node';
 
-import { keys } from "./keys"
+import { keys } from './keys';
 
-const key = keys().KNOCK_SECRET_API_KEY
+const key = keys().KNOCK_SECRET_API_KEY;
 
-export const notifications = new Knock(key)
+export const notifications = new Knock(key);
