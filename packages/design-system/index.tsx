@@ -7,18 +7,28 @@ import { Toaster } from "./components/ui/sonner"
 import { TooltipProvider } from "./components/ui/tooltip"
 import { ThemeProvider } from "./providers/theme"
 
-type DesignSystemProviderProperties = ThemeProviderProps
+type DesignSystemProviderProperties = ThemeProviderProps & {
+  auth?: boolean
+}
 
 export const DesignSystemProvider = ({
+  auth = true,
   children,
   ...properties
 }: DesignSystemProviderProperties) => (
   <ThemeProvider {...properties}>
-    <AuthProvider>
+    {auth ? (
+      <AuthProvider>
+        <AnalyticsProvider>
+        <TooltipProvider>{children}</TooltipProvider>
+          <Toaster />
+        </AnalyticsProvider>
+      </AuthProvider>
+    ) : (
       <AnalyticsProvider>
         <TooltipProvider>{children}</TooltipProvider>
         <Toaster />
       </AnalyticsProvider>
-    </AuthProvider>
+    )}
   </ThemeProvider>
 )

@@ -9,12 +9,13 @@ import { fonts } from "@undrstnd/design-system/lib/fonts"
 import { cn } from "@undrstnd/design-system/lib/utils"
 
 import { site } from "@/lib/config"
-import { constructMetadata } from "@/lib/utils"
-
+import { createMetadata } from '@undrstnd/seo/metadata';
 import { Footer } from "@/components/layout/footer"
 
-export const metadata: Metadata = constructMetadata({
+export const metadata: Metadata = createMetadata({
   title: `${site.name} | ${site.description}`,
+  description: site.description,
+  image: '/og.png'
 })
 
 export const viewport: Viewport = {
@@ -36,7 +37,7 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
         "bg-background mx-auto min-h-screen w-full scroll-smooth font-sans antialiased"
       )}
     >
-      <DesignSystemProvider>
+      <DesignSystemProvider auth={false}>
         {children}
         <Footer />
         {process.env.NODE_ENV === "development" && <ModeToggle />}
