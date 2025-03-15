@@ -25,13 +25,6 @@ const securityHeaders = env.FLAGS_SECRET
   : noseconeMiddleware(noseconeOptions)
 
 const middleware = async (request: NextRequest) => {
-  const i18nResponse = internationalizationMiddleware(
-    request as unknown as NextRequest
-  )
-  if (i18nResponse) {
-    return i18nResponse
-  }
-
   if (!env.ARCJET_KEY) {
     return securityHeaders()
   }
