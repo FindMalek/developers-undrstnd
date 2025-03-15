@@ -37,8 +37,8 @@ export function Footer() {
           </Container>
         </Section>
 
-        <Section className="flex flex-col justify-between gap-y-5 md:flex-row md:items-center">
-          <Container className="text-muted-foreground flex flex-col gap-x-5 gap-y-2 md:flex-row md:items-center">
+        <Section className="flex flex-col justify-between gap-y-5">
+          <Container className="text-muted-foreground flex flex-col gap-x-5 gap-y-2">
             {site.footer.links.map((link, index) => (
               <Link
                 key={index}
