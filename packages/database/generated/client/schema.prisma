@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  output          = "../generated/client"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+/**
+ * Represents a waitlist.
+ * @property id - Unique identifier for the waitlist entry. Type: String. Generated using cuid().
+ * @property email - Email address of the user. Type: String. Must be unique.
+ * @property country - Country of the user. Type: String. Optional.
+ * @property city - City of the user. Type: String. Optional.
+ * @property ip - IP address of the user. Type: String. Optional.
+ * @property joinedAt - Timestamp when the user joined the waitlist. Type: DateTime. Optional.
+ * @property createdAt - Timestamp when the waitlist entry was created. Type: DateTime. Defaults to current time.
+ */
+model Waitlist {
+  id    String @id @default(cuid())
+  email String @unique
+
+  country  String?
+  city     String?
+  ip       String?
+  joinedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@map("waitlist")
+}
+
+// This is a stub model.
+// Delete it and add your own Prisma models.
+model Page {
+  id   Int    @id @default(autoincrement())
+  name String
+}

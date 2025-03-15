@@ -7,15 +7,16 @@ import { TailwindIndicator } from "@undrstnd/design-system/components/layout/tai
 import { ModeToggle } from "@undrstnd/design-system/components/shared/mode-toggle"
 import { fonts } from "@undrstnd/design-system/lib/fonts"
 import { cn } from "@undrstnd/design-system/lib/utils"
+import { createMetadata } from "@undrstnd/seo/metadata"
 
 import { site } from "@/lib/config"
-import { createMetadata } from '@undrstnd/seo/metadata';
+
 import { Footer } from "@/components/layout/footer"
 
 export const metadata: Metadata = createMetadata({
   title: `${site.name} | ${site.description}`,
   description: site.description,
-  image: '/og.png'
+  image: "/og.png",
 })
 
 export const viewport: Viewport = {

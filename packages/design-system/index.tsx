@@ -20,7 +20,7 @@ export const DesignSystemProvider = ({
     {auth ? (
       <AuthProvider>
         <AnalyticsProvider>
-        <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>{children}</TooltipProvider>
           <Toaster />
         </AnalyticsProvider>
       </AuthProvider>
