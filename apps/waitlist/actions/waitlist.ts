@@ -5,6 +5,7 @@ import { analytics } from "@undrstnd/analytics/posthog/server"
 import { database } from "@undrstnd/database"
 import { resend } from "@undrstnd/email"
 import { log } from "@undrstnd/observability/log"
+import { parseError } from "@undrstnd/observability/error"
 
 import type { ResponseWaitlist } from "@/types"
 
@@ -66,7 +67,6 @@ export async function addWaitlistAndSendEmail(
   email: string
 ): Promise<ResponseWaitlist> {
   log.info("Adding waitlist and sending email", { email })
-  log.error("Error", { error: "test" })
 
   try {
     const exists = await isOnWaitlist(email)
@@ -88,6 +88,8 @@ export async function addWaitlistAndSendEmail(
 
     log.info("Waitlist Email Added", { email })
     if (!emailResult.success) {
+      const error = parseError(emailResult.error)
+      log.error("Failed to send waitlist joined email", { error })
       return {
         success: true,
         warning: "Added to waitlist but failed to send email",
@@ -103,7 +105,8 @@ export async function addWaitlistAndSendEmail(
       success: true,
     }
   } catch (error) {
-    log.error("Failed to add to waitlist", { error })
+    const errorMessage = parseError(error)
+    log.error("Failed to add to waitlist", { error: errorMessage })
     return {
       success: false,
       error: "Failed to add to waitlist",
