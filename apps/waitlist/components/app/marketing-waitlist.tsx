@@ -50,10 +50,12 @@ async function handleWaitlistSubmission(
       variant: "destructive",
     })
   } else if (result.warning) {
+    log.warn("Warning adding to waitlist", { email, warning: result.warning })
     toast({
       title: result.warning,
     })
   } else {
+    log.info("Successfully added to waitlist", { email })
     toast({
       title: "Successfully joined the waitlist!",
     })
@@ -67,10 +69,10 @@ export function MarketingWaitlist() {
     <Section id="cta">
       <div className="relative overflow-hidden border p-6 md:p-12 lg:p-16">
         <div className="max-w-3xl">
-          <p className="text-foreground mb-4 text-2xl md:text-3xl font-medium">
+          <p className="text-foreground text-2xl md:text-3xl font-medium">
             Ready to supercharge your development with AI?
           </p>
-          <p className="text-foreground mb-8 max-w-3xl text-base md:text-lg">
+          <p className="text-muted-foreground mb-8 max-w-3xl text-base md:text-lg">
             Join the waitlist to get early access to Undrstnd Developers API.
           </p>
 
@@ -93,7 +95,7 @@ export function MarketingWaitlist() {
                     autoComplete="email"
                     aria-label="Email address"
                     required
-                    className="border-border font-sm text-primary h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
+                    className="border-border font-sm h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
                   />
                   <SubmitButton />
                 </fieldset>

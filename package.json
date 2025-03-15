@@ -15,7 +15,7 @@
     "clean": "git clean -xdf node_modules",
     "db:format": "cd packages/database && npx prisma format",
     "db:generate": "cd packages/database && npx prisma generate",
-    "db:studio": "cd packages/studio && pnpm dev",
+    "db:studio": "cd packages/database && pnpm run studio",
     "db:pull": "cd packages/database && npx prisma db pull",
     "db:push": "cd packages/database && npx prisma db push",
     "db:migrate": "cd packages/database && pnpm prisma migrate dev && pnpm -w run db:push",
