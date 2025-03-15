@@ -92,8 +92,7 @@ export const WelcomeWaitlist = () => {
             <br />
 
             <Text className="text-[#707070]">
-              Best regards,
-              Malek Gara-Hellal - Founder, Undrstnd Labs
+              Best regards, Malek Gara-Hellal - Founder, Undrstnd Labs
             </Text>
 
             <Img

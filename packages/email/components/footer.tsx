@@ -3,23 +3,25 @@ import {
   Img,
   Link,
   Section,
-  Text,
   Tailwind,
+  Text,
 } from "@react-email/components"
 
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
-import { BorderText } from "./border-text"
-
 import { siteEmail as site } from "@undrstnd/seo/email"
+
+import { BorderText } from "./border-text"
 
 export function Footer() {
   return (
     <Tailwind>
-      <Container className="w-full max-w-[600px] mx-auto flex flex-col gap-y-5 rounded-lg px-7 py-5">
+      <Container className="mx-auto flex w-full max-w-[600px] flex-col gap-y-5 rounded-lg px-7 py-5">
         <Section className="flex items-center justify-between">
           <Container className="flex items-center gap-x-2">
             <Icons.logo className="h-5 w-5" />
-            <Text className="text-foreground text-lg font-bold">{site.name}</Text>
+            <Text className="text-foreground text-lg font-bold">
+              {site.name}
+            </Text>
           </Container>
 
           <Container className="flex gap-x-2">
@@ -49,9 +51,7 @@ export function Footer() {
           </Container>
         </Section>
 
-        <BorderText
-          text={site.footer.brandText}
-        />
+        <BorderText text={site.footer.brandText} />
       </Container>
     </Tailwind>
   )
