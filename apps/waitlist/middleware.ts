@@ -3,7 +3,6 @@ import {
   type NextMiddleware,
   type NextRequest,
 } from "next/server"
-import { authMiddleware } from "@undrstnd/auth/middleware"
 import { internationalizationMiddleware } from "@undrstnd/internationalization/middleware"
 import { parseError } from "@undrstnd/observability/error"
 import { secure } from "@undrstnd/security"
@@ -25,7 +24,7 @@ const securityHeaders = env.FLAGS_SECRET
   ? noseconeMiddleware(noseconeOptionsWithToolbar)
   : noseconeMiddleware(noseconeOptions)
 
-const middleware = authMiddleware(async (_auth, request) => {
+const middleware = async (request: NextRequest) => {
   const i18nResponse = internationalizationMiddleware(
     request as unknown as NextRequest
   )
@@ -54,6 +53,6 @@ const middleware = authMiddleware(async (_auth, request) => {
 
     return NextResponse.json({ error: message }, { status: 403 })
   }
-}) as unknown as NextMiddleware
+}
 
 export default middleware
