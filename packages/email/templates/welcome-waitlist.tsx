@@ -91,14 +91,15 @@ export const WelcomeWaitlist = () => {
 
             <br />
 
-            <Text className="text-[#707070]">Best regards,</Text>
-            <Text className="text-[#707070]">Malek Gara-Hellal</Text>
-            <Text className="text-[#707070]">Founder, Undrstnd Labs</Text>
+            <Text className="text-[#707070]">
+              Best regards,
+              Malek Gara-Hellal - Founder, Undrstnd Labs
+            </Text>
 
             <Img
               src={`${baseUrl}/signature.jpg`}
               alt="Signature"
-              className="block h-[20px] w-[143px]"
+              className="h-[80px] w-[143px]"
             />
             <br />
             <br />
