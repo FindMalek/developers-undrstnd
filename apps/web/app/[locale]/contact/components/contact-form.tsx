@@ -1,27 +1,27 @@
-'use client';
+"use client"
 
-import { format } from 'date-fns';
-import { CalendarIcon, Check, MoveRight } from 'lucide-react';
+import { format } from "date-fns"
+import { CalendarIcon, Check, MoveRight } from "lucide-react"
 
-import { Button } from '@undrstnd/design-system/components/ui/button';
-import { Calendar } from '@undrstnd/design-system/components/ui/calendar';
-import { Input } from '@undrstnd/design-system/components/ui/input';
-import { Label } from '@undrstnd/design-system/components/ui/label';
+import { useState } from "react"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import { Calendar } from "@undrstnd/design-system/components/ui/calendar"
+import { Input } from "@undrstnd/design-system/components/ui/input"
+import { Label } from "@undrstnd/design-system/components/ui/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@undrstnd/design-system/components/ui/popover';
-import { cn } from '@undrstnd/design-system/lib/utils';
-import type { Dictionary } from '@undrstnd/internationalization';
-import { useState } from 'react';
+} from "@undrstnd/design-system/components/ui/popover"
+import { cn } from "@undrstnd/design-system/lib/utils"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type ContactFormProps = {
-  dictionary: Dictionary;
-};
+  dictionary: Dictionary
+}
 
 export const ContactForm = ({ dictionary }: ContactFormProps) => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date())
 
   return (
     <div className="w-full py-20 lg:py-40">
@@ -30,10 +30,10 @@ export const ContactForm = ({ dictionary }: ContactFormProps) => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
+                <h4 className="font-regular max-w-xl text-left text-3xl tracking-tighter md:text-5xl">
                   {dictionary.web.contact.meta.title}
                 </h4>
-                <p className="max-w-sm text-left text-lg text-muted-foreground leading-relaxed tracking-tight">
+                <p className="text-muted-foreground max-w-sm text-left text-lg leading-relaxed tracking-tight">
                   {dictionary.web.contact.meta.description}
                 </p>
               </div>
@@ -47,7 +47,7 @@ export const ContactForm = ({ dictionary }: ContactFormProps) => {
                 className="flex flex-row items-start gap-6 text-left"
                 key={index}
               >
-                <Check className="mt-2 h-4 w-4 text-primary" />
+                <Check className="text-primary mt-2 h-4 w-4" />
                 <div className="flex flex-col gap-1">
                   <p>{benefit.title}</p>
                   <p className="text-muted-foreground text-sm">
@@ -70,13 +70,13 @@ export const ContactForm = ({ dictionary }: ContactFormProps) => {
                     <Button
                       variant="outline"
                       className={cn(
-                        'w-full max-w-sm justify-start text-left font-normal',
-                        !date && 'text-muted-foreground'
+                        "w-full max-w-sm justify-start text-left font-normal",
+                        !date && "text-muted-foreground"
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
                       {date ? (
-                        format(date, 'PPP')
+                        format(date, "PPP")
                       ) : (
                         <span>{dictionary.web.contact.hero.form.date}</span>
                       )}
@@ -112,7 +112,7 @@ export const ContactForm = ({ dictionary }: ContactFormProps) => {
               </div>
 
               <Button className="w-full gap-4">
-                {dictionary.web.contact.hero.form.cta}{' '}
+                {dictionary.web.contact.hero.form.cta}{" "}
                 <MoveRight className="h-4 w-4" />
               </Button>
             </div>
@@ -120,5 +120,5 @@ export const ContactForm = ({ dictionary }: ContactFormProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,30 +1,30 @@
-import { auth, currentUser } from '@undrstnd/auth/server';
-import { SidebarProvider } from '@undrstnd/design-system/components/ui/sidebar';
-import { showBetaFeature } from '@undrstnd/feature-flags';
-import { NotificationsProvider } from '@undrstnd/notifications/components/provider';
-import { secure } from '@undrstnd/security';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react"
+import { auth, currentUser } from "@undrstnd/auth/server"
+import { SidebarProvider } from "@undrstnd/design-system/components/ui/sidebar"
+import { showBetaFeature } from "@undrstnd/feature-flags"
+import { NotificationsProvider } from "@undrstnd/notifications/components/provider"
+import { secure } from "@undrstnd/security"
 
-import { env } from '@/env';
+import { env } from "@/env"
 
-import { PostHogIdentifier } from './components/posthog-identifier';
-import { GlobalSidebar } from './components/sidebar';
+import { PostHogIdentifier } from "./components/posthog-identifier"
+import { GlobalSidebar } from "./components/sidebar"
 
 type AppLayoutProperties = {
-  readonly children: ReactNode;
-};
+  readonly children: ReactNode
+}
 
 const AppLayout = async ({ children }: AppLayoutProperties) => {
   if (env.ARCJET_KEY) {
-    await secure(['CATEGORY:PREVIEW']);
+    await secure(["CATEGORY:PREVIEW"])
   }
 
-  const user = await currentUser();
-  const { redirectToSignIn } = await auth();
-  const betaFeature = await showBetaFeature();
+  const user = await currentUser()
+  const { redirectToSignIn } = await auth()
+  const betaFeature = await showBetaFeature()
 
   if (!user) {
-    return redirectToSignIn();
+    return redirectToSignIn()
   }
 
   return (
@@ -32,7 +32,7 @@ const AppLayout = async ({ children }: AppLayoutProperties) => {
       <SidebarProvider>
         <GlobalSidebar>
           {betaFeature && (
-            <div className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
+            <div className="bg-success text-success-foreground m-4 rounded-full p-1.5 text-center text-sm">
               Beta feature now available
             </div>
           )}
@@ -41,7 +41,7 @@ const AppLayout = async ({ children }: AppLayoutProperties) => {
         <PostHogIdentifier />
       </SidebarProvider>
     </NotificationsProvider>
-  );
-};
+  )
+}
 
-export default AppLayout;
+export default AppLayout

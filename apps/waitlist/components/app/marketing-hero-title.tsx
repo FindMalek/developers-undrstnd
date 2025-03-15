@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion"
 
-import { AuroraText } from '@undrstnd/design-system/components/fancy/aurora-text';
+import { AuroraText } from "@undrstnd/design-system/components/fancy/aurora-text"
 
-import { ease, siteConfig } from '@/lib/config';
+import { ease, site } from "@/lib/config"
 
 export function MarketingHeroTitle() {
   return (
     <div className="flex w-full max-w-3xl flex-col overflow-hidden pt-8">
       <motion.h1
-        className="text-left font-semibold text-4xl text-foreground leading-tighter tracking-tighter sm:text-5xl md:text-6xl"
-        initial={{ filter: 'blur(10px)', opacity: 0, y: 50 }}
-        animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
+        className="text-foreground leading-tighter text-left text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl"
+        initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
+        animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
         transition={{
           duration: 1,
           ease,
@@ -27,13 +27,11 @@ export function MarketingHeroTitle() {
             ease,
           }}
         >
-          <AuroraText className="leading-normal">
-            {siteConfig.hero.title}
-          </AuroraText>
+          <AuroraText className="leading-normal">{site.hero.title}</AuroraText>
         </motion.span>
       </motion.h1>
       <motion.p
-        className="max-w-xl text-balance text-left text-muted-foreground leading-normal sm:text-lg sm:leading-normal"
+        className="text-muted-foreground max-w-xl text-balance text-left leading-normal sm:text-lg sm:leading-normal"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -42,8 +40,8 @@ export function MarketingHeroTitle() {
           ease,
         }}
       >
-        {siteConfig.hero.description}
+        {site.hero.description}
       </motion.p>
     </div>
-  );
+  )
 }

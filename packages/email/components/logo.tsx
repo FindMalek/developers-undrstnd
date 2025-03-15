@@ -1,6 +1,6 @@
-import { Img, Section } from '@react-email/components';
+import { Img, Section } from "@react-email/components"
 
-const baseUrl = 'https://email.undrstnd.dev';
+import { baseUrl } from "@undrstnd/seo/email"
 
 export function Logo() {
   return (
@@ -13,5 +13,5 @@ export function Logo() {
         className="mx-auto my-0 block"
       />
     </Section>
-  );
+  )
 }

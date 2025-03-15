@@ -9,15 +9,15 @@ import {
   Preview,
   Tailwind,
   Text,
-} from '@react-email/components';
+} from "@react-email/components"
 
-import { Footer } from '../components/footer';
-import { Logo } from '../components/logo';
+import { baseUrl } from "@undrstnd/seo/email"
 
-const baseUrl = 'https://email.undrstnd.dev';
+import { Footer } from "../components/footer"
+import { Logo } from "../components/logo"
 
 export const WelcomeWaitlist = () => {
-  const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`;
+  const text = `Hi there! Welcome to Undrstnd Developers! I'm Malek, founder of Undrstnd Labs. We're excited to have you join our community of innovative developers.`
 
   return (
     <Html>
@@ -27,8 +27,8 @@ export const WelcomeWaitlist = () => {
             fontFamily="Geist"
             fallbackFontFamily="Helvetica"
             webFont={{
-              url: 'https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2',
-              format: 'woff2',
+              url: "https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-400-normal.woff2",
+              format: "woff2",
             }}
             fontWeight={400}
             fontStyle="normal"
@@ -38,8 +38,8 @@ export const WelcomeWaitlist = () => {
             fontFamily="Geist"
             fallbackFontFamily="Helvetica"
             webFont={{
-              url: 'https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2',
-              format: 'woff2',
+              url: "https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.1/files/geist-sans-latin-500-normal.woff2",
+              format: "woff2",
             }}
             fontWeight={500}
             fontStyle="normal"
@@ -50,10 +50,10 @@ export const WelcomeWaitlist = () => {
         <Body className="mx-auto my-auto bg-[#fff] font-sans">
           <Container
             className="mx-auto my-[40px] max-w-[600px] border-transparent p-[20px] md:border-[#E8E7E1]"
-            style={{ borderStyle: 'solid', borderWidth: 1 }}
+            style={{ borderStyle: "solid", borderWidth: 1 }}
           >
-            {/* <Logo />
-            <Heading className="mx-0 my-[30px] p-0 text-center font-normal text-[#121212] text-[21px]">
+            <Logo />
+            <Heading className="mx-0 my-[30px] p-0 text-center text-[21px] font-normal text-[#121212]">
               Welcome to Undrstnd Developers
             </Heading>
 
@@ -75,7 +75,7 @@ export const WelcomeWaitlist = () => {
               <br />
               We're excited to have you join our community. If you'd like to
               discuss ideas, provide feedback, or just have a chat about
-              development, you can schedule a time with me{' '}
+              development, you can schedule a time with me{" "}
               <Link
                 href="https://cal.com/findmalek"
                 className="text-[#121212] underline"
@@ -98,7 +98,7 @@ export const WelcomeWaitlist = () => {
               src={`${baseUrl}/signature.jpg`}
               alt="Signature"
               className="block h-[20px] w-[143px]"
-            /> */}
+            />
             <br />
             <br />
 
@@ -107,7 +107,7 @@ export const WelcomeWaitlist = () => {
         </Body>
       </Tailwind>
     </Html>
-  );
-};
+  )
+}
 
-export default WelcomeWaitlist;
+export default WelcomeWaitlist

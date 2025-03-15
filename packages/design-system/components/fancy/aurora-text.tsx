@@ -1,19 +1,19 @@
-'use client';
+"use client"
 
-import { cn } from '@undrstnd/design-system/lib/utils';
-import type React from 'react';
+import type React from "react"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 export function AuroraText({
   className,
   children,
 }: {
-  className?: string;
-  children: React.ReactNode;
+  className?: string
+  children: React.ReactNode
 }) {
   return (
     <span
       className={cn(
-        'relative inline-flex overflow-hidden bg-background',
+        "bg-background relative inline-flex overflow-hidden",
         className
       )}
     >
@@ -25,11 +25,11 @@ export function AuroraText({
             className="aurora__item absolute h-[60vw] w-[60vw]"
             style={{
               backgroundColor: `hsl(var(--color-${i + 1}))`,
-              filter: 'blur(1rem)',
+              filter: "blur(1rem)",
               animation: `aurora-border 6s ease-in-out infinite, aurora-${
                 i + 1
               } 12s ease-in-out infinite alternate`,
-              mixBlendMode: 'overlay',
+              mixBlendMode: "overlay",
               ...getInitialPosition(i),
             }}
           />
@@ -113,15 +113,15 @@ export function AuroraText({
         }
       `}</style>
     </span>
-  );
+  )
 }
 
 function getInitialPosition(index: number): React.CSSProperties {
   const positions = [
-    { top: '-50%' },
+    { top: "-50%" },
     { right: 0, top: 0 },
     { left: 0, bottom: 0 },
-    { right: 0, bottom: '-50%' },
-  ];
-  return positions[index] || {};
+    { right: 0, bottom: "-50%" },
+  ]
+  return positions[index] || {}
 }

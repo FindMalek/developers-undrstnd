@@ -1,41 +1,41 @@
-'use client';
+"use client"
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion"
 
-import Image from 'next/image';
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from "react"
+import Image from "next/image"
 
-import { MarketingHeroCTA } from '@/components/app/marketing-hero-cta';
-import { MarketingHeroPill } from '@/components/app/marketing-hero-pill';
-import { MarketingHeroTitle } from '@/components/app/marketing-hero-title';
-import { Section } from '@/components/layout/section';
+import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
+import { MarketingHeroPill } from "@/components/app/marketing-hero-pill"
+import { MarketingHeroTitle } from "@/components/app/marketing-hero-title"
+import { Section } from "@/components/layout/section"
 
-const LazySpline = lazy(() => import('@splinetool/react-spline'));
+const LazySpline = lazy(() => import("@splinetool/react-spline"))
 
 export function MarketingHero() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [showSpline, setShowSpline] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
+  const [showSpline, setShowSpline] = useState(false)
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
+      setIsMobile(window.innerWidth < 1024)
+    }
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
 
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     if (!isMobile) {
       const timer = setTimeout(() => {
-        setShowSpline(true);
-      }, 1000);
+        setShowSpline(true)
+      }, 1000)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [isMobile]);
+  }, [isMobile])
 
   return (
     <Section id="hero">
@@ -76,5 +76,5 @@ export function MarketingHero() {
         )}
       </div>
     </Section>
-  );
+  )
 }

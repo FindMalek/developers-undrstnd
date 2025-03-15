@@ -1,33 +1,33 @@
-'use client';
+"use client"
 
-import { useAnalytics } from '@undrstnd/analytics/posthog/client';
-import { useUser } from '@undrstnd/auth/client';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react"
+import { usePathname, useSearchParams } from "next/navigation"
+import { useAnalytics } from "@undrstnd/analytics/posthog/client"
+import { useUser } from "@undrstnd/auth/client"
 
 export const PostHogIdentifier = () => {
-  const { user } = useUser();
-  const identified = useRef(false);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const analytics = useAnalytics();
+  const { user } = useUser()
+  const identified = useRef(false)
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const analytics = useAnalytics()
 
   useEffect(() => {
     // Track pageviews
     if (pathname && analytics) {
-      let url = window.origin + pathname;
+      let url = window.origin + pathname
       if (searchParams.toString()) {
-        url = `${url}?${searchParams.toString()}`;
+        url = `${url}?${searchParams.toString()}`
       }
-      analytics.capture('$pageview', {
+      analytics.capture("$pageview", {
         $current_url: url,
-      });
+      })
     }
-  }, [pathname, searchParams, analytics]);
+  }, [pathname, searchParams, analytics])
 
   useEffect(() => {
     if (!user || identified.current) {
-      return;
+      return
     }
 
     analytics.identify(user.id, {
@@ -37,10 +37,10 @@ export const PostHogIdentifier = () => {
       createdAt: user.createdAt,
       avatar: user.imageUrl,
       phoneNumber: user.phoneNumbers.at(0)?.phoneNumber,
-    });
+    })
 
-    identified.current = true;
-  }, [user, analytics]);
+    identified.current = true
+  }, [user, analytics])
 
-  return null;
-};
+  return null
+}

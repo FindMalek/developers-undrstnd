@@ -1,1 +1,1 @@
-export * from '@undrstnd/collaboration/config';
+export * from "@undrstnd/collaboration/config"

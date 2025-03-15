@@ -1,18 +1,18 @@
-import { Container, Link, Section, Text } from '@react-email/components';
+import { Container, Img, Link, Section, Text } from "@react-email/components"
 
-import { siteConfig } from '@undrstnd/seo/config';
+import { siteEmail as site } from "@undrstnd/seo/email"
 
 export function Footer() {
   return (
     <Container className="px-7 py-5">
       <Section className="my-5">
-        {/* <Container className="flex items-center justify-between">
+        <Container className="flex items-center justify-between">
           <Container>
-            <Text className="font-bold text-lg">{siteConfig.name}</Text>
+            <Text className="text-lg font-bold">{site.name}</Text>
           </Container>
 
           <Container className="flex space-x-4">
-            {siteConfig.footer.socialLinks.map((link, index) => (
+            {site.footer.socialLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.url}
@@ -22,35 +22,32 @@ export function Footer() {
               </Link>
             ))}
           </Container>
-        </Container> */}
+        </Container>
       </Section>
 
-      {/* <Section>
+      <Section>
         <Container>
-          {siteConfig.footer.links.map((link, index) => (
+          {site.footer.socialLinks.map((link, index) => (
             <Link
               key={index}
               href={link.url}
-              className="mr-4 text-gray-500 text-sm hover:text-gray-900"
+              className="mr-4 text-sm text-gray-500 hover:text-gray-900"
             >
-              {link.text}
+              <Img src={link.icon} alt={link.url} />
             </Link>
           ))}
         </Container>
 
-        <Text className="mt-4 text-gray-500 text-sm">
-          {siteConfig.footer.bottomText}
+        <Text className="mt-4 text-sm text-gray-500">
+          {site.footer.bottomText}
         </Text>
       </Section>
 
       <Section>
-        <Text className="font-medium font-mono text-4xl tracking-tighter">
-          {siteConfig.footer.brandText}
+        <Text className="font-mono text-4xl font-medium tracking-tighter">
+          {site.footer.brandText}
         </Text>
-      </Section> */}
-      <Text>
-        <Link href="https://undrstnd.dev">Undrstnd Labs</Link>
-      </Text>
+      </Section>
     </Container>
-  );
+  )
 }

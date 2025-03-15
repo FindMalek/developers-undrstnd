@@ -1,1 +1,1 @@
-export { default } from '@undrstnd/testing';
+export { default } from "@undrstnd/testing"
