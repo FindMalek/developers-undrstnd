@@ -28,19 +28,19 @@ export const siteEmail = {
   footer: {
     socialLinks: [
       {
-        icon: "https://www.flaticon.com/free-icons/github",
+        icon: "https://email.undrstnd.dev/github.png",
         url: "https://go.undrstnd.dev/gh",
       },
       {
-        icon: "https://www.flaticon.com/free-icons/twitter",
+        icon: "https://email.undrstnd.dev/twitter.png",
         url: "https://go.undrstnd.dev/x",
       },
       {
-        icon: "https://www.flaticon.com/free-icons/rss",
+        icon: "https://email.undrstnd.dev/rss.png",
         url: "https://go.undrstnd.dev/dc",
       },
       {
-        icon: "https://www.flaticon.com/free-icons/linkedin",
+        icon: "https://email.undrstnd.dev/linkedin.png",
         url: "https://go.undrstnd.dev/li",
       },
     ],
