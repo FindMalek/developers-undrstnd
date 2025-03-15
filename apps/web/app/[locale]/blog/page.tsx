@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { blog } from "@repo/cms"
-import { Feed } from "@repo/cms/components/feed"
-import { Image } from "@repo/cms/components/image"
-import { cn } from "@repo/design-system/lib/utils"
-import { getDictionary } from "@repo/internationalization"
-import type { Blog, WithContext } from "@repo/seo/json-ld"
-import { JsonLd } from "@repo/seo/json-ld"
-import { createMetadata } from "@repo/seo/metadata"
+import { blog } from "@undrstnd/cms"
+import { Feed } from "@undrstnd/cms/components/feed"
+import { Image } from "@undrstnd/cms/components/image"
+import { cn } from "@undrstnd/design-system/lib/utils"
+import { getDictionary } from "@undrstnd/internationalization"
+import type { Blog, WithContext } from "@undrstnd/seo/json-ld"
+import { JsonLd } from "@undrstnd/seo/json-ld"
+import { createMetadata } from "@undrstnd/seo/metadata"
 
 type BlogProps = {
   params: Promise<{

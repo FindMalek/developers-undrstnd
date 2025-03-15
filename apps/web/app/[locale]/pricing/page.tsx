@@ -1,7 +1,7 @@
 import { Check, Minus, MoveRight, PhoneCall } from "lucide-react"
 
 import Link from "next/link"
-import { Button } from "@repo/design-system/components/ui/button"
+import { Button } from "@undrstnd/design-system/components/ui/button"
 
 import { env } from "@/env"
 

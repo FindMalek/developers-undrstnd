@@ -1,6 +1,6 @@
 import { MoveDownLeft, MoveUpRight } from "lucide-react"
 
-import type { Dictionary } from "@repo/internationalization"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type StatsProps = {
   dictionary: Dictionary

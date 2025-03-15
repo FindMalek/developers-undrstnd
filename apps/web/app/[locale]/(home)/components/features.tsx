@@ -1,6 +1,6 @@
 import { User } from "lucide-react"
 
-import type { Dictionary } from "@repo/internationalization"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type FeaturesProps = {
   dictionary: Dictionary

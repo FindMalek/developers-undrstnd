@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import { notFound } from "next/navigation"
-import { auth } from "@repo/auth/server"
-import { database } from "@repo/database"
+import { auth } from "@undrstnd/auth/server"
+import { database } from "@undrstnd/database"
 
 import { env } from "@/env"
 

@@ -1,7 +1,7 @@
-import { BorderText } from "@repo/design-system/components/fancy/border-number"
-import { Icons } from "@repo/design-system/components/shared/icons"
+import { BorderText } from "@undrstnd/design-system/components/fancy/border-number"
+import { Icons } from "@undrstnd/design-system/components/shared/icons"
 
-import { siteConfig } from "@/lib/config"
+import { site } from "@/lib/config"
 
 export function Footer() {
   return (
@@ -9,13 +9,11 @@ export function Footer() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-2">
           <Icons.logo className="h-5 w-5" />
-          <h2 className="text-foreground text-lg font-bold">
-            {siteConfig.name}
-          </h2>
+          <h2 className="text-foreground text-lg font-bold">{site.name}</h2>
         </div>
 
         <div className="flex gap-x-2">
-          {siteConfig.footer.socialLinks.map((link, index) => (
+          {site.footer.socialLinks.map((link, index) => (
             <a
               key={index}
               href={link.url}
@@ -28,7 +26,7 @@ export function Footer() {
       </div>
       <div className="flex flex-col justify-between gap-y-5 md:flex-row md:items-center">
         <ul className="text-muted-foreground flex flex-col gap-x-5 gap-y-2 md:flex-row md:items-center">
-          {siteConfig.footer.links.map((link, index) => (
+          {site.footer.links.map((link, index) => (
             <li
               key={index}
               className="text-muted-foreground hover:text-foreground text-[15px]/normal font-medium transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
@@ -38,11 +36,11 @@ export function Footer() {
           ))}
         </ul>
         <div className="text-muted-foreground flex items-center justify-between text-sm font-medium tracking-tight">
-          <p>{siteConfig.footer.bottomText}</p>
+          <p>{site.footer.bottomText}</p>
         </div>
       </div>
       <BorderText
-        text={siteConfig.footer.brandText}
+        text={site.footer.brandText}
         className="overflow-hidden font-mono text-[clamp(3rem,15vw,10rem)] font-medium tracking-tighter"
       />
     </footer>

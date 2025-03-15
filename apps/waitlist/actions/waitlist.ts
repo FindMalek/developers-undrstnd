@@ -1,11 +1,12 @@
 "use server"
 
 import { headers } from "next/headers"
-import { analytics } from "@repo/analytics/posthog/server"
-import { database } from "@repo/database"
-import { log } from "@repo/observability/log"
+import { analytics } from "@undrstnd/analytics/posthog/server"
+import { database } from "@undrstnd/database"
+import { resend } from "@undrstnd/email"
+import { log } from "@undrstnd/observability/log"
 
-import { ResponseWaitlist } from "@/types"
+import type { ResponseWaitlist } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
   try {
@@ -44,9 +45,9 @@ export async function addWaitlist(email: string) {
 
   return await database.waitlist.create({
     data: {
+      ip,
       email,
       country,
-      ipAddress: ip,
     },
   })
 }
@@ -70,7 +71,10 @@ export async function addWaitlistAndSendEmail(
   try {
     const exists = await isOnWaitlist(email)
     if (exists) {
-      analytics.capture("Waitlist Email Already Exists")
+      analytics.capture({
+        event: "Waitlist Email Already Exists",
+        distinctId: email,
+      })
       log.info("Waitlist Email Already Exists", { email })
       return {
         success: true,
@@ -78,22 +82,22 @@ export async function addWaitlistAndSendEmail(
       }
     }
 
-    // await addWaitlist(email)
+    await addWaitlist(email)
 
-    // const emailService = new ResendService()
-    // const emailResult = await emailService.sendWaitlistJoinedEmail([email])
+    const emailResult = await resend.sendWaitlistJoinedEmail({ email })
 
-    // log.info("Waitlist Email Added", { email })
-    // if (!emailResult.success) {
-    //   return {
-    //     success: true,
-    //     warning: "Added to waitlist but failed to send email",
-    //   }
-    // }
+    log.info("Waitlist Email Added", { email })
+    if (!emailResult.success) {
+      return {
+        success: true,
+        warning: "Added to waitlist but failed to send email",
+      }
+    }
 
-    // analytics.capture("Waitlist Email Added", {
-    //   distinctId: email,
-    // })
+    analytics.capture({
+      event: "Waitlist Email Added",
+      distinctId: email,
+    })
 
     return {
       success: true,

@@ -5,8 +5,8 @@ import { Menu, MoveRight, X } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ModeToggle } from "@repo/design-system/components/shared/mode-toggle"
-import { Button } from "@repo/design-system/components/ui/button"
+import { ModeToggle } from "@undrstnd/design-system/components/shared/mode-toggle"
+import { Button } from "@undrstnd/design-system/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,8 +14,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@repo/design-system/components/ui/navigation-menu"
-import type { Dictionary } from "@repo/internationalization"
+} from "@undrstnd/design-system/components/ui/navigation-menu"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 import { env } from "@/env"
 

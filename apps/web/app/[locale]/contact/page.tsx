@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { getDictionary } from "@repo/internationalization"
-import { createMetadata } from "@repo/seo/metadata"
+import { getDictionary } from "@undrstnd/internationalization"
+import { createMetadata } from "@undrstnd/seo/metadata"
 
 import { ContactForm } from "./components/contact-form"
 

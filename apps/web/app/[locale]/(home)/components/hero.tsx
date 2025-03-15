@@ -1,10 +1,10 @@
 import { MoveRight, PhoneCall } from "lucide-react"
 
 import Link from "next/link"
-import { blog } from "@repo/cms"
-import { Feed } from "@repo/cms/components/feed"
-import { Button } from "@repo/design-system/components/ui/button"
-import type { Dictionary } from "@repo/internationalization"
+import { blog } from "@undrstnd/cms"
+import { Feed } from "@undrstnd/cms/components/feed"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 import { env } from "@/env"
 

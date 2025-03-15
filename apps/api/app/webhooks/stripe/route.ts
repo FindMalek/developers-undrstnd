@@ -1,11 +1,11 @@
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
-import { analytics } from "@repo/analytics/posthog/server"
-import { clerkClient } from "@repo/auth/server"
-import { parseError } from "@repo/observability/error"
-import { log } from "@repo/observability/log"
-import { stripe } from "@repo/payments"
-import type { Stripe } from "@repo/payments"
+import { analytics } from "@undrstnd/analytics/posthog/server"
+import { clerkClient } from "@undrstnd/auth/server"
+import { parseError } from "@undrstnd/observability/error"
+import { log } from "@undrstnd/observability/log"
+import { stripe } from "@undrstnd/payments"
+import type { Stripe } from "@undrstnd/payments"
 
 import { env } from "@/env"
 

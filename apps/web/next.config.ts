@@ -1,8 +1,8 @@
 import { env } from '@/env';
-import { withCMS } from '@repo/cms/next-config';
-import { withToolbar } from '@repo/feature-flags/lib/toolbar';
-import { config, withAnalyzer } from '@repo/next-config';
-import { withLogging, withSentry } from '@repo/observability/next-config';
+import { withCMS } from '@undrstnd/cms/next-config';
+import { withToolbar } from '@undrstnd/feature-flags/lib/toolbar';
+import { config, withAnalyzer } from '@undrstnd/next-config';
+import { withLogging, withSentry } from '@undrstnd/observability/next-config';
 import type { NextConfig } from 'next';
 
 let nextConfig: NextConfig = withToolbar(withLogging(config));

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 
-import { AuroraText } from "@repo/design-system/components/fancy/aurora-text"
+import { AuroraText } from "@undrstnd/design-system/components/fancy/aurora-text"
 
-import { ease, siteConfig } from "@/lib/config"
+import { ease, site } from "@/lib/config"
 
 export function MarketingHeroTitle() {
   return (
@@ -27,9 +27,7 @@ export function MarketingHeroTitle() {
             ease,
           }}
         >
-          <AuroraText className="leading-normal">
-            {siteConfig.hero.title}
-          </AuroraText>
+          <AuroraText className="leading-normal">{site.hero.title}</AuroraText>
         </motion.span>
       </motion.h1>
       <motion.p
@@ -42,7 +40,7 @@ export function MarketingHeroTitle() {
           ease,
         }}
       >
-        {siteConfig.hero.description}
+        {site.hero.description}
       </motion.p>
     </div>
   )

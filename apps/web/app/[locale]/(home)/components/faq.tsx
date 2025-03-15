@@ -6,9 +6,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@repo/design-system/components/ui/accordion"
-import { Button } from "@repo/design-system/components/ui/button"
-import type { Dictionary } from "@repo/internationalization"
+} from "@undrstnd/design-system/components/ui/accordion"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import type { Dictionary } from "@undrstnd/internationalization"
 
 type FAQProps = {
   dictionary: Dictionary

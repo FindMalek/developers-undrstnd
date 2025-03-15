@@ -4,7 +4,7 @@ import { getUsers } from "@/app/actions/users/get"
 import { searchUsers } from "@/app/actions/users/search"
 
 import type { ReactNode } from "react"
-import { Room } from "@repo/collaboration/room"
+import { Room } from "@undrstnd/collaboration/room"
 
 export const CollaborationProvider = ({
   orgId,

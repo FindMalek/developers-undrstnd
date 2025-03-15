@@ -3,7 +3,7 @@
 import * as RechartsPrimitive from "recharts"
 
 import * as React from "react"
-import { cn } from "@repo/design-system/lib/utils"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" } as const

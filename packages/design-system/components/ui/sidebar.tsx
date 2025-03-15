@@ -5,23 +5,23 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, VariantProps } from "class-variance-authority"
 
 import * as React from "react"
-import { Button } from "@repo/design-system/components/ui/button"
-import { Input } from "@repo/design-system/components/ui/input"
-import { Separator } from "@repo/design-system/components/ui/separator"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import { Input } from "@undrstnd/design-system/components/ui/input"
+import { Separator } from "@undrstnd/design-system/components/ui/separator"
 import {
   Sheet,
   SheetContent,
   SheetTitle,
-} from "@repo/design-system/components/ui/sheet"
-import { Skeleton } from "@repo/design-system/components/ui/skeleton"
+} from "@undrstnd/design-system/components/ui/sheet"
+import { Skeleton } from "@undrstnd/design-system/components/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/design-system/components/ui/tooltip"
-import { useIsMobile } from "@repo/design-system/hooks/use-mobile"
-import { cn } from "@repo/design-system/lib/utils"
+} from "@undrstnd/design-system/components/ui/tooltip"
+import { useIsMobile } from "@undrstnd/design-system/hooks/use-mobile"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

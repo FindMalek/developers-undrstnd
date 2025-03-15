@@ -1,12 +1,12 @@
 import { createEnv } from "@t3-oss/env-nextjs"
 
-import { keys as cms } from "@repo/cms/keys"
-import { keys as email } from "@repo/email/keys"
-import { keys as flags } from "@repo/feature-flags/keys"
-import { keys as core } from "@repo/next-config/keys"
-import { keys as observability } from "@repo/observability/keys"
-import { keys as rateLimit } from "@repo/rate-limit/keys"
-import { keys as security } from "@repo/security/keys"
+import { keys as cms } from "@undrstnd/cms/keys"
+import { keys as email } from "@undrstnd/email/keys"
+import { keys as flags } from "@undrstnd/feature-flags/keys"
+import { keys as core } from "@undrstnd/next-config/keys"
+import { keys as observability } from "@undrstnd/observability/keys"
+import { keys as rateLimit } from "@undrstnd/rate-limit/keys"
+import { keys as security } from "@undrstnd/security/keys"
 
 export const env = createEnv({
   extends: [

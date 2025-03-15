@@ -1,11 +1,11 @@
 import { motion } from "framer-motion"
 
 import Link from "next/link"
-import { Icons } from "@repo/design-system/components/shared/icons"
-import { buttonVariants } from "@repo/design-system/components/ui/button"
-import { cn } from "@repo/design-system/lib/utils"
+import { Icons } from "@undrstnd/design-system/components/shared/icons"
+import { buttonVariants } from "@undrstnd/design-system/components/ui/button"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
-import { ease, siteConfig } from "@/lib/config"
+import { ease, site } from "@/lib/config"
 
 export function MarketingHeroCTA() {
   return (
@@ -17,14 +17,14 @@ export function MarketingHeroCTA() {
         transition={{ delay: 0.8, duration: 0.8, ease }}
       >
         <Link
-          href={siteConfig.links.about}
+          href={site.links.about}
           className={cn(
             buttonVariants({ variant: "secondary" }),
             "flex w-full gap-2 rounded-lg sm:w-auto"
           )}
         >
           <Icons.logo className="h-6 w-6" />
-          {siteConfig.hero.cta}
+          {site.hero.cta}
         </Link>
       </motion.div>
       <motion.p
@@ -33,7 +33,7 @@ export function MarketingHeroCTA() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.0, duration: 0.8 }}
       >
-        {siteConfig.hero.ctaDescription}
+        {site.hero.ctaDescription}
       </motion.p>
     </div>
   )

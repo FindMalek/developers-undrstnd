@@ -1,13 +1,16 @@
 import {
+  NextResponse,
+  type NextMiddleware,
+  type NextRequest,
+} from "next/server"
+import { internationalizationMiddleware } from "@undrstnd/internationalization/middleware"
+import { parseError } from "@undrstnd/observability/error"
+import { secure } from "@undrstnd/security"
+import {
   noseconeMiddleware,
   noseconeOptions,
   noseconeOptionsWithToolbar,
-} from "repo/security/middleware"
-
-import { NextResponse } from "next/server"
-import { authMiddleware } from "@repo/auth/middleware"
-import { parseError } from "@repo/observability/error"
-import { secure } from "@repo/security"
+} from "@undrstnd/security/middleware"
 
 import { env } from "@/env"
 
@@ -21,7 +24,7 @@ const securityHeaders = env.FLAGS_SECRET
   ? noseconeMiddleware(noseconeOptionsWithToolbar)
   : noseconeMiddleware(noseconeOptions)
 
-export default authMiddleware(async (_auth, request) => {
+const middleware = async (request: NextRequest) => {
   if (!env.ARCJET_KEY) {
     return securityHeaders()
   }
@@ -43,4 +46,6 @@ export default authMiddleware(async (_auth, request) => {
 
     return NextResponse.json({ error: message }, { status: 403 })
   }
-})
+}
+
+export default middleware

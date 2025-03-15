@@ -5,7 +5,8 @@
   "types": "./index.ts",
   "scripts": {
     "analyze": "prisma generate --no-hints --schema=./prisma/schema/schema.prisma",
-    "build": "prisma generate --no-hints --schema=./prisma/schema/schema.prisma",
+    "build": "prisma generate --no-hints --schema=./generated/client/schema.prisma",
+    "generate": "prisma generate --no-hints --schema=./prisma/schema/schema.prisma",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },

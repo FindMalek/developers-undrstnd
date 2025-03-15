@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
 
-import { siteConfig } from "@/lib/config"
+import { site } from "@/lib/config"
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL || siteConfig.url}${path}`
+  return `${process.env.NEXT_PUBLIC_APP_URL || site.url}${path}`
 }
 
 export function constructMetadata({
-  title = siteConfig.name,
-  description = siteConfig.description,
+  title = site.name,
+  description = site.description,
   image = absoluteUrl("/og"),
   ...props
 }: {
@@ -19,16 +19,16 @@ export function constructMetadata({
 }): Metadata {
   return {
     title: {
-      template: `%s | ${siteConfig.name}`,
-      default: siteConfig.name,
+      template: `%s | ${site.name}`,
+      default: site.name,
     },
-    description: description || siteConfig.description,
-    keywords: siteConfig.keywords,
+    description: description || site.description,
+    keywords: site.keywords,
     openGraph: {
       title,
       description,
-      url: siteConfig.url,
-      siteName: siteConfig.name,
+      url: site.url,
+      siteName: site.name,
       images: [
         {
           url: image,
@@ -41,11 +41,11 @@ export function constructMetadata({
       locale: "en_US",
     },
     icons: "/favicon.ico",
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL(site.url),
     authors: [
       {
-        name: siteConfig.name,
-        url: siteConfig.url,
+        name: site.name,
+        url: site.url,
       },
     ],
     ...props,

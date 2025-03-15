@@ -3,15 +3,15 @@ import {
   type NextMiddleware,
   type NextRequest,
 } from "next/server"
-import { authMiddleware } from "@repo/auth/middleware"
-import { internationalizationMiddleware } from "@repo/internationalization/middleware"
-import { parseError } from "@repo/observability/error"
-import { secure } from "@repo/security"
+import { authMiddleware } from "@undrstnd/auth/middleware"
+import { internationalizationMiddleware } from "@undrstnd/internationalization/middleware"
+import { parseError } from "@undrstnd/observability/error"
+import { secure } from "@undrstnd/security"
 import {
   noseconeMiddleware,
   noseconeOptions,
   noseconeOptionsWithToolbar,
-} from "@repo/security/middleware"
+} from "@undrstnd/security/middleware"
 
 import { env } from "@/env"
 

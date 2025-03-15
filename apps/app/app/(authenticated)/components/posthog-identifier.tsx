@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
-import { useAnalytics } from "@repo/analytics/posthog/client"
-import { useUser } from "@repo/auth/client"
+import { useAnalytics } from "@undrstnd/analytics/posthog/client"
+import { useUser } from "@undrstnd/auth/client"
 
 export const PostHogIdentifier = () => {
   const { user } = useUser()

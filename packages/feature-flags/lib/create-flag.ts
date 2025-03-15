@@ -1,7 +1,7 @@
 import { flag } from "flags/next"
 
-import { analytics } from "@repo/analytics/posthog/server"
-import { auth } from "@repo/auth/server"
+import { analytics } from "@undrstnd/analytics/posthog/server"
+import { auth } from "@undrstnd/auth/server"
 
 export const createFlag = (key: string) =>
   flag({

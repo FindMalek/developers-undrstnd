@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { capitalize } from "@repo/design-system/lib/utils"
+import { capitalize } from "@undrstnd/design-system/lib/utils"
 
 type SidebarProperties = {
   readonly date: Date

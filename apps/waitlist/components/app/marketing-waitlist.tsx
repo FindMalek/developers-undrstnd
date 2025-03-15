@@ -1,11 +1,12 @@
 "use client"
 
 import { useFormStatus } from "react-dom"
-import { log } from "repo/observability/log"
 
 import { useState } from "react"
-import { Icons } from "@repo/design-system/components/shared/icons"
-import { toast } from "@repo/design-system/hooks/use-toast"
+import { Icons } from "@undrstnd/design-system/components/shared/icons"
+import { toast } from "@undrstnd/design-system/hooks/use-toast"
+import { log } from "@undrstnd/observability/log"
+import { parseError } from "@undrstnd/observability/error"
 
 import { Section } from "@/components/layout/section"
 
@@ -32,66 +33,73 @@ function SubmitButton() {
   )
 }
 
+async function handleWaitlistSubmission(
+  formData: FormData,
+  setSubmitted: React.Dispatch<React.SetStateAction<boolean>>
+) {
+  setSubmitted(true)
+
+  const email = formData.get("email") as string
+
+  const result = await addWaitlistAndSendEmail(email)
+  if (!result.success) {
+    log.error(parseError(result.error))
+    toast({
+      title: "Error",
+      description: result.error,
+      variant: "destructive",
+    })
+  } else if (result.warning) {
+    toast({
+      title: result.warning,
+    })
+  } else {
+    toast({
+      title: "Successfully joined the waitlist!",
+    })
+  }
+}
+
 export function MarketingWaitlist() {
   const [isSubmitted, setSubmitted] = useState(false)
 
   return (
     <Section id="cta">
-      <div className="relative mx-auto overflow-hidden border py-16 text-center">
-        <p className="text-foreground mx-auto mb-6 max-w-3xl text-balance text-3xl font-medium">
-          Ready to supercharge your development with AI?
-        </p>
-        <p className="text-foreground mx-auto mb-6 max-w-3xl text-balance text-lg">
-          Join the waitlist to get early access to Undrstnd Developers.
-        </p>
+      <div className="relative overflow-hidden border p-6 md:p-12 lg:p-16">
+        <div className="max-w-3xl">
+          <p className="text-foreground mb-4 text-2xl md:text-3xl font-medium">
+            Ready to supercharge your development with AI?
+          </p>
+          <p className="text-foreground mb-8 max-w-3xl text-base md:text-lg">
+            Join the waitlist to get early access to Undrstnd Developers API.
+          </p>
 
-        <div className="flex justify-center">
-          {isSubmitted ? (
-            <div className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1 sm:max-w-[330px]">
-              <p>Added to waitlist!</p>
-              <Icons.check className="size-4" />
-            </div>
-          ) : (
-            <form
-              action={async (formData) => {
-                setSubmitted(true)
-
-                const email = formData.get("email") as string
-
-                const result = await addWaitlistAndSendEmail(email)
-                if (!result.success) {
-                  log.error(result.error ?? "Unknown error")
-                  toast({
-                    title: "Error",
-                    description: result.error,
-                    variant: "destructive",
-                  })
-                } else if (result.warning) {
-                  toast({
-                    title: result.warning,
-                  })
-                } else {
-                  toast({
-                    title: "Successfully joined the waitlist!",
-                  })
-                }
-              }}
-            >
-              <fieldset className="relative z-50 min-w-[300px] max-w-full">
-                <input
-                  placeholder="example@email.com"
-                  type="email"
-                  name="email"
-                  id="email"
-                  autoComplete="email"
-                  aria-label="Email address"
-                  required
-                  className="font-sm border-border text-primary h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none sm:max-w-[360px]"
-                />
-                <SubmitButton />
-              </fieldset>
-            </form>
-          )}
+          <div className="w-full max-w-md">
+            {isSubmitted ? (
+              <div className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1">
+                <p>Added to waitlist!</p>
+                <Icons.check className="size-4" />
+              </div>
+            ) : (
+              <form
+                action={(formData) => handleWaitlistSubmission(formData, setSubmitted)}
+              >
+                <fieldset className="relative z-50 w-full">
+                  <input
+                    placeholder="example@email.com"
+                    type="email"
+                    name="email"
+                    id="email"
+                    autoComplete="email"
+                    aria-label="Email address"
+                    required
+                    className="border-border font-sm text-primary h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
+                  />
+                  <SubmitButton />
+                </fieldset>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </Section>

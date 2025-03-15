@@ -2,15 +2,15 @@ import { Webhook } from "svix"
 
 import { headers } from "next/headers"
 import { NextResponse } from "next/server"
-import { analytics } from "@repo/analytics/posthog/server"
+import { analytics } from "@undrstnd/analytics/posthog/server"
 import type {
   DeletedObjectJSON,
   OrganizationJSON,
   OrganizationMembershipJSON,
   UserJSON,
   WebhookEvent,
-} from "@repo/auth/server"
-import { log } from "@repo/observability/log"
+} from "@undrstnd/auth/server"
+import { log } from "@undrstnd/observability/log"
 
 import { env } from "@/env"
 

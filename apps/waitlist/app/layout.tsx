@@ -1,20 +1,22 @@
-import "@repo/design-system/styles/globals.css"
+import "@undrstnd/design-system/styles/globals.css"
 
 import type { ReactNode } from "react"
 import type { Metadata, Viewport } from "next"
-import { DesignSystemProvider } from "@repo/design-system"
-import { TailwindIndicator } from "@repo/design-system/components/layout/tailwind-indicator"
-import { ModeToggle } from "@repo/design-system/components/shared/mode-toggle"
-import { fonts } from "@repo/design-system/lib/fonts"
-import { cn } from "@repo/design-system/lib/utils"
+import { DesignSystemProvider } from "@undrstnd/design-system"
+import { TailwindIndicator } from "@undrstnd/design-system/components/layout/tailwind-indicator"
+import { ModeToggle } from "@undrstnd/design-system/components/shared/mode-toggle"
+import { fonts } from "@undrstnd/design-system/lib/fonts"
+import { cn } from "@undrstnd/design-system/lib/utils"
+import { createMetadata } from "@undrstnd/seo/metadata"
 
-import { siteConfig } from "@/lib/config"
-import { constructMetadata } from "@/lib/utils"
+import { site } from "@/lib/config"
 
 import { Footer } from "@/components/layout/footer"
 
-export const metadata: Metadata = constructMetadata({
-  title: `${siteConfig.name} | ${siteConfig.description}`,
+export const metadata: Metadata = createMetadata({
+  title: `${site.name} | ${site.description}`,
+  description: site.description,
+  image: "/og.png",
 })
 
 export const viewport: Viewport = {
@@ -36,7 +38,7 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
         "bg-background mx-auto min-h-screen w-full scroll-smooth font-sans antialiased"
       )}
     >
-      <DesignSystemProvider>
+      <DesignSystemProvider auth={false}>
         {children}
         <Footer />
         {process.env.NODE_ENV === "development" && <ModeToggle />}

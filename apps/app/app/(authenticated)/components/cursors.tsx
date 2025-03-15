@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { useMyPresence, useOthers } from "@repo/collaboration/hooks"
+import { useMyPresence, useOthers } from "@undrstnd/collaboration/hooks"
 
 const Cursor = ({
   name,

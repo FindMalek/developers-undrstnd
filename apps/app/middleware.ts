@@ -1,10 +1,10 @@
 import type { NextMiddleware } from "next/server"
-import { authMiddleware } from "@repo/auth/middleware"
+import { authMiddleware } from "@undrstnd/auth/middleware"
 import {
   noseconeMiddleware,
   noseconeOptions,
   noseconeOptionsWithToolbar,
-} from "@repo/security/middleware"
+} from "@undrstnd/security/middleware"
 
 import { env } from "./env"
 

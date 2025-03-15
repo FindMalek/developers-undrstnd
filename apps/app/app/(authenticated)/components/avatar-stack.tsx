@@ -1,17 +1,17 @@
 "use client"
 
-import { useOthers, useSelf } from "@repo/collaboration/hooks"
+import { useOthers, useSelf } from "@undrstnd/collaboration/hooks"
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@repo/design-system/components/ui/avatar"
+} from "@undrstnd/design-system/components/ui/avatar"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@repo/design-system/components/ui/tooltip"
-import { tailwind } from "@repo/tailwind-config"
+} from "@undrstnd/design-system/components/ui/tooltip"
+import { tailwind } from "@undrstnd/tailwind-config"
 
 type PresenceAvatarProps = {
   info?: Liveblocks["UserMeta"]["info"]

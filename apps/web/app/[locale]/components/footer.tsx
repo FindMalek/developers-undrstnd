@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { legal } from "@repo/cms"
-import { Feed } from "@repo/cms/components/feed"
-import { Status } from "@repo/observability/status"
+import { legal } from "@undrstnd/cms"
+import { Feed } from "@undrstnd/cms/components/feed"
+import { Status } from "@undrstnd/observability/status"
 
 import { env } from "@/env"
 

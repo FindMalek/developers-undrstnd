@@ -6,7 +6,7 @@ import type { Theme } from "@clerk/types"
 import { useTheme } from "next-themes"
 
 import type { ComponentProps } from "react"
-import { tailwind } from "@repo/tailwind-config"
+import { tailwind } from "@undrstnd/tailwind-config"
 
 export const AuthProvider = (
   properties: ComponentProps<typeof ClerkProvider>
