@@ -364,9 +364,6 @@ importers:
       '@undrstnd/analytics':
         specifier: workspace:*
         version: link:../../packages/analytics
-      '@undrstnd/auth':
-        specifier: workspace:*
-        version: link:../../packages/auth
       '@undrstnd/database':
         specifier: workspace:*
         version: link:../../packages/database

@@ -20,7 +20,6 @@
     "@undrstnd/design-system": "workspace:*",
     "@undrstnd/rate-limit": "workspace:*",
     "@undrstnd/security": "workspace:*",
-    "@undrstnd/auth": "workspace:*",
     "@undrstnd/testing": "workspace:*",
     "@undrstnd/database": "workspace:*",
     "@undrstnd/analytics": "workspace:*",
