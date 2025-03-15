@@ -27,6 +27,8 @@ model Waitlist {
 model Page {
   id   Int    @id @default(autoincrement())
   name String
+
+  createdAt DateTime @default(now())
 }
 
 generator client {
@@ -40,3 +42,4 @@ datasource db {
   provider     = "postgresql"
   url          = env("DATABASE_URL")
 }
+

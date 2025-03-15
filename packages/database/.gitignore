@@ -1,6 +1,10 @@
-node_modules
 # Keep environment variables out of version control
 .env
 
 # Generated client
-generated
+# Ignore all files in the generated directory
+prisma/generated/
+# But track the schema.prisma file
+!prisma/generated/client/schema.prisma
+
+node_modules

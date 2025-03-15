@@ -18,7 +18,7 @@
     "db:studio": "cd packages/database && pnpm run studio",
     "db:pull": "cd packages/database && npx prisma db pull",
     "db:push": "cd packages/database && npx prisma db push",
-    "db:migrate": "cd packages/database && pnpm prisma migrate dev  && pnpm -w run db:push",
+    "db:migrate": "cd packages/database && pnpm prisma migrate dev && pnpm -w run db:push",
     "app:ai-engine:dev": "cd apps/ai-engine && pnpm dev",
     "app:ai-engine:build": "cd apps/ai-engine && pnpm build",
     "app:ai-engine:start": "cd apps/ai-engine && pnpm start",
