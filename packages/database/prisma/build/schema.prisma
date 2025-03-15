@@ -1,7 +1,7 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters", "prismaSchemaFolder"]
-  output          = "../generated/client"
+  output = "../generated/client"
 }
 
 datasource db {
@@ -10,7 +10,8 @@ datasource db {
   url          = env("DATABASE_URL")
 }
 
-// Models from auth.prismahj
+
+// Models from auth.prisma
 /**
  * Represents a waitlist.
  * @property id - Unique identifier for the waitlist entry. Type: String. Generated using cuid().
@@ -35,6 +36,7 @@ model Waitlist {
   @@map("waitlist")
 }
 
+
 // Models from cron.prisma
 // This is a stub model.
 // Delete it and add your own Prisma models.
@@ -44,3 +46,5 @@ model Page {
 
   createdAt DateTime @default(now())
 }
+
+
