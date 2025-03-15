@@ -51,7 +51,6 @@ export function Footer() {
 
         <BorderText
           text={site.footer.brandText}
-          className="overflow-hidden font-mono text-[clamp(3rem,15vw,10rem)] font-medium tracking-tighter"
         />
       </Container>
     </Tailwind>
