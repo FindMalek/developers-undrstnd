@@ -1,10 +1,10 @@
 # Keep environment variables out of version control
 .env
 
-# Generated client
-# Ignore all files in the generated directory
-prisma/generated/
-# But track the schema.prisma file
-!prisma/generated/client/schema.prisma
-
 node_modules
+
+# Explicitly allow tracking the build folder (overrides root .gitignore)
+!build/
+
+# Generated client - exclude the entire generated directory
+prisma/generated/
