@@ -4,7 +4,7 @@ import { neonConfig, Pool } from "@neondatabase/serverless"
 import { PrismaNeon } from "@prisma/adapter-neon"
 import ws from "ws"
 
-import { PrismaClient } from "./generated/client"
+import { PrismaClient } from "./prisma/generated/client"
 import { keys } from "./keys"
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
@@ -28,4 +28,4 @@ if (keys().NODE_ENV !== "production") {
 }
 
 export { database }
-export * from "./generated/client"
+export * from "./prisma/generated/client"

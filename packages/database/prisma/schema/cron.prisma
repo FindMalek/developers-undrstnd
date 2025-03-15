@@ -2,5 +2,5 @@
 // Delete it and add your own Prisma models.
 model Page {
   id   Int    @id @default(autoincrement())
-  name String
+  name String?
 }
