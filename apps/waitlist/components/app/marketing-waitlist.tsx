@@ -82,7 +82,7 @@ export function MarketingWaitlist() {
           >
             <div className="max-w-3xl">
               <motion.p
-                className="text-foreground text-2xl font-medium md:text-3xl"
+                className="text-foreground text-xl font-medium md:text-2xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1, duration: 0.5 }}
@@ -90,7 +90,7 @@ export function MarketingWaitlist() {
                 Ready to supercharge your development with AI?
               </motion.p>
               <motion.p
-                className="text-muted-foreground mb-8 max-w-3xl text-base md:text-lg"
+                className="text-muted-foreground md:text-md mb-8 max-w-3xl text-base"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.3, duration: 0.5 }}
