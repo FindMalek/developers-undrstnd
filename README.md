@@ -48,4 +48,4 @@ Easy, cheap and fast AI integration for devs.
 
 ## Repo Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/2991986135d6e47299c2718c3ba0eaf4f7f4c677.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/8b9ed409a32706af714d004735156ecd3fa305ac.svg "Repobeats analytics image")
