@@ -92,7 +92,7 @@ export const POST = async (request: Request): Promise<Response> => {
         break
       }
       default: {
-        log.warn(`Unhandled event type ${event.type}`)
+        log.info(`Unhandled event type ${event.type}`)
       }
     }
 
@@ -102,7 +102,7 @@ export const POST = async (request: Request): Promise<Response> => {
   } catch (error) {
     const message = parseError(error)
 
-    log.error(message)
+    log.info(message)
 
     return NextResponse.json(
       {

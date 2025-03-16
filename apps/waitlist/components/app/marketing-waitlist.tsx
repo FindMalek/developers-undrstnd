@@ -44,14 +44,14 @@ async function handleWaitlistSubmission(
 
   const result = await addWaitlistAndSendEmail(email)
   if (!result.success) {
-    log.error(parseError(result.error))
+    log.info(parseError(result.error))
     toast({
       title: "Error",
       description: result.error,
       variant: "destructive",
     })
   } else if (result.warning) {
-    log.warn("Warning adding to waitlist", { email, warning: result.warning })
+    log.info("Warning adding to waitlist", { email, warning: result.warning })
     toast({
       title: result.warning,
     })
