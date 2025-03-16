@@ -1,16 +1,18 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 
 import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
-import { MarketingHeroPill } from "@/components/app/marketing-hero-pill"
 import { MarketingHeroTitle } from "@/components/app/marketing-hero-title"
 import { Section } from "@/components/layout/section"
 
 const LazySpline = lazy(() => import("@splinetool/react-spline"))
+
+const splineScene =
+  "https://prod.spline.design/kOtSXlXNswXbWI8r/scene.splinecode"
 
 export function MarketingHero() {
   const [isMobile, setIsMobile] = useState(false)
@@ -31,7 +33,7 @@ export function MarketingHero() {
     if (!isMobile) {
       const timer = setTimeout(() => {
         setShowSpline(true)
-      }, 1000)
+      }, 3000)
 
       return () => clearTimeout(timer)
     }
@@ -41,36 +43,42 @@ export function MarketingHero() {
     <Section id="hero">
       <div className="relative grid w-full grid-cols-1 gap-x-8 overflow-hidden border-x p-6 lg:grid-cols-2 lg:p-12">
         <div className="flex flex-col items-start justify-start lg:col-span-1">
-          <MarketingHeroPill />
           <MarketingHeroTitle />
           <MarketingHeroCTA />
         </div>
         {!isMobile && (
           <div className="relative lg:col-span-1 lg:h-full">
-            <Suspense
-              fallback={
-                <Image
-                  src="/cube.png"
-                  alt="Spline Placeholder"
-                  width={1920}
-                  height={1080}
-                  layout="responsive"
-                  className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
-                />
-              }
-            >
-              {showSpline && (
+            <AnimatePresence mode="wait">
+              {!showSpline && (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1 }}
+                  key="placeholder"
+                  className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <LazySpline
-                    scene="https://prod.spline.design/mZBrYNcnoESGlTUG/scene.splinecode"
-                    className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
+                  <Image
+                    src="/spline-render.png"
+                    alt="Spline Placeholder"
+                    fill
+                    className="object-contain"
                   />
                 </motion.div>
               )}
+            </AnimatePresence>
+
+            <Suspense fallback={null}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
+              >
+                <LazySpline
+                  scene={splineScene}
+                  className="pointer-events-none h-full w-full"
+                />
+              </motion.div>
             </Suspense>
           </div>
         )}

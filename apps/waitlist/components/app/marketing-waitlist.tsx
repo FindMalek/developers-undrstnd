@@ -1,12 +1,13 @@
 "use client"
 
+import { AnimatePresence, motion } from "framer-motion"
 import { useFormStatus } from "react-dom"
 
 import { useState } from "react"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
 import { toast } from "@undrstnd/design-system/hooks/use-toast"
-import { log } from "@undrstnd/observability/log"
 import { parseError } from "@undrstnd/observability/error"
+import { log } from "@undrstnd/observability/log"
 
 import { Section } from "@/components/layout/section"
 
@@ -67,42 +68,78 @@ export function MarketingWaitlist() {
 
   return (
     <Section id="cta">
-      <div className="relative overflow-hidden border p-6 md:p-12 lg:p-16">
-        <div className="max-w-3xl">
-          <p className="text-foreground text-2xl md:text-3xl font-medium">
-            Ready to supercharge your development with AI?
-          </p>
-          <p className="text-muted-foreground mb-8 max-w-3xl text-base md:text-lg">
-            Join the waitlist to get early access to Undrstnd Developers API.
-          </p>
-
-          <div className="w-full max-w-md">
-            {isSubmitted ? (
-              <div className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1">
-                <p>Added to waitlist!</p>
-                <Icons.check className="size-4" />
-              </div>
-            ) : (
-              <form
-                action={(formData) => handleWaitlistSubmission(formData, setSubmitted)}
+      <div className="relative grid w-full grid-cols-1 overflow-hidden border p-6 lg:p-12">
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="grid w-full grid-cols-1"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 0.8,
+            }}
+          >
+            <div className="max-w-3xl">
+              <motion.p
+                className="text-foreground text-xl font-medium md:text-2xl"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
               >
-                <fieldset className="relative z-50 w-full">
-                  <input
-                    placeholder="example@email.com"
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                    aria-label="Email address"
-                    required
-                    className="border-border font-sm h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
-                  />
-                  <SubmitButton />
-                </fieldset>
-              </form>
-            )}
-          </div>
-        </div>
+                Ready to supercharge your development with AI?
+              </motion.p>
+              <motion.p
+                className="text-muted-foreground md:text-md mb-8 max-w-3xl text-base"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.5 }}
+              >
+                Join the waitlist to get early access to Undrstnd Developers
+                API.
+              </motion.p>
+
+              <motion.div
+                className="w-full max-w-md"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
+              >
+                {isSubmitted ? (
+                  <motion.div
+                    className="font-sm text-primary flex h-11 w-full items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1"
+                    initial={{ scale: 0.95 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p>Added to waitlist!</p>
+                    <Icons.check className="size-4" />
+                  </motion.div>
+                ) : (
+                  <form
+                    action={(formData) =>
+                      handleWaitlistSubmission(formData, setSubmitted)
+                    }
+                  >
+                    <fieldset className="relative z-50 w-full">
+                      <input
+                        placeholder="example@email.com"
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="email"
+                        aria-label="Email address"
+                        required
+                        className="border-border font-sm h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
+                      />
+                      <SubmitButton />
+                    </fieldset>
+                  </form>
+                )}
+              </motion.div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </Section>
   )

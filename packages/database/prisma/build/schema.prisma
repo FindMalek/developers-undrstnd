@@ -11,7 +11,7 @@ datasource db {
 }
 
 
-// Models from auth.prisma
+// Models from 'auth.prisma'
 /**
  * Represents a waitlist.
  * @property id - Unique identifier for the waitlist entry. Type: String. Generated using cuid().
@@ -37,7 +37,7 @@ model Waitlist {
 }
 
 
-// Models from cron.prisma
+// Models from 'cron.prisma'
 // This is a stub model.
 // Delete it and add your own Prisma models.
 model Page {

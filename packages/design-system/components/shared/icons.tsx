@@ -27,18 +27,11 @@ export const Icons: { [key: string]: React.FC<IconProps> } = {
   logo: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      viewBox="0 0 342.996 421.766"
+      fill="currentColor"
       {...props}
     >
-      <polyline points="4 17 10 11 4 5" />
-      <line x1="12" x2="20" y1="19" y2="19" />
+      <path d="M336.744,192.492,235.417,141.829a6.756,6.756,0,0,0-9.191,6.285l.006,129.337a.767.767,0,0,1-1.11.686L116.756,223.894V58.372a6.685,6.685,0,0,0-3.719-6.015L9.2.444A6.757,6.757,0,0,0,0,6.727v300.1a6.691,6.691,0,0,0,3.717,6.015l158.028,79.021,59.815,29.9h2.684a.711.711,0,0,0,.189-.025,6.935,6.935,0,0,0,5.435-6.7l-.006-129.229a.767.767,0,0,1,1.11-.686l103.718,51.8h2.685a.732.732,0,0,0,.187-.024A6.937,6.937,0,0,0,343,330.2V202.609A11.31,11.31,0,0,0,336.744,192.492Z" />
     </svg>
   ),
   discord: FaDiscord,

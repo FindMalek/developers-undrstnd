@@ -5,7 +5,7 @@ import { site } from "@/lib/config"
 
 export function Footer() {
   return (
-    <footer className="container flex flex-col gap-y-5 rounded-lg px-7 py-5">
+    <footer className="container flex flex-col gap-y-5 rounded-lg px-10 py-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-2">
           <Icons.logo className="h-5 w-5" />
