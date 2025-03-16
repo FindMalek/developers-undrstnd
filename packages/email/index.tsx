@@ -53,7 +53,7 @@ export class ResendService {
       }
     } catch (error) {
       const errorMessage = parseError(error)
-      log.error("Failed to send waitlist joined email:", {
+      log.info("Failed to send waitlist joined email:", {
         error: errorMessage,
         email,
       })

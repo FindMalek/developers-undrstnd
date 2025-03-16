@@ -4,7 +4,7 @@ import { keys } from "../keys"
 import type { BetterStackResponse } from "./types"
 
 const apiKey = keys().BETTERSTACK_API_KEY
-const url = keys().BETTERSTACK_URL
+const url = keys().NEXT_PUBLIC_BETTERSTACK_API_KEY
 
 export const Status = async () => {
   if (!apiKey || !url) {

@@ -19,6 +19,7 @@ export const parseError = (error: unknown): string => {
   } catch (newError) {
     // biome-ignore lint/suspicious/noConsole: Need console here
     console.error("Error parsing error:", newError)
+    log.error(`Parsing error: ${newError}`)
   }
 
   return message

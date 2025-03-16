@@ -12,9 +12,12 @@ import type { ResponseWaitlist } from "@/types"
 async function getCountryFromIP(ip: string): Promise<string> {
   try {
     const response = await fetch(`http://ip-api.com/json/${ip}`)
+    log.info("Country from IP", { ip })
     const data = await response.json()
     return data.countryCode?.toLowerCase() || "unknown"
   } catch (error) {
+    const errorMessage = parseError(error)
+    log.info("Error getting country from IP", { error: errorMessage })
     return "unknown"
   }
 }
@@ -26,16 +29,20 @@ async function getClientIP(): Promise<string> {
     const forwardedFor = headersList.get("x-forwarded-for") || ""
 
     if (forwardedFor) {
+      log.info("Forwarded for", { forwardedFor })
       const ipList = forwardedFor.split(",")
       return ipList[0].trim()
     }
 
     if (realIP) {
+      log.info("Real IP", { realIP })
       return realIP.trim()
     }
 
     return "0.0.0.0"
   } catch (error) {
+    const errorMessage = parseError(error)
+    log.info("Error getting client IP", { error: errorMessage })
     return "0.0.0.0"
   }
 }
@@ -43,6 +50,8 @@ async function getClientIP(): Promise<string> {
 export async function addWaitlist(email: string) {
   const ip = await getClientIP()
   const country = await getCountryFromIP(ip)
+
+  log.info("Adding waitlist", { ip, country })
 
   return await database.waitlist.create({
     data: {
@@ -54,6 +63,7 @@ export async function addWaitlist(email: string) {
 }
 
 export async function isOnWaitlist(email: string) {
+  log.info("Checking if email is on waitlist", { email })
   const waitlist = await database.waitlist.findUnique({
     where: {
       email,
@@ -89,7 +99,7 @@ export async function addWaitlistAndSendEmail(
     log.info("Waitlist Email Added", { email })
     if (!emailResult.success) {
       const error = parseError(emailResult.error)
-      log.error("Failed to send waitlist joined email", { error })
+      log.info("Failed to send waitlist joined email", { error })
       return {
         success: true,
         warning: "Added to waitlist but failed to send email",
@@ -106,7 +116,7 @@ export async function addWaitlistAndSendEmail(
     }
   } catch (error) {
     const errorMessage = parseError(error)
-    log.error("Failed to add to waitlist", { error: errorMessage })
+    log.info("Failed to add to waitlist", { error: errorMessage })
     return {
       success: false,
       error: "Failed to add to waitlist",

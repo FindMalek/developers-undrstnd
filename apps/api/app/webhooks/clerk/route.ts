@@ -181,7 +181,7 @@ export const POST = async (request: Request): Promise<Response> => {
       "svix-signature": svixSignature,
     }) as WebhookEvent
   } catch (error) {
-    log.error("Error verifying webhook:", { error })
+    log.info("Error verifying webhook:", { error })
     return new Response("Error occured", {
       status: 400,
     })
