@@ -1,6 +1,7 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 
@@ -9,6 +10,9 @@ import { MarketingHeroTitle } from "@/components/app/marketing-hero-title"
 import { Section } from "@/components/layout/section"
 
 const LazySpline = lazy(() => import("@splinetool/react-spline"))
+
+const splineScene =
+  "https://prod.spline.design/Te6DyWKle1p53kKp/scene.splinecode"
 
 export function MarketingHero() {
   const [isMobile, setIsMobile] = useState(false)
@@ -63,9 +67,9 @@ export function MarketingHero() {
                 onAnimationComplete={() => setIsLoading(false)}
               >
                 <LazySpline
-                  scene="https://prod.spline.design/j6C8rRGoWWKTQ1vV/scene.splinecode"
-                  className="h-full w-full pointer-events-none"
+                  scene={splineScene}
                   onLoad={() => setIsLoading(false)}
+                  className="pointer-events-none h-full w-full"
                 />
               </motion.div>
             </Suspense>

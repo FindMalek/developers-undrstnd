@@ -1,12 +1,13 @@
 "use client"
 
+import { AnimatePresence, motion } from "framer-motion"
 import { useFormStatus } from "react-dom"
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+
+import { useState } from "react"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
 import { toast } from "@undrstnd/design-system/hooks/use-toast"
-import { log } from "@undrstnd/observability/log"
 import { parseError } from "@undrstnd/observability/error"
+import { log } from "@undrstnd/observability/log"
 
 import { Section } from "@/components/layout/section"
 
@@ -64,44 +65,27 @@ async function handleWaitlistSubmission(
 
 export function MarketingWaitlist() {
   const [isSubmitted, setSubmitted] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-
-  // Add a delay to show the waitlist after the hero section
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 800) // Delay showing the waitlist
-
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <Section id="cta">
-      <AnimatePresence mode="wait">
-        {isVisible && (
+      <div className="relative grid w-full grid-cols-1 overflow-hidden border p-6 lg:p-12">
+        <AnimatePresence mode="wait">
           <motion.div
-            className="relative overflow-hidden border p-6 md:p-12 lg:p-16"
+            className="grid w-full grid-cols-1"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.6,
               ease: "easeOut",
+              delay: 0.8,
             }}
           >
-            <motion.div
-              className="max-w-3xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                delay: 0.2,
-                duration: 0.5
-              }}
-            >
+            <div className="max-w-3xl">
               <motion.p
-                className="text-foreground text-2xl md:text-3xl font-medium"
+                className="text-foreground text-2xl font-medium md:text-3xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
               >
                 Ready to supercharge your development with AI?
               </motion.p>
@@ -109,16 +93,17 @@ export function MarketingWaitlist() {
                 className="text-muted-foreground mb-8 max-w-3xl text-base md:text-lg"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
+                transition={{ delay: 1.3, duration: 0.5 }}
               >
-                Join the waitlist to get early access to Undrstnd Developers API.
+                Join the waitlist to get early access to Undrstnd Developers
+                API.
               </motion.p>
 
               <motion.div
                 className="w-full max-w-md"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
               >
                 {isSubmitted ? (
                   <motion.div
@@ -132,7 +117,9 @@ export function MarketingWaitlist() {
                   </motion.div>
                 ) : (
                   <form
-                    action={(formData) => handleWaitlistSubmission(formData, setSubmitted)}
+                    action={(formData) =>
+                      handleWaitlistSubmission(formData, setSubmitted)
+                    }
                   >
                     <fieldset className="relative z-50 w-full">
                       <input
@@ -150,10 +137,10 @@ export function MarketingWaitlist() {
                   </form>
                 )}
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      </div>
     </Section>
   )
 }

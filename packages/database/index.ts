@@ -4,8 +4,8 @@ import { neonConfig, Pool } from "@neondatabase/serverless"
 import { PrismaNeon } from "@prisma/adapter-neon"
 import ws from "ws"
 
-import { PrismaClient } from "./prisma/generated/client"
 import { keys } from "./keys"
+import { PrismaClient } from "./prisma/generated/client"
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 

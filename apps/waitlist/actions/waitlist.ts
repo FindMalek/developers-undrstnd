@@ -4,8 +4,8 @@ import { headers } from "next/headers"
 import { analytics } from "@undrstnd/analytics/posthog/server"
 import { database } from "@undrstnd/database"
 import { resend } from "@undrstnd/email"
-import { log } from "@undrstnd/observability/log"
 import { parseError } from "@undrstnd/observability/error"
+import { log } from "@undrstnd/observability/log"
 
 import type { ResponseWaitlist } from "@/types"
 
