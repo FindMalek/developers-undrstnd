@@ -13,7 +13,7 @@ export function Footer() {
           <h2 className="text-foreground text-lg font-bold">{site.name}</h2>
         </div>
 
-        <div className="md:flex gap-x-2 hidden">
+        <div className="hidden gap-x-2 md:flex">
           {site.footer.socialLinks.map((link, index) => (
             <a
               key={index}
@@ -51,7 +51,6 @@ export function Footer() {
             ))}
           </div>
         </div>
-
       </div>
       <BorderText
         text={site.footer.brandText}

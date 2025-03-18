@@ -2,10 +2,9 @@ import type { ThemeProviderProps } from "next-themes"
 
 import { AnalyticsProvider } from "@undrstnd/analytics"
 import { AuthProvider } from "@undrstnd/auth/provider"
-
-import { Toaster } from "./components/ui/sonner"
-import { TooltipProvider } from "./components/ui/tooltip"
-import { ThemeProvider } from "./providers/theme"
+import { Toaster } from "@undrstnd/design-system/components/ui/sonner"
+import { TooltipProvider } from "@undrstnd/design-system/components/ui/tooltip"
+import { ThemeProvider } from "@undrstnd/design-system/providers/theme"
 
 type DesignSystemProviderProperties = ThemeProviderProps & {
   auth?: boolean
