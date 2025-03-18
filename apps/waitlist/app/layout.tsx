@@ -40,8 +40,8 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
     >
       <DesignSystemProvider auth={false}>
         {children}
-        <Footer />
         {process.env.NODE_ENV === "development" && <ModeToggle />}
+        <Footer />
         <TailwindIndicator />
       </DesignSystemProvider>
     </body>

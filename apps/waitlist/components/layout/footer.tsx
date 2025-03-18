@@ -1,5 +1,6 @@
 import { BorderText } from "@undrstnd/design-system/components/fancy/border-number"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
+import { cn } from "@undrstnd/design-system/lib/utils"
 
 import { site } from "@/lib/config"
 
@@ -12,7 +13,7 @@ export function Footer() {
           <h2 className="text-foreground text-lg font-bold">{site.name}</h2>
         </div>
 
-        <div className="flex gap-x-2">
+        <div className="md:flex gap-x-2 hidden">
           {site.footer.socialLinks.map((link, index) => (
             <a
               key={index}
@@ -35,13 +36,29 @@ export function Footer() {
             </li>
           ))}
         </ul>
-        <div className="text-muted-foreground flex items-center justify-between text-sm font-medium tracking-tight">
+        <div className="flex items-center justify-between">
           <p>{site.footer.bottomText}</p>
+
+          <div className="flex gap-x-2 md:hidden">
+            {site.footer.socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                className="text-muted-foreground hover:text-foreground flex h-5 w-5 items-center justify-center transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
+
       </div>
       <BorderText
         text={site.footer.brandText}
-        className="overflow-hidden font-mono text-[clamp(3rem,15vw,10rem)] font-medium tracking-tighter"
+        className={cn(
+          "before:from-primary/20 before:to-primary/60 after:bg-neutral-600/70",
+          "mx-[-8.5rem] overflow-hidden whitespace-nowrap font-mono text-[clamp(3rem,10vw,6rem)] font-medium tracking-tighter sm:text-[clamp(4rem,10vw,6rem)] md:text-[clamp(3rem,15vw,10rem)]"
+        )}
       />
     </footer>
   )

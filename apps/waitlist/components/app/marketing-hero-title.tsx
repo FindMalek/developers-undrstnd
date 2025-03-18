@@ -18,7 +18,7 @@ export function MarketingHeroTitle() {
         }}
       >
         <motion.span
-          className="inline-block text-balance"
+          className="inline-block text-balance pb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -27,7 +27,7 @@ export function MarketingHeroTitle() {
             ease,
           }}
         >
-          <AuroraText className="leading-normal">{site.hero.title}</AuroraText>
+          <AuroraText className="leading-tight">{site.hero.title}</AuroraText>
         </motion.span>
       </motion.h1>
       <motion.p

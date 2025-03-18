@@ -12,7 +12,7 @@ import { Section } from "@/components/layout/section"
 const LazySpline = lazy(() => import("@splinetool/react-spline"))
 
 const splineScene =
-  "https://prod.spline.design/kOtSXlXNswXbWI8r/scene.splinecode"
+  "https://prod.spline.design/QYPVEu7QR1n3ApaQ/scene.splinecode"
 
 export function MarketingHero() {
   const [isMobile, setIsMobile] = useState(false)
