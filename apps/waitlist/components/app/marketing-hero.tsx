@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 
+import { useMobile } from "@/hooks/use-mobile"
 import { BLUR_FADE_DELAY } from "@/lib/config"
 
 import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
@@ -17,19 +18,8 @@ const splineScene =
   "https://prod.spline.design/QYPVEu7QR1n3ApaQ/scene.splinecode"
 
 export function MarketingHero() {
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useMobile()
   const [showSpline, setShowSpline] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
 
   useEffect(() => {
     if (!isMobile) {

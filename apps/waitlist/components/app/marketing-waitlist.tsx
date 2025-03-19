@@ -5,15 +5,21 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
 import { FlickeringGrid } from "@undrstnd/design-system/components/fancy/flickering-grid"
 
+import { DailySignups } from "@/types"
+
 import { BLUR_FADE_DELAY, ease } from "@/lib/config"
 
 import { MarketingWaitlistForm } from "@/components/app/marketing-waitlist-form"
 import { MarketingWaitlistStats } from "@/components/app/marketing-waitlist-stats"
 import { Section } from "@/components/layout/section"
 
-export function MarketingWaitlist() {
+interface MarketingWaitlistProps {
+  waitlistSignups: DailySignups[]
+}
+
+export function MarketingWaitlist({ waitlistSignups }: MarketingWaitlistProps) {
   const [isSubmitted, setSubmitted] = useState(false)
-  const [userEmail, setUserEmail] = useState<string | null>(null)
+  const [alreadyJoined, setAlreadyJoined] = useState<Date | null>(null)
 
   return (
     <Section id="waitlist">
@@ -57,9 +63,9 @@ export function MarketingWaitlist() {
                 >
                   <MarketingWaitlistForm
                     onSubmit={(email) => {
-                      setUserEmail(email)
                       setSubmitted(true)
                     }}
+                    setAlreadyJoined={setAlreadyJoined}
                   />
                 </motion.div>
               </div>
@@ -74,7 +80,10 @@ export function MarketingWaitlist() {
                 ease,
               }}
             >
-              <MarketingWaitlistStats userEmail={userEmail} />
+              <MarketingWaitlistStats
+                alreadyJoined={alreadyJoined}
+                waitlistSignups={waitlistSignups}
+              />
             </motion.div>
           )}
         </AnimatePresence>

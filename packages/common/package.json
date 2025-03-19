@@ -1,0 +1,17 @@
+{
+  "name": "@undrstnd/common",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@undrstnd/database": "workspace:*"
+  },
+  "devDependencies": {
+    "@undrstnd/typescript-config": "workspace:*",
+    "@types/node": "22.13.10",
+    "typescript": "^5.8.2"
+  }
+}
