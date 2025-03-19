@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
 
+import { BLUR_FADE_DELAY } from "@/lib/config"
+
 import { MarketingWaitlistContributionGraph } from "@/components/app/marketing-waitlist-contribution-graph"
 
 // Mock data - in a real app, this would come from your API
@@ -46,9 +48,7 @@ export function MarketingWaitlistStats({ userEmail }: WaitlistStatsProps) {
   const [data, setData] = useState(mockWaitlistData)
   const [isUserDuplicate, setIsUserDuplicate] = useState(false)
 
-  // Simulate checking if user is a duplicate (in a real app, this would be done server-side)
   useEffect(() => {
-    // 20% chance the user is a duplicate for demo purposes
     const isDuplicate = Math.random() < 0.2
     setIsUserDuplicate(isDuplicate)
   }, [userEmail])
@@ -56,41 +56,30 @@ export function MarketingWaitlistStats({ userEmail }: WaitlistStatsProps) {
   return (
     <>
       <motion.div
-        className="flex flex-col gap-6"
+        className="flex w-full flex-col gap-4 pt-4 text-center sm:gap-6"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
+        transition={{ delay: BLUR_FADE_DELAY, duration: 0.5 }}
       >
-        <div>
-          <h3 className="text-foreground text-xl font-medium">
-            Waitlist Status
-          </h3>
-          <p className="text-muted-foreground">
+        <div className="w-full space-y-2 px-2 text-center sm:px-0">
+          <h3 className="text-foreground text-lg font-semibold sm:text-xl">
             {isUserDuplicate
-              ? "You've already joined with another email."
+              ? "You have already joined our waitlist!"
               : "Thanks for joining our waitlist!"}
-          </p>
-        </div>
+          </h3>
 
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <Icons.users className="text-primary size-5" />
-            <span className="text-foreground">
-              <strong>{data.totalSignups.toLocaleString()}</strong> developers
-              have joined
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Icons.logo className="text-primary size-5" />
-            <span
-              className={isUserDuplicate ? "text-red-500" : "text-foreground"}
-            >
-              Your position:{" "}
-              <strong>
-                #{isUserDuplicate ? "Duplicate" : data.userPosition}
-              </strong>
-            </span>
+          <div className="text-muted-foreground flex w-full flex-wrap items-center justify-center gap-1 text-center text-sm sm:text-base">
+            <span>We have</span>
+            <Icons.users className="text-primary mx-1 hidden size-4 sm:mx-2 sm:size-5 md:block" />
+            <strong className="text-foreground mr-1">
+              {data.totalSignups.toLocaleString()}
+            </strong>
+            <span>developers have joined, and you're number</span>
+            <Icons.logo className="text-primary mx-1 hidden size-4 sm:mx-2 sm:size-5 md:block" />
+            <strong className="text-foreground mr-1">
+              {data.userPosition.toLocaleString()}
+            </strong>
+            <span>in line.</span>
           </div>
         </div>
 

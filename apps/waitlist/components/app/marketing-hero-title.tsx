@@ -1,14 +1,14 @@
 import { motion } from "framer-motion"
 
-import { AuroraText } from "@undrstnd/design-system/components/fancy/aurora-text"
+import { site } from "@undrstnd/seo/config"
 
-import { ease, site } from "@/lib/config"
+import { ease } from "@/lib/config"
 
 export function MarketingHeroTitle() {
   return (
     <div className="flex w-full max-w-3xl flex-col overflow-hidden pt-8">
       <motion.h1
-        className="text-foreground leading-tighter text-left text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl"
+        className="text-foreground leading-tighter text-left text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
         animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
         transition={{
@@ -18,7 +18,7 @@ export function MarketingHeroTitle() {
         }}
       >
         <motion.span
-          className="inline-block text-balance pb-4"
+          className="inline-block text-balance pb-4 text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -27,7 +27,7 @@ export function MarketingHeroTitle() {
             ease,
           }}
         >
-          <AuroraText className="leading-tight">{site.hero.title}</AuroraText>
+          {site.hero.title}
         </motion.span>
       </motion.h1>
       <motion.p

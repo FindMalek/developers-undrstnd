@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "framer-motion"
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 
+import { BLUR_FADE_DELAY } from "@/lib/config"
+
 import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
 import { MarketingHeroTitle } from "@/components/app/marketing-hero-title"
 import { Section } from "@/components/layout/section"
@@ -71,7 +73,7 @@ export function MarketingHero() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: BLUR_FADE_DELAY }}
                 className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
               >
                 <LazySpline

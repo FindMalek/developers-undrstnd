@@ -1,8 +1,7 @@
 import { BorderText } from "@undrstnd/design-system/components/fancy/border-number"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
 import { cn } from "@undrstnd/design-system/lib/utils"
-
-import { site } from "@/lib/config"
+import { site } from "@undrstnd/seo/config"
 
 export function Footer() {
   return (
@@ -32,7 +31,9 @@ export function Footer() {
               key={index}
               className="text-muted-foreground hover:text-foreground text-[15px]/normal font-medium transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
             >
-              <a href={link.url}>{link.text}</a>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.text}
+              </a>
             </li>
           ))}
         </ul>
@@ -44,6 +45,8 @@ export function Footer() {
               <a
                 key={index}
                 href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground flex h-5 w-5 items-center justify-center transition-all duration-100 ease-linear hover:underline hover:underline-offset-4"
               >
                 {link.icon}
@@ -55,7 +58,8 @@ export function Footer() {
       <BorderText
         text={site.footer.brandText}
         className={cn(
-          "before:from-primary/20 before:to-primary/60 after:bg-neutral-600/70",
+          "before:from-neutral-300 before:to-neutral-200/70",
+          "dark:before:to-neutral-800/30 dark:after:bg-neutral-600/70",
           "mx-[-8.5rem] overflow-hidden whitespace-nowrap font-mono text-[clamp(3rem,10vw,6rem)] font-medium tracking-tighter sm:text-[clamp(4rem,10vw,6rem)] md:text-[clamp(3rem,15vw,10rem)]"
         )}
       />

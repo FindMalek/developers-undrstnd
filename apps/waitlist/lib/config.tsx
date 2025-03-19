@@ -4,8 +4,6 @@ export const BLUR_FADE_DELAY = 0.15
 
 export const ease = [0.16, 1, 0.3, 1]
 
-export { site } from "@undrstnd/seo/config"
-
 export const companies: Company[] = [
   {
     name: "Google",
@@ -25,7 +23,7 @@ export const companies: Company[] = [
   {
     name: "Mistral",
     imageUrl: "/logos/mistral.png",
-    href: "https://mistral.com",
+    href: "https://mistral.ai/",
   },
   {
     name: "Cerebras",
@@ -38,3 +36,5 @@ export const companies: Company[] = [
     href: "https://sambanova.ai",
   },
 ]
+
+export const waitlistOpenDate = new Date("2025-01-02")

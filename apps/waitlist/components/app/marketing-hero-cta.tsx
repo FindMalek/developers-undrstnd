@@ -4,8 +4,9 @@ import Link from "next/link"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
 import { buttonVariants } from "@undrstnd/design-system/components/ui/button"
 import { cn } from "@undrstnd/design-system/lib/utils"
+import { site } from "@undrstnd/seo/config"
 
-import { ease, site } from "@/lib/config"
+import { ease } from "@/lib/config"
 
 export function MarketingHeroCTA() {
   return (

@@ -4,6 +4,8 @@ import { useFormStatus } from "react-dom"
 
 import { useState } from "react"
 import { Icons } from "@undrstnd/design-system/components/shared/icons"
+import { Button } from "@undrstnd/design-system/components/ui/button"
+import { Input } from "@undrstnd/design-system/components/ui/input"
 import { toast } from "@undrstnd/design-system/hooks/use-toast"
 import { parseError } from "@undrstnd/observability/error"
 import { log } from "@undrstnd/observability/log"
@@ -26,13 +28,14 @@ function SubmitButton() {
   }
 
   return (
-    <button
+    <Button
       type="submit"
-      className="bg-primary text-primary-foreground absolute right-2 top-2 z-10 h-7 rounded-md px-4 text-sm font-medium"
+      className="absolute right-2 top-2 z-10 h-7"
       aria-label="Submit email"
+      size="sm"
     >
       <Icons.chevronRight className="inline-block size-4" />
-    </button>
+    </Button>
   )
 }
 
@@ -69,7 +72,7 @@ export function MarketingWaitlistForm({ onSubmit }: WaitlistFormProps) {
   return (
     <form action={handleWaitlistSubmission}>
       <fieldset className="relative z-50 w-full">
-        <input
+        <Input
           placeholder="example@email.com"
           type="email"
           name="email"
@@ -79,7 +82,7 @@ export function MarketingWaitlistForm({ onSubmit }: WaitlistFormProps) {
           autoComplete="email"
           aria-label="Email address"
           required
-          className="border-border font-sm h-11 w-full rounded-lg border bg-transparent px-3 py-1 outline-none"
+          className="h-11 w-full"
         />
         <SubmitButton />
       </fieldset>

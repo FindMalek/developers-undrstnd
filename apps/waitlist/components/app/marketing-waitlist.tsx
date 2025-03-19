@@ -3,6 +3,9 @@
 import { AnimatePresence, motion } from "framer-motion"
 
 import { useState } from "react"
+import { FlickeringGrid } from "@undrstnd/design-system/components/fancy/flickering-grid"
+
+import { BLUR_FADE_DELAY, ease } from "@/lib/config"
 
 import { MarketingWaitlistForm } from "@/components/app/marketing-waitlist-form"
 import { MarketingWaitlistStats } from "@/components/app/marketing-waitlist-stats"
@@ -14,11 +17,11 @@ export function MarketingWaitlist() {
 
   return (
     <Section id="waitlist">
-      <div className="relative w-full overflow-hidden rounded-lg border">
+      <div className="bg-background relative w-full overflow-hidden border">
         <AnimatePresence mode="wait">
           {!isSubmitted ? (
             <motion.div
-              className="grid w-full grid-cols-1 p-6 lg:p-12"
+              className="relative z-10 grid w-full grid-cols-1 p-6 lg:p-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -32,7 +35,7 @@ export function MarketingWaitlist() {
                   className="text-foreground text-xl font-medium md:text-2xl"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
+                  transition={{ delay: BLUR_FADE_DELAY, duration: 0.5 }}
                 >
                   Ready to supercharge your development with AI?
                 </motion.p>
@@ -40,7 +43,7 @@ export function MarketingWaitlist() {
                   className="text-muted-foreground md:text-md mb-8 max-w-3xl text-base"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
+                  transition={{ delay: BLUR_FADE_DELAY, duration: 0.5 }}
                 >
                   Join the waitlist to get early access to Undrstnd Developers
                   API.
@@ -50,7 +53,7 @@ export function MarketingWaitlist() {
                   className="w-full max-w-md"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
+                  transition={{ delay: BLUR_FADE_DELAY, duration: 0.5 }}
                 >
                   <MarketingWaitlistForm
                     onSubmit={(email) => {
@@ -63,18 +66,26 @@ export function MarketingWaitlist() {
             </motion.div>
           ) : (
             <motion.div
-              className="grid w-full grid-cols-1 gap-8 p-6 lg:grid-cols-2 lg:p-12"
+              className="relative z-10 w-full p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
-                ease: "easeOut",
+                duration: BLUR_FADE_DELAY,
+                ease,
               }}
             >
               <MarketingWaitlistStats userEmail={userEmail} />
             </motion.div>
           )}
         </AnimatePresence>
+        <FlickeringGrid
+          className="absolute inset-0 z-0 [mask-image:linear-gradient(to_left,white,transparent)]"
+          squareSize={4}
+          gridGap={6}
+          color="#60A5FA"
+          maxOpacity={0.2}
+          flickerChance={0.1}
+        />
       </div>
     </Section>
   )
