@@ -59,7 +59,7 @@ export function MarketingWaitlistForm({
   const form = useForm<TWaitlistForm>({
     resolver: zodResolver(waitlistFormSchema),
     defaultValues: {
-      email: "ee@ffff.cccc",
+      email: "",
     },
   })
 
