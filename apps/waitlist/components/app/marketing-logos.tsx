@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-import { companies } from "@/lib/config"
+import { BLUR_FADE_DELAY, companies, ease } from "@/lib/config"
 
 import { Section } from "@/components/layout/section"
 
@@ -27,9 +27,9 @@ export function MarketingLogos() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
+                    ease,
                     duration: 0.5,
-                    ease: "easeInOut",
-                    delay: Math.random() * 0.5,
+                    delay: Math.random() * BLUR_FADE_DELAY,
                   }}
                 >
                   <Image

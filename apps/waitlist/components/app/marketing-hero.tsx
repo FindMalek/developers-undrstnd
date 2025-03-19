@@ -5,6 +5,9 @@ import { AnimatePresence, motion } from "framer-motion"
 import { lazy, Suspense, useEffect, useState } from "react"
 import Image from "next/image"
 
+import { useMobile } from "@/hooks/use-mobile"
+import { BLUR_FADE_DELAY } from "@/lib/config"
+
 import { MarketingHeroCTA } from "@/components/app/marketing-hero-cta"
 import { MarketingHeroTitle } from "@/components/app/marketing-hero-title"
 import { Section } from "@/components/layout/section"
@@ -12,22 +15,11 @@ import { Section } from "@/components/layout/section"
 const LazySpline = lazy(() => import("@splinetool/react-spline"))
 
 const splineScene =
-  "https://prod.spline.design/kOtSXlXNswXbWI8r/scene.splinecode"
+  "https://prod.spline.design/QYPVEu7QR1n3ApaQ/scene.splinecode"
 
 export function MarketingHero() {
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useMobile()
   const [showSpline, setShowSpline] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
 
   useEffect(() => {
     if (!isMobile) {
@@ -71,7 +63,7 @@ export function MarketingHero() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: BLUR_FADE_DELAY }}
                 className="absolute inset-0 flex h-full w-full origin-top-left items-center justify-center"
               >
                 <LazySpline

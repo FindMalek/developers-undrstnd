@@ -1,13 +1,22 @@
-# **Undrstnd Developers**
+![hero](github.jpg)
 
-Easy, cheap and fast AI integration for devs.
-
-[Website](https://dev.undrstnd.com),
-[Issues](https://github.com/undrstnd-labs/developers/issues),
-[PRs](https://go.undrstnd.dev/gh),
-[Discord](https://go.undrstnd.dev/dc),
-[LinkedIn](https://go.undrstnd.dev/li),
-[Facebook](https://go.undrstnd.dev/fb)
+<p align="center">
+	<h1 align="center"><b>Undrstnd Developers</b></h1>
+    <p align="center">
+        Easy, cheap and fast AI integration for devs.
+        <br />
+        <br />
+        <a href="https://go.undrstnd.dev/dc">Discord</a>
+        ·
+        <a href="https://dev.undrstnd.com">Website</a>
+        .
+        <a href="https://go.undrstnd.dev/li">LinkedIn</a>
+        .
+        <a href="https://go.undrstnd.dev/fb">Facebook</a>
+        .
+        <a href="https://github.com/undrstnd-labs/developers/issues">Issues</a>
+    </p>
+</p>
 
 ## Under active development
 

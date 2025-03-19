@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-
-import { site } from "@/lib/config"
+import { site } from "@undrstnd/seo/config"
 
 export function absoluteUrl(path: string) {
   return `${process.env.NEXT_PUBLIC_APP_URL || site.url}${path}`

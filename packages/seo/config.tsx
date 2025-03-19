@@ -87,7 +87,10 @@ export const site = {
     links: [
       { text: "About", url: "/about" },
       { text: "Contact", url: "/contact" },
-      { text: "Careers", url: "/careers" },
+      {
+        text: "Branding",
+        url: "https://www.behance.net/gallery/221052193/undrstnd-labs",
+      },
     ],
     bottomText: "All rights reserved.",
     brandText: "Undrstnd Labs",

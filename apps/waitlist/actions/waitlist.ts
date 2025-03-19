@@ -7,7 +7,7 @@ import { resend } from "@undrstnd/email"
 import { parseError } from "@undrstnd/observability/error"
 import { log } from "@undrstnd/observability/log"
 
-import type { ResponseWaitlist } from "@/types"
+import type { DailySignups, ResponseWaitlist, WaitlistUserInfo } from "@/types"
 
 async function getCountryFromIP(ip: string): Promise<string> {
   try {
@@ -70,7 +70,7 @@ export async function isOnWaitlist(email: string) {
     },
   })
 
-  return !!waitlist
+  return waitlist
 }
 
 export async function addWaitlistAndSendEmail(
@@ -85,9 +85,11 @@ export async function addWaitlistAndSendEmail(
         event: "Waitlist Email Already Exists",
         distinctId: email,
       })
+
       log.info("Waitlist Email Already Exists", { email })
       return {
         success: true,
+        alreadyJoined: exists.createdAt,
         warning: "Email is already on the waitlist",
       }
     }
@@ -121,5 +123,78 @@ export async function addWaitlistAndSendEmail(
       success: false,
       error: "Failed to add to waitlist",
     }
+  }
+}
+
+export async function getWaitlistSignupsByDate(): Promise<DailySignups[]> {
+  log.info("Getting waitlist signups by date")
+
+  try {
+    const waitlistEntries = await database.waitlist.findMany({
+      select: {
+        createdAt: true,
+      },
+      orderBy: {
+        createdAt: "asc",
+      },
+    })
+
+    const signupsByDate = new Map<string, number>()
+
+    for (const entry of waitlistEntries) {
+      // Format date as YYYY-MM-DD
+      const date = entry.createdAt.toISOString().split("T")[0]
+
+      if (signupsByDate.has(date)) {
+        signupsByDate.set(date, signupsByDate.get(date)! + 1)
+      } else {
+        signupsByDate.set(date, 1)
+      }
+    }
+
+    // TODO: add this to the `@undrstnd/common/entites/waitlist` package
+    const result: DailySignups[] = Array.from(signupsByDate.entries()).map(
+      ([date, count]) => ({
+        date,
+        count,
+      })
+    )
+
+    return result
+  } catch (error) {
+    const errorMessage = parseError(error)
+    log.info("Error getting waitlist signups by date", { error: errorMessage })
+    return []
+  }
+}
+
+export async function getWaitlistUserInfo(
+  email: string
+): Promise<WaitlistUserInfo | null> {
+  log.info("Getting waitlist user info", { email })
+
+  try {
+    const waitlistEntry = await database.waitlist.findUnique({
+      where: {
+        email,
+      },
+      select: {
+        id: true,
+        createdAt: true,
+      },
+    })
+
+    if (!waitlistEntry) {
+      return null
+    }
+
+    return {
+      id: waitlistEntry.id,
+      signupDate: waitlistEntry.createdAt,
+    }
+  } catch (error) {
+    const errorMessage = parseError(error)
+    log.info("Error getting waitlist user info", { error: errorMessage })
+    return null
   }
 }

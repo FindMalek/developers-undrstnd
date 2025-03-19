@@ -7,9 +7,8 @@ import { TailwindIndicator } from "@undrstnd/design-system/components/layout/tai
 import { ModeToggle } from "@undrstnd/design-system/components/shared/mode-toggle"
 import { fonts } from "@undrstnd/design-system/lib/fonts"
 import { cn } from "@undrstnd/design-system/lib/utils"
+import { site } from "@undrstnd/seo/config"
 import { createMetadata } from "@undrstnd/seo/metadata"
-
-import { site } from "@/lib/config"
 
 import { Footer } from "@/components/layout/footer"
 
@@ -40,8 +39,8 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
     >
       <DesignSystemProvider auth={false}>
         {children}
-        <Footer />
         {process.env.NODE_ENV === "development" && <ModeToggle />}
+        <Footer />
         <TailwindIndicator />
       </DesignSystemProvider>
     </body>

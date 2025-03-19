@@ -15,3 +15,18 @@ export const handleError = (error: unknown): void => {
 
   toast.error(message)
 }
+
+export function formatDate(date: Date | string) {
+  if (typeof date === "string") {
+    const dateObj = new Date(date)
+    return dateObj.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    })
+  }
+
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  })
+}

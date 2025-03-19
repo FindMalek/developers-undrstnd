@@ -13,6 +13,7 @@ export const config: Config = {
     "./node_modules/@undrstnd/design-system/index.tsx",
     "./components/**/*.{ts,tsx}",
     "./lib/**/*.{ts,tsx}",
+    "./hooks/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./providers/**/*.{ts,tsx}",
   ],

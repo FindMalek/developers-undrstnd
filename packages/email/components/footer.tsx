@@ -17,7 +17,7 @@ export function Footer() {
       <Container className="mx-auto flex w-full flex-col gap-y-5 rounded-lg px-7 py-5">
         <Section className="flex flex-col justify-between gap-y-5">
           <Container className="text-muted-foreground flex flex-row items-center gap-x-5">
-            {site.footer.links?.map((link, index) => (
+            {site.links?.map((link, index) => (
               <Link
                 key={index}
                 href={link.url}
@@ -31,14 +31,14 @@ export function Footer() {
 
         <Container>
           <BorderText
-            text={site.footer.brandText}
+            text={site.brandText}
             className="overflow-hidden font-mono text-4xl font-medium tracking-tighter"
           />
         </Container>
 
         <Section className="flex items-center justify-between">
           <Container className="flex w-full justify-around gap-x-6">
-            {site.footer.socialLinks.map((link, index) => (
+            {site.socialLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.url}
@@ -49,7 +49,7 @@ export function Footer() {
             ))}
           </Container>
           <Container className="text-muted-foreground flex items-center text-sm font-medium tracking-tight">
-            <Text>{site.footer.bottomText}</Text>
+            <Text>{site.bottomText}</Text>
           </Container>
         </Section>
       </Container>
