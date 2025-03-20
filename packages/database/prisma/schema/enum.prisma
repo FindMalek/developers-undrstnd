@@ -1,0 +1,11 @@
+enum ModelStatus {
+    OPERATIONAL
+    DEGRADED
+    MAINTENANCE
+}
+
+enum ApiKeyTier {
+    FREE
+    PRO
+    ENTERPRISE
+}
