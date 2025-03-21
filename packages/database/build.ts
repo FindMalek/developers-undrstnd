@@ -40,9 +40,8 @@ for (const file of schemaFiles) {
   const fileContent = fs.readFileSync(filePath, "utf8")
 
   console.log(`Processing ${file}...`)
-  finalSchema += `// Models from '${file}'\n`
   finalSchema += fileContent
-  finalSchema += "\n\n"
+  finalSchema += "\n"
 }
 
 // Write the combined schema to the output file

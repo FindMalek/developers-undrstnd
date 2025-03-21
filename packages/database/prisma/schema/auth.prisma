@@ -1,12 +1,19 @@
 /**
- * Represents a waitlist.
- * @property id - Unique identifier for the waitlist entry. Type: String. Generated using cuid().
- * @property email - Email address of the user. Type: String. Must be unique.
- * @property country - Country of the user. Type: String. Optional.
- * @property city - City of the user. Type: String. Optional.
- * @property ip - IP address of the user. Type: String. Optional.
- * @property joinedAt - Timestamp when the user joined the waitlist. Type: DateTime. Optional.
- * @property createdAt - Timestamp when the waitlist entry was created. Type: DateTime. Defaults to current time.
+ * Waitlist Model
+ * Manages user waitlist entries for controlled access to the platform.
+ * Tracks user information and signup timestamps.
+ * @model Waitlist
+ * @description User waitlist management and tracking
+ * Fields:
+ * @field id {String} - Unique identifier (cuid)
+ * @field email {String} - User's email address
+ * @field country {String?} - User's country
+ * @field city {String?} - User's city
+ * @field ip {String?} - User's IP address at signup
+ * @field joinedAt {DateTime?} - When user was granted access
+ * @field createdAt {DateTime} - When user joined waitlist
+ * Indexes:
+ * @@unique([email]) - Ensures one entry per email
  */
 model Waitlist {
   id    String @id @default(cuid())

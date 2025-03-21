@@ -1,5 +1,15 @@
-// This is a stub model.
-// Delete it and add your own Prisma models.
+/**
+ * Page Model
+ * Temporary model for development and testing purposes.
+ * This model should be replaced with actual cron-related models.
+ * @model Page
+ * @description Stub model for development
+ * @deprecated This is a placeholder model - replace with actual cron job models
+ * Fields:
+ * @field id {Int} - Auto-incrementing identifier
+ * @field name {String} - Page name
+ * @field createdAt {DateTime} - Creation timestamp
+ */
 model Page {
   id   Int    @id @default(autoincrement())
   name String
