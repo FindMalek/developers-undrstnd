@@ -10,9 +10,9 @@
  * @value MAINTENANCE - Model is temporarily unavailable for maintenance
  */
 enum ModelStatus {
-    OPERATIONAL
-    DEGRADED
-    MAINTENANCE
+  OPERATIONAL
+  DEGRADED
+  MAINTENANCE
 }
 
 /**
@@ -27,9 +27,9 @@ enum ModelStatus {
  * @value ENTERPRISE - Custom limits and SLA
  */
 enum ApiKeyTier {
-    FREE
-    PRO
-    ENTERPRISE
+  FREE
+  PRO
+  ENTERPRISE
 }
 
 /**
@@ -44,7 +44,7 @@ enum ApiKeyTier {
  * @value COMPLETIONS - Text completion endpoint
  */
 enum ApiEndpoint {
-    CHAT_COMPLETIONS
-    MODELS
-    COMPLETIONS
+  CHAT_COMPLETIONS
+  MODELS
+  COMPLETIONS
 }

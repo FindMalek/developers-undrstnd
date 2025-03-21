@@ -18,19 +18,19 @@
  * @@unique([name]) - Ensures provider names are unique
  */
 model Provider {
-    id   String @id @default(uuid())
-    name String @unique
+  id   String @id @default(uuid())
+  name String @unique
 
-    baseUrl        String
-    apiKey         String
-    inferenceSpeed Float  @default(20.0) // Tokens per second
+  baseUrl        String
+  apiKey         String
+  inferenceSpeed Float  @default(20.0) // Tokens per second
 
-    models LanguageModel[]
+  models LanguageModel[]
 
-    updatedAt DateTime @updatedAt
-    createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 
-    @@map("providers")
+  @@map("providers")
 }
 
 /**
@@ -60,32 +60,32 @@ model Provider {
  * @@unique([providerId, externalId]) - Ensures model uniqueness per provider
  */
 model LanguageModel {
-    id         String @id @default(uuid())
-    externalId String
+  id         String @id @default(uuid())
+  externalId String
 
-    name       String?
-    owner      String?
-    parameters BigInt?
+  name       String?
+  owner      String?
+  parameters BigInt?
 
-    inputCost  Float
-    outputCost Float
+  inputCost  Float
+  outputCost Float
 
-    requestLogs RequestLog[]
+  requestLogs RequestLog[]
 
-    consecutiveErrorCount Int         @default(0)
-    status                ModelStatus @default(OPERATIONAL)
+  consecutiveErrorCount Int         @default(0)
+  status                ModelStatus @default(OPERATIONAL)
 
-    lastFetched DateTime @updatedAt
-    createdAt   DateTime @default(now()) @map("created")
+  lastFetched DateTime @updatedAt
+  createdAt   DateTime @default(now()) @map("created")
 
-    siblings  LanguageModel[] @relation("ModelSiblings")
-    siblingOf LanguageModel[] @relation("ModelSiblings")
+  siblings  LanguageModel[] @relation("ModelSiblings")
+  siblingOf LanguageModel[] @relation("ModelSiblings")
 
-    providerId String
-    provider   Provider @relation(fields: [providerId], references: [id])
+  providerId String
+  provider   Provider @relation(fields: [providerId], references: [id])
 
-    @@unique([providerId, externalId])
-    @@map("language_models")
+  @@unique([providerId, externalId])
+  @@map("language_models")
 }
 
 /**
@@ -107,20 +107,20 @@ model LanguageModel {
  * @relation apiKeys {APIKey[]} - Keys using this tier's configuration
  */
 model RateLimitTier {
-    tier ApiKeyTier @id
+  tier ApiKeyTier @id
 
-    requestsPerHour  Int
-    requestsPerDay   Int
-    requestsPerMonth Int
-    maxBurstSize     Int
-    tokensPerMonth   Int?
+  requestsPerHour  Int
+  requestsPerDay   Int
+  requestsPerMonth Int
+  maxBurstSize     Int
+  tokensPerMonth   Int?
 
-    apiKeys APIKey[]
+  apiKeys APIKey[]
 
-    updatedAt DateTime @updatedAt
-    createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 
-    @@map("rate_limit_tiers")
+  @@map("rate_limit_tiers")
 }
 
 /**
@@ -152,33 +152,33 @@ model RateLimitTier {
  * @@index([tier]) - Optimizes queries by tier
  */
 model APIKey {
-    id  String @id @default(uuid())
-    key String @unique
+  id  String @id @default(uuid())
+  key String @unique
 
-    name String?
-    tier ApiKeyTier @default(FREE)
+  name String?
+  tier ApiKeyTier @default(FREE)
 
-    isRevoked Boolean @default(false)
-    isDeleted Boolean @default(false)
+  isRevoked Boolean @default(false)
+  isDeleted Boolean @default(false)
 
-    hourlyUsage  Int @default(0)
-    dailyUsage   Int @default(0)
-    monthlyUsage Int @default(0)
-    tokenUsage   Int @default(0)
+  hourlyUsage  Int @default(0)
+  dailyUsage   Int @default(0)
+  monthlyUsage Int @default(0)
+  tokenUsage   Int @default(0)
 
-    requestLogs RequestLog[]
+  requestLogs RequestLog[]
 
-    deletedAt  DateTime?
-    lastUsedAt DateTime?
-    updatedAt  DateTime  @updatedAt
-    createdAt  DateTime  @default(now())
+  deletedAt  DateTime?
+  lastUsedAt DateTime?
+  updatedAt  DateTime  @updatedAt
+  createdAt  DateTime  @default(now())
 
-    userId String
+  userId String
 
-    rateLimitTier RateLimitTier @relation(fields: [tier], references: [tier])
+  rateLimitTier RateLimitTier @relation(fields: [tier], references: [tier])
 
-    @@index([tier])
-    @@map("api_keys")
+  @@index([tier])
+  @@map("api_keys")
 }
 
 /**
@@ -202,23 +202,23 @@ model APIKey {
  * @relation model {LanguageModel} - The model used
  */
 model RequestLog {
-    id       String      @id @default(uuid())
-    endpoint ApiEndpoint
+  id       String      @id @default(uuid())
+  endpoint ApiEndpoint
 
-    statusCode Int
-    duration   Int
+  statusCode Int
+  duration   Int
 
-    inputTokens  Int?
-    outputTokens Int?
+  inputTokens  Int?
+  outputTokens Int?
 
-    timestamp DateTime @default(now())
+  timestamp DateTime @default(now())
 
-    apiKeyId String
-    apiKey   APIKey @relation(fields: [apiKeyId], references: [id])
+  apiKeyId String
+  apiKey   APIKey @relation(fields: [apiKeyId], references: [id])
 
-    modelId String
-    model   LanguageModel @relation(fields: [modelId], references: [id])
+  modelId String
+  model   LanguageModel @relation(fields: [modelId], references: [id])
 
-    @@index([apiKeyId])
-    @@index([modelId])
+  @@index([apiKeyId])
+  @@index([modelId])
 }
