@@ -155,34 +155,38 @@ export class ModelSyncService {
   }
 
   /**
-   * Sends a notification to the model discovery webhook
+   * Records new model discovery in the database for weekly summary emails
    */
   private async notifyModelDiscovery(
     model: LanguageModel,
     provider: Provider
   ): Promise<void> {
     try {
-      await fetch("https://api.undrstnd.dev/webhooks/model-discovery", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await database.modelDiscovery.create({
+        data: {
+          modelId: model.id,
+          providerId: provider.id,
+          providerName: provider.name,
+          modelName: model.name || model.externalId,
+          parameters: model.parameters,
+          notifiedInSummary: false,
+          discoveredAt: new Date(),
         },
-        body: JSON.stringify({
-          event: "model_discovered",
-          model_id: model.id,
-          provider: provider.name,
-          external_id: model.externalId,
-          timestamp: new Date().toISOString(),
-        }),
+      })
+
+      log.info("MODEL_DISCOVERY_RECORDED", {
+        modelId: model.id,
+        providerId: provider.id,
+        modelName: model.name || model.externalId,
       })
     } catch (error) {
       const message = parseError(error)
-      log.error("MODEL_DISCOVERY_WEBHOOK_ERROR", {
+      log.error("MODEL_DISCOVERY_RECORD_ERROR", {
         modelId: model.id,
         providerId: provider.id,
         error: message,
       })
-      // Don't rethrow - we don't want to fail the sync if the webhook fails
+      // Don't rethrow - we don't want to fail the sync if recording the discovery fails
     }
   }
 
