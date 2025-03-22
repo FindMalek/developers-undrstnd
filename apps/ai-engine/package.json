@@ -18,6 +18,7 @@
     "@undrstnd/next-config": "workspace:*",
     "@undrstnd/observability": "workspace:*",
     "@undrstnd/testing": "workspace:*",
+    "@undrstnd/rate-limit": "workspace:*",
     "@undrstnd/notifications": "workspace:*",
     "@sentry/nextjs": "^9.5.0",
     "@t3-oss/env-nextjs": "^0.12.0",

@@ -1,0 +1,50 @@
+/**
+ * ModelStatus Enum
+ * Represents the operational status of a language model.
+ * Used to track service health and availability.
+ * @enum ModelStatus
+ * @description Language model operational states
+ * Values:
+ * @value OPERATIONAL - Model is functioning normally
+ * @value DEGRADED - Model is experiencing performance issues
+ * @value MAINTENANCE - Model is temporarily unavailable for maintenance
+ */
+enum ModelStatus {
+  OPERATIONAL
+  DEGRADED
+  MAINTENANCE
+}
+
+/**
+ * ApiKeyTier Enum
+ * Defines the service tiers available for API keys.
+ * Each tier has different rate limits and capabilities.
+ * @enum ApiKeyTier
+ * @description API access tiers with varying limits
+ * Values:
+ * @value FREE - Basic access with limited quotas
+ * @value PRO - Professional tier with higher limits
+ * @value ENTERPRISE - Custom limits and SLA
+ */
+enum ApiKeyTier {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+/**
+ * ApiEndpoint Enum
+ * Lists the available API endpoints in the system.
+ * Used for request logging and access control.
+ * @enum ApiEndpoint
+ * @description Available API endpoints
+ * Values:
+ * @value CHAT_COMPLETIONS - Chat completion endpoint
+ * @value MODELS - Model information endpoint
+ * @value COMPLETIONS - Text completion endpoint
+ */
+enum ApiEndpoint {
+  CHAT_COMPLETIONS
+  MODELS
+  COMPLETIONS
+}
