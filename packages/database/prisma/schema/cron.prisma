@@ -1,18 +1,49 @@
 /**
- * Page Model
- * Temporary model for development and testing purposes.
- * This model should be replaced with actual cron-related models.
- * @model Page
- * @description Stub model for development
- * @deprecated This is a placeholder model - replace with actual cron job models
+ * ModelDiscovery Model
+ * Tracks newly discovered language models for notification purposes
+ * @model ModelDiscovery
+ * @description Records each new model discovery event for weekly summaries
  * Fields:
- * @field id {Int} - Auto-incrementing identifier
- * @field name {String} - Page name
- * @field createdAt {DateTime} - Creation timestamp
+ * @field id {String} - Unique UUID identifier
+ * @field modelId {String} - Reference to the discovered language model
+ * @field providerId {String} - Reference to the provider of the model
+ * @field providerName {String} - Provider name (denormalized for reporting)
+ * @field modelName {String} - Model name (denormalized for reporting)
+ * @field parameters {BigInt?} - Model size in parameters (if known)
+ * @field notifiedInSummary {Boolean} - Whether this discovery was included in a weekly summary
+ * @field discoveredAt {DateTime} - When the model was discovered
  */
-model Page {
-  id   Int    @id @default(autoincrement())
-  name String
+model ModelDiscovery {
+  id                String   @id @default(uuid())
+  modelId           String
+  providerId        String
+  providerName      String
+  modelName         String
+  parameters        BigInt?
+  notifiedInSummary Boolean  @default(false)
+  discoveredAt      DateTime @default(now())
 
-  createdAt DateTime @default(now())
+  @@index([notifiedInSummary])
+  @@index([discoveredAt])
+  @@map("model_discoveries")
+}
+
+/**
+ * WeeklySummary Model
+ * Tracks weekly summary emails sent about new models
+ * @model WeeklySummary
+ * @description Records when weekly summary emails are sent
+ * Fields:
+ * @field id {String} - Unique UUID identifier
+ * @field modelCount {Int} - Number of models included in this summary
+ * @field sent {Boolean} - Whether the email was sent successfully
+ * @field createdAt {DateTime} - When the summary was created
+ */
+model WeeklySummary {
+  id         String   @id @default(uuid())
+  modelCount Int
+  sent       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@map("weekly_summaries")
 }

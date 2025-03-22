@@ -1,11 +1,13 @@
 import {
   LanguageModelEntityDb,
+  LanguageModelEntitySelect,
   LanguageModelSimpleEntityDb,
   ProviderEntity,
 } from "@undrstnd/common/entities"
 import {
   LanguageModelRo,
   LanguageModelSimpleRo,
+  OpenAiModelRo,
 } from "@undrstnd/common/schemas"
 
 export class LanguageModelEntity {
@@ -40,6 +42,15 @@ export class LanguageModelEntity {
 
       siblings: entity.siblings.map(LanguageModelEntity.getSimpleRo),
       provider: ProviderEntity.getSimpleRo(entity.provider),
+    }
+  }
+
+  static getModelRo(entity: LanguageModelEntitySelect): OpenAiModelRo {
+    return {
+      id: entity.id,
+      object: "model",
+      created: Math.floor(entity.createdAt.getTime() / 1000),
+      owned_by: entity.owner || "undrstnd",
     }
   }
 }

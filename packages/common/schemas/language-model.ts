@@ -31,3 +31,12 @@ export const languageModelSchema = languageModelSimpleSchema.extend({
 })
 
 export type LanguageModelRo = z.infer<typeof languageModelSchema>
+
+export const openAiModelSchema = z.object({
+  id: z.string(),
+  object: z.string(),
+  created: z.number(),
+  owned_by: z.string(),
+})
+
+export type OpenAiModelRo = z.infer<typeof openAiModelSchema>
