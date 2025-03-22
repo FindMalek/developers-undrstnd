@@ -8,11 +8,15 @@
  * @value OPERATIONAL - Model is functioning normally
  * @value DEGRADED - Model is experiencing performance issues
  * @value MAINTENANCE - Model is temporarily unavailable for maintenance
+ * @value UNAVAILABLE - Model is not operational
+ * @value DEPRECATED - Model is deprecated and will be removed in the future
  */
 enum ModelStatus {
   OPERATIONAL
   DEGRADED
   MAINTENANCE
+  UNAVAILABLE
+  DEPRECATED
 }
 
 /**

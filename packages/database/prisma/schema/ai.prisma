@@ -9,7 +9,6 @@
  * @field name {String} - Unique provider name (e.g., "OpenAI", "Anthropic")
  * @field baseUrl {String} - Base URL for API endpoints
  * @field apiKey {String} - Authentication key (encrypted)
- * @field inferenceSpeed {Float} - Average tokens per second output rate
  * @field createdAt {DateTime} - Creation timestamp
  * @field updatedAt {DateTime} - Last update timestamp
  * Relations:
@@ -21,9 +20,8 @@ model Provider {
   id   String @id @default(uuid())
   name String @unique
 
-  baseUrl        String
-  apiKey         String
-  inferenceSpeed Float  @default(20.0) // Tokens per second
+  baseUrl String
+  apiKey  String
 
   models LanguageModel[]
 

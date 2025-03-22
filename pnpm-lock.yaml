@@ -84,6 +84,9 @@ importers:
       '@undrstnd/observability':
         specifier: workspace:*
         version: link:../../packages/observability
+      '@undrstnd/rate-limit':
+        specifier: workspace:*
+        version: link:../../packages/rate-limit
       '@undrstnd/testing':
         specifier: workspace:*
         version: link:../../packages/testing
@@ -729,6 +732,25 @@ importers:
         specifier: workspace:*
         version: link:../typescript-config
 
+  packages/common:
+    dependencies:
+      '@undrstnd/database':
+        specifier: workspace:*
+        version: link:../database
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
+    devDependencies:
+      '@types/node':
+        specifier: 22.13.9
+        version: 22.13.9
+      '@undrstnd/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+
   packages/database:
     dependencies:
       '@neondatabase/serverless':
@@ -1140,6 +1162,9 @@ importers:
 
   packages/observability:
     dependencies:
+      '@logtail/next':
+        specifier: ^0.1.7
+        version: 0.1.7(next@15.2.2(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@logtail/node':
         specifier: ^0.1.17
         version: 0.1.17
@@ -2432,6 +2457,12 @@ packages:
 
   '@logtail/core@0.1.16':
     resolution: {integrity: sha512-yjvDZwaFpb0z2W2cfpJoMKswB7LJYGEqomU1dOc3yTPNe6VRMtpRekLVw/3nPeNxiJj7VzHDmQ6SG5Wwkw7ZZA==}
+
+  '@logtail/next@0.1.7':
+    resolution: {integrity: sha512-1CEBO+C65PGI1THcanwuyLkD8G3w6PLudEgZBY/okCH5cR1FPBJiztkkBkP4wasQfsNJiFkYEmHkFriLM67SfQ==}
+    engines: {node: '>=15'}
+    peerDependencies:
+      next: ^12.1.4 || ^13 || ^14 || ^15
 
   '@logtail/node@0.1.17':
     resolution: {integrity: sha512-m4YLqgZRyD7kBU11YhcLTuYywyHqM23XsPpAtIs38e/4cS3+8c+mD4jBPwPSX8TaEtzyceq7iAifHfOl2bxmfQ==}
@@ -10449,6 +10480,11 @@ snapshots:
     dependencies:
       '@logtail/tools': 0.1.16
       '@logtail/types': 0.1.16
+
+  '@logtail/next@0.1.7(next@15.2.2(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))':
+    dependencies:
+      next: 15.2.2(@babel/core@7.24.5)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      whatwg-fetch: 3.6.20
 
   '@logtail/node@0.1.17':
     dependencies:

@@ -64,10 +64,16 @@ export class ModelSiblingsService {
             provider: true,
           },
         },
+        siblingOf: {
+          include: {
+            provider: true,
+          },
+        },
       },
     })
 
-    return model?.siblings || []
+    // Combine both relationship directions
+    return [...(model?.siblings || []), ...(model?.siblingOf || [])]
   }
 
   /**
@@ -86,10 +92,17 @@ export class ModelSiblingsService {
             provider: true,
           },
         },
+        siblingOf: {
+          where: { status: ModelStatus.OPERATIONAL },
+          include: {
+            provider: true,
+          },
+        },
       },
     })
 
-    return model?.siblings || []
+    // Combine both relationship directions
+    return [...(model?.siblings || []), ...(model?.siblingOf || [])]
   }
 
   /**
@@ -121,11 +134,22 @@ export class ModelSiblingsService {
           lte: maxParameters,
         },
         NOT: {
-          siblings: {
-            some: {
-              id: modelId,
+          OR: [
+            {
+              siblings: {
+                some: {
+                  id: modelId,
+                },
+              },
             },
-          },
+            {
+              siblingOf: {
+                some: {
+                  id: modelId,
+                },
+              },
+            },
+          ],
         },
       },
       include: {
