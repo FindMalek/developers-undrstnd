@@ -1,23 +1,21 @@
+import { ModelSyncService } from "@/services/model-sync/model-sync.service"
+
 import { NextResponse } from "next/server"
-import { log } from "@undrstnd/observability"
+import { parseError } from "@undrstnd/observability/error"
+import { log } from "@undrstnd/observability/log"
 
-import { ModelSyncService } from "../../../../services/model-sync/model-sync.service"
+import { env } from "@/env"
 
-// This endpoint should be protected by a cron job secret
-const CRON_SECRET = process.env.CRON_SECRET
-
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<NextResponse> {
   try {
-    // Verify the cron job secret
     const authHeader = request.headers.get("authorization")
-    if (authHeader !== `Bearer ${CRON_SECRET}`) {
+    if (authHeader !== `Bearer ${env.CRON_SECRET}`) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
     const modelSyncService = new ModelSyncService()
     const results = await modelSyncService.syncAllProviders()
 
-    // Log the sync results
     log.info("MODEL_SYNC_COMPLETED", {
       results: results.map((result) => ({
         providerId: result.providerId,
@@ -27,25 +25,15 @@ export async function POST(request: Request) {
       })),
     })
 
-    // Log any errors separately for better visibility
-    results.forEach((result) => {
-      if (result.errors?.length) {
-        log.error("MODEL_SYNC_PROVIDER_ERRORS", {
-          providerId: result.providerId,
-          errors: result.errors,
-        })
-      }
-    })
-
     return NextResponse.json({
       status: "success",
       results,
     })
   } catch (error) {
+    const errorMessage = parseError(error)
     log.error("MODEL_SYNC_CRON_ERROR", {
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: errorMessage,
     })
-
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

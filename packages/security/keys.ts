@@ -5,8 +5,10 @@ export const keys = () =>
   createEnv({
     server: {
       ARCJET_KEY: z.string().min(1).startsWith("ajkey_").optional(),
+      CRON_SECRET: z.string().min(1).startsWith("cron_").optional(),
     },
     runtimeEnv: {
       ARCJET_KEY: process.env.ARCJET_KEY,
+      CRON_SECRET: process.env.CRON_SECRET,
     },
   })

@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server"
-import { database, ModelStatus } from "@undrstnd/database"
+import {
+  LanguageModelEntity,
+  LanguageModelFetchHelper,
+} from "@undrstnd/common/entities"
+import { database } from "@undrstnd/database"
 import { parseError } from "@undrstnd/observability/error"
 import { log } from "@undrstnd/observability/log"
 
@@ -25,33 +29,16 @@ export async function GET(request: Request) {
       )
     }
 
-    // TODO: Please create a fetch-helper for the selected fields
-    // TODO: Please create a fetch-helper for the where clause
     const models = await database.languageModel.findMany({
-      where: {
-        status: ModelStatus.OPERATIONAL,
-      },
-      select: {
-        id: true,
-        externalId: true,
-        name: true,
-        owner: true,
-        createdAt: true,
-      },
+      where: LanguageModelFetchHelper.getActiveWhereClause(),
+      select: LanguageModelFetchHelper.getSelect(),
     })
 
-    // TODO: Please create a entity for the return object
     const response = {
       object: "list",
-      data: models.map((model) => ({
-        id: model.externalId,
-        object: "model",
-        created: Math.floor(model.createdAt.getTime() / 1000),
-        owned_by: model.owner || "undrstnd",
-      })),
+      data: models.map((model) => LanguageModelEntity.getModelRo(model)),
     }
 
-    // Log the request
     log.info("MODELS_LISTED", {
       apiKeyId: key.id,
       modelCount: models.length,
