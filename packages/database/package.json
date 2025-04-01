@@ -13,7 +13,7 @@
     "studio": "pnpm compile-schema && prisma studio --schema=./prisma/build/schema.prisma"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.10.4",
+    "@neondatabase/serverless": "^1.0.0",
     "@prisma/adapter-neon": "6.4.1",
     "@prisma/client": "6.4.1",
     "@t3-oss/env-nextjs": "^0.12.0",
