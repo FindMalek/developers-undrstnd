@@ -21,7 +21,7 @@
     "@undrstnd/notifications": "workspace:*",
     "@sentry/nextjs": "^9.5.0",
     "@t3-oss/env-nextjs": "^0.12.0",
-    "next": "15.2.2",
+    "next": "15.3.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "svix": "^1.61.4",
